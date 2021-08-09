@@ -32,6 +32,15 @@ require('packer').startup(function()
   use 'hrsh7th/nvim-compe' -- Autocompletion plugin
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons',
+  config = function ()
+   require("bufferline").setup{
+require("packer.settings.bufferline")
+}
+  end
+
+  }
+
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
