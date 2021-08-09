@@ -34,17 +34,47 @@ require('packer').startup(function()
 
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+      local myTreeConfig = require("packer.settings.nvimtree")
+      local g = vim.g
+      local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+        for opt, val in pairs(myTreeConfig) do
+    g["nvim_tree_" .. opt] = val
+  end
+      g.nvim_tree_bindings = {
+      { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+      { key = "h", cb = tree_cb "close_node" },
+      { key = "v", cb = tree_cb "vsplit" },
+    }
+    end,
+}
+
+-- dims inactive portions of the code you're editing
+use {
+  "folke/twilight.nvim",
+  config = function()
+    require("twilight").setup {
+    }
+  end
 }
 
 use {
   "folke/which-key.nvim",
   config = function()
-    require("which-key").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+local myWKConfig = require("packer.settings.which-key")
+  local wk = require "which-key"
+    wk.setup {
+      myWKConfig.settings
     }
+local opts = myWKConfig.opts
+  local vopts = myWKConfig.opts
+
+  local mappings = myWKConfig.mappings
+  local vmappings = myWKConfig.vmappings
+
+  wk.register(mappings, opts)
+  wk.register(vmappings, vopts)
   end
 }
 end)
