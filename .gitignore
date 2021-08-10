@@ -22,3 +22,4 @@ spell/
 *.bak
 *.backup
 *.old
+lua/.DS_Store
