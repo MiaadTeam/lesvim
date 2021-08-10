@@ -3,7 +3,10 @@ require "packer.loader"
 require "packer.plugins"
 
 -- Key Mappings
-require "keymap.buffer"
+require "keymap.init"
+
+-- Settings
+require "settings"
 
 --Incremental live completion
 vim.o.inccommand = 'nosplit'
