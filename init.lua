@@ -1,12 +1,21 @@
---Package configurations 
+DATA_PATH = vim.fn.stdpath "data"
+MAP = vim.api.nvim_set_keymap
+
+--Package configurations
 require "packer.loader"
 require "packer.plugins"
 
 -- Key Mappings
-require "keymap.init"
+require "keymap"
 
 -- Settings
 require "settings"
+
+-- LSP
+-- require "lsp.init"
+require('lsp.lspinstall')
+
+
 
 --Incremental live completion
 vim.o.inccommand = 'nosplit'

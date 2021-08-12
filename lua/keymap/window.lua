@@ -1,6 +1,6 @@
 local global = require("keymap.global")
  local map = global.map
- mapOptions = global.mapOptions
+local mapOptions = global.mapOptions
 
 -- better window movement
 map('n', '<C-h>', '<C-w>h', mapOptions)

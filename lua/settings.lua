@@ -38,7 +38,7 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 -- vim.g.nvim_tree_disable_netrw = O.nvim_tree_disable_netrw -- enable netrw for remote gx gf support (must be set before plugin's packadd)
 vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
 vim.cmd('filetype plugin on') -- filetype detection
-vim.cmd('set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h16')
+vim.cmd('set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h20')
 -- vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
 -- vim.o.guifont = "Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h24"
 -- vim.o.guifont = "Cascadia Code Light,Hack Nerd Font,Adobe Arabic:h24"

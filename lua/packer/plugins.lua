@@ -28,9 +28,12 @@ require('packer').startup(function()
   use 'nvim-treesitter/nvim-treesitter'
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-compe' -- Autocompletion plugin
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
+use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+    use {'kabouzeid/nvim-lspinstall',
+}
 
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons',
   config = function ()
@@ -85,5 +88,23 @@ local opts = myWKConfig.opts
   wk.register(mappings, opts)
   wk.register(vmappings, vopts)
   end
+
+
+
 }
+  use 'b3nj5m1n/kommentary'
+
+
+  use {
+  "folke/trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+
 end)

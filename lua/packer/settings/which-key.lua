@@ -74,13 +74,13 @@ return {
     -- NOTE: Prefer using : over <cmd> as the latter avoids going back in normal-mode.
     -- see https://neovim.io/doc/user/map.html#:map-cmd
     vmappings = {
-      ["/"] = { ":CommentToggle<CR>", "Comment" },
+      ["/"] = { "<Plug>kommentary_visual_default<C-c>", "Comment" },
     },
 
     mappings = {
       ["w"] = { "<cmd>w!<CR>", "Save" },
       ["q"] = { "<cmd>q!<CR>", "Quit" },
-      ["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
+      ["/"] = { "<Plug>kommentary_line_default", "Comment" },
       ["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
       ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
       ["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
@@ -183,15 +183,6 @@ return {
           "Workspace Symbols",
         },
       },
-      L = {
-        name = "+LunarVim",
-        k = { "<cmd>lua require('keymappings').print()<cr>", "View LunarVim's default keymappings" },
-        i = {
-          "<cmd>lua require('core.info').toggle_popup(vim.bo.filetype)<cr>",
-          "Toggle LunarVim Info",
-        },
-      },
-
       s = {
         name = "Search",
         b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
