@@ -28,7 +28,11 @@ require('packer').startup(function()
   use 'nvim-treesitter/nvim-treesitter'
   -- Additional textobjects for treesitter
   use 'nvim-treesitter/nvim-treesitter-textobjects'
-  use 'hrsh7th/nvim-compe' -- Autocompletion plugin
+  use {'hrsh7th/nvim-compe',
+  config = function ()
+      require "packer.settings.compe"
+  end
+  } -- Autocompletion plugin
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
 use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client

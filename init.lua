@@ -16,7 +16,6 @@ require "settings"
 require('lsp.lspinstall')
 
 
-
 --Incremental live completion
 vim.o.inccommand = 'nosplit'
 

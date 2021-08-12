@@ -17,10 +17,6 @@
 
 
 
-
-
-
-
 -- Example configuations here: https://github.com/mattn/efm-langserver
 -- TODO this file needs to be refactored eache lang should be it's own file
 local lua_arguments = {}
@@ -30,13 +26,13 @@ local luaFormat = {
     formatStdin = true
 }
 
-local lua_fmt = {
-    formatCommand = "luafmt --indent-count 2 --line-width 120 --stdin",
-    formatStdin = true
-}
+-- local lua_fmt = {
+--     formatCommand = "luafmt --indent-count 2 --line-width 120 --stdin",
+--     formatStdin = true
+-- }
 
 --  table.insert(lua_arguments, luaFormat)
-  table.insert(lua_arguments, lua_fmt)
+  table.insert(lua_arguments, luaFormat)
 
 -- sh
 local sh_arguments = {}
@@ -48,9 +44,9 @@ local shellcheck = {
     lintFormats = {'%f:%l:%c: %trror: %m', '%f:%l:%c: %tarning: %m', '%f:%l:%c: %tote: %m'}
 }
 
-table.insert(sh_arguments, shfmt) 
+table.insert(sh_arguments, shfmt)
 
-table.insert(sh_arguments, shellcheck) 
+table.insert(sh_arguments, shellcheck)
 
 -- tsserver/web javascript react, vue, json, html, css, yaml
 local prettier = {formatCommand = "prettier --stdin-filepath ${INPUT}", formatStdin = true}
@@ -70,7 +66,7 @@ local tsserver_args = {}
 
 table.insert(tsserver_args, prettier)
 
-table.insert(tsserver_args, eslint) 
+table.insert(tsserver_args, eslint)
 
 -- local markdownlint = {
 --     -- TODO default to global lintrc
@@ -109,4 +105,37 @@ require"lspconfig".efm.setup {
         }
     }
 }
+
+local efm_settings = {
+
+        cmd = {DATA_PATH .. "/lspinstall/efm/efm-langserver"},
+    init_options = {documentFormatting = true, codeAction = false},
+    filetypes = {"lua", "python", "javascriptreact", "javascript", "typescript","typescriptreact","sh", "html", "css", "json", "yaml", "markdown", "vue"},
+    settings = {
+        rootMarkers = {".git/"},
+        languages = {
+            lua = lua_arguments,
+            sh = sh_arguments,
+            javascript = tsserver_args,
+            javascriptreact = tsserver_args,
+			typescript = tsserver_args,
+			typescriptreact = tsserver_args,
+            html = {prettier},
+            css = {prettier},
+            json = {prettier},
+            yaml = {prettier},
+            markdown = {markdownPandocFormat}
+            -- javascriptreact = {prettier, eslint},
+            -- javascript = {prettier, eslint},
+            -- markdown = {markdownPandocFormat, markdownlint},
+        }
+    }
+}
+
+
+return {
+    efm_settings
+}
+
+
 
