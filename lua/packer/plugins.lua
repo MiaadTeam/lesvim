@@ -35,6 +35,10 @@ require('packer').startup(function()
   } -- Autocompletion plugin
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
+
+  -- Built-in Terminal
+  use {"akinsho/nvim-toggleterm.lua"}
+
 use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
     use {'kabouzeid/nvim-lspinstall',
 }
