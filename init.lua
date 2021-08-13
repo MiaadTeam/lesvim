@@ -18,17 +18,8 @@ require("lsp.lspinstall")
 --Incremental live completion
 vim.o.inccommand = "nosplit"
 
---Make line numbers default
-vim.wo.number = true
-
 --Do not save when switching buffers
 vim.o.hidden = true
-
---Enable mouse mode
-vim.o.mouse = "a"
-
---Enable break indent
-vim.o.breakindent = true
 
 --Save undo history
 vim.cmd([[set undofile]])
@@ -52,11 +43,6 @@ vim.g.lightline = {
 	active = { left = { { "mode", "paste" }, { "gitbranch", "readonly", "filename", "modified" } } },
 	component_function = { gitbranch = "fugitive#head" },
 }
-
---Remap space as leader key
-vim.api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
@@ -151,30 +137,3 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
-
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
-local luasnip = require("luasnip")
-
-_G.tab_complete = function()
-	if vim.fn.pumvisible() == 1 then
-		return t("<C-n>")
-	elseif luasnip.expand_or_jumpable() then
-		return t("<Plug>luasnip-expand-or-jump")
-	elseif check_back_space() then
-		return t("<Tab>")
-	else
-		return vim.fn["compe#complete"]()
-	end
-end
-
-_G.s_tab_complete = function()
-	if vim.fn.pumvisible() == 1 then
-		return t("<C-p>")
-	elseif luasnip.jumpable(-1) then
-		return t("<Plug>luasnip-jump-prev")
-	else
-		return t("<S-Tab>")
-	end
-end

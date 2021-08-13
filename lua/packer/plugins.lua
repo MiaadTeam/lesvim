@@ -95,7 +95,13 @@ require("packer").startup(function()
 			wk.register(vmappings, vopts)
 		end,
 	})
-	use("b3nj5m1n/kommentary")
+
+	use({
+		"b3nj5m1n/kommentary",
+		config = function()
+			require("packer.settings.kommantary")
+		end,
+	})
 
 	use({
 		"folke/trouble.nvim",
