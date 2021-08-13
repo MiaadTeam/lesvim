@@ -27,8 +27,14 @@ require("format").setup({
 			tempfile_postfix = ".tmp",
 		},
 	},
+	typescriptreact = {
+		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+	},
+	typescript = {
+		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+	},
 	javascript = {
-		{ cmd = { "prettier -w", "./node_modules/.bin/eslint --fix" } },
+		{ cmd = { "dprint fmt" } },
 	},
 	markdown = {
 		{ cmd = { "prettier -w" } },
