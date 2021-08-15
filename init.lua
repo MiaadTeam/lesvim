@@ -8,18 +8,16 @@ require("packer.plugins")
 -- Key Mappings
 require("keymap")
 
--- Settings
-require("settings")
-
 -- LSP
 -- require "lsp.init"
 require("lsp.lspinstall")
+require("lsp.ts-js-deno")
+
+-- Settings
+require("settings")
 
 --Incremental live completion
 vim.o.inccommand = "nosplit"
-
---Do not save when switching buffers
-vim.o.hidden = true
 
 --Save undo history
 vim.cmd([[set undofile]])
@@ -27,10 +25,6 @@ vim.cmd([[set undofile]])
 --Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
-
---Decrease update time
-vim.o.updatetime = 250
-vim.wo.signcolumn = "yes"
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
