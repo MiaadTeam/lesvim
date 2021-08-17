@@ -20,7 +20,7 @@ require("settings")
 vim.o.inccommand = "nosplit"
 
 --Save undo history
-vim.cmd([[set undofile]])
+-- vim.cmd([[set undofile]])
 
 --Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
