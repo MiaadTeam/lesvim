@@ -57,14 +57,14 @@ return {
 	-- NOTE: Prefer using : over <cmd> as the latter avoids going back in normal-mode.
 	-- see https://neovim.io/doc/user/map.html#:map-cmd
 	vmappings = {
-		["/"] = { "<cmd>kommentary_visual_default<C-c>", "Comment" },
+		["/"] = { ":CommentToggle<CR>", "Comment" },
 	},
 
 	mappings = {
 		["w"] = { "<cmd>w!<CR>", "Save" },
 		["q"] = { "<cmd>q!<CR>", "Quit" },
-		["/"] = { "<cmd>kommentary_line_default<CR>", "Comment" },
-		["c"] = { "<cmd>BufferLinePickClose<CR>", "Close Buffer" },
+		["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
+		["c"] = { "<cmd>bd<CR>", "Close Buffer" },
 		["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 		["r"] = { "<cmd>Format<CR>", "Reformat File" },
