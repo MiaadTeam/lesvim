@@ -1,3 +1,7 @@
+local global = require("keymap.global")
+local map = global.map
+local mapOptions = global.mapOptions
+
 vim.o.completeopt = "menuone,noinsert,noselect"
 
 require("compe").setup({
@@ -24,22 +28,24 @@ require("compe").setup({
 	max_kind_width = 100,
 	max_menu_width = 100,
 
+	-- TODO add emoji for git and other file trype also
 	source = {
-		path = { kind = " Ôõó  (Path)" },
-		buffer = { kind = " Ôêé  (Buffer)" },
-		calc = { kind = " Ôá¨  (Calc)" },
-		vsnip = { kind = " ÔÉÑ  (Snippet)" },
-		nvim_lsp = { kind = " Óúñ  (LSP)" },
-		nvim_lua = { kind = " ÓüÖ " },
-		luasnip = { kind = " ÓüÖ " },
-
-		spell = { kind = " Ôëà  (Spell)" },
-		vim_dadbod_completion = true,
-		-- snippets_nvim = {kind = " Ôóè "},
-		-- ultisnips = {kind = " Ôóè "},
-		-- treesitter = {kind = " ÔÜª "},
-		emoji = { kind = " Ô≤É  (Emoji)", filetypes = { "markdown", "text" } },
-		ultisnips = true,
+		path = { kind = "🪃  (Path)" },
+		buffer = { kind = "🗂️  (Buffer)" },
+		calc = { kind = "🧮  (Calc)" },
+		vsnip = { kind = "🦮  (Snippet)" },
+		nvim_lsp = { kind = "🤖 (LSP)" },
+		nvim_lua = { kind = "🔵  (Nvim Lua) " },
+		text = { kind = "📜  (Text)" },
+		luasnip = { kind = "🔵  (Lua)" },
+		typescript = { kind = "🟦  (Typescript)" },
+		javascript = { kind = "🟨  (Javascript)" },
+		spell = { kind = "🙊  (Spell)" },
+		vim_dadbod_completion = { "💚 (Vim)" },
+		snippets_nvim = { kind = "💁   (Snippets)" },
+		ultisnips = { kind = "ℹ️   (Snippets)" },
+		treesitter = { kind = "🌳  (Treesitter)" },
+		emoji = { kind = "🤣  (Emoji)", filetypes = { "markdown", "text" } },
 	},
 })
 
@@ -77,7 +83,16 @@ _G.s_tab_complete = function()
 	end
 end
 
-vim.api.nvim_set_keymap("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+-- Complete
+map("i", "<C-Space>", "compe#complete()", { expr = true, silent = true })
+map("i", "<CR>", "compe#confirm(luaeval(\"require 'nvim-autopairs'.autopairs_cr()\"))", { expr = true, silent = true })
+map("i", "<C-e>", "compe#close('<C-e>')", { expr = true, silent = true })
+map("i", "<C-f>", "compe#scroll({ 'delta': +4 })", { expr = true, silent = true })
+map("i", "<C-d>", "compe#scroll({ 'delta': -4 })", { expr = true, silent = true })
+-- --
+map("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
+map("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
+map("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+map("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
+
+vim.cmd([[highlight link CompeDocumentation NormalFloatocal]])
