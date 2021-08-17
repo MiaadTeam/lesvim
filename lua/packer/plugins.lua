@@ -13,7 +13,11 @@ require("packer").startup(function()
 	use("wbthomason/packer.nvim") -- Package manager
 	use("tpope/vim-fugitive") -- Git commands in nvim
 	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
-	use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
+	use("hrsh7th/vim-vsnip")
+	use({
+		"rafamadriz/friendly-snippets",
+		event = "InsertCharPre",
+	})
 	use("ludovicchabant/vim-gutentags") -- Automatic tags management
 	-- UI to select things (files, grep results, open buffers...)
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } } })
@@ -29,11 +33,24 @@ require("packer").startup(function()
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	use({
 		"hrsh7th/nvim-compe",
+		event = "InsertEnter",
 		config = function()
 			require("packer.settings.compe")
 		end,
 	}) -- Autocompletion plugin
-	use("L3MON4D3/LuaSnip") -- Snippets plugin
+	use("norcalli/snippets.nvim") -- Snippets plugin
+	use({
+		"windwp/nvim-autopairs",
+		after = "nvim-compe",
+		config = function()
+			--			require("nvim-autopairs.completion.compe").setup({
+			--				map_complete = true, -- it will auto insert `(` after select function or method item
+			--				auto_select = false, -- auto select first item
+			--			})
+
+			require("packer.settings.autopairs")
+		end,
+	})
 
 	-- Built-in Terminal
 	use({ "akinsho/nvim-toggleterm.lua" })
@@ -78,6 +95,25 @@ require("packer").startup(function()
 	})
 
 	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
+	use({
+		"lukas-reineke/format.nvim",
+		config = function()
+			require("packer.settings.format")
+		end,
+	})
+
+	use({
 		"folke/which-key.nvim",
 		config = function()
 			local myWKConfig = require("packer.settings.which-key")
@@ -95,30 +131,11 @@ require("packer").startup(function()
 			wk.register(vmappings, vopts)
 		end,
 	})
-
 	use({
-		"b3nj5m1n/kommentary",
+		"terrortylor/nvim-comment",
+		event = "BufRead",
 		config = function()
-			require("packer.settings.kommantary")
-		end,
-	})
-
-	use({
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
-		end,
-	})
-
-	use({
-		"lukas-reineke/format.nvim",
-		config = function()
-			require("packer.settings.format")
+			require("nvim_comment").setup()
 		end,
 	})
 end)
