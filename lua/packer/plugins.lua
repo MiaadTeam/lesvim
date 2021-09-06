@@ -11,18 +11,29 @@ vim.api.nvim_exec(
 local use = require("packer").use
 require("packer").startup(function()
 	use("wbthomason/packer.nvim") -- Package manager
+	use("nvim-lua/plenary.nvim")
+	use("nvim-lua/popup.nvim")
 	use("tpope/vim-fugitive") -- Git commands in nvim
 	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 	use("hrsh7th/vim-vsnip")
+	use({ "turbio/bracey.vim", run = "npm install --prefix server" })
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
+	use("airblade/vim-rooter")
 	use({
 		"rafamadriz/friendly-snippets",
 		event = "InsertCharPre",
 	})
-	use("ludovicchabant/vim-gutentags") -- Automatic tags management
+	-- use("ludovicchabant/vim-gutentags") -- Automatic tags management
 	-- UI to select things (files, grep results, open buffers...)
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } } })
-	use("joshdick/onedark.vim") -- Theme inspired by Atom
-	use("itchyny/lightline.vim") -- Fancier statusline
+	-- use("joshdick/onedark.vim") -- Theme inspired by Atom
+	use({
+		"folke/tokyonight.nvim",
+	})
+	-- use("itchyny/lightline.vim") -- Fancier statusline
+	use({
+		"windwp/windline.nvim",
+	}) -- Fancier statusline
 	-- Add indentation guides even on blank lines
 	use("lukas-reineke/indent-blankline.nvim")
 	-- Add git related info in the signs columns and popups
@@ -138,4 +149,5 @@ require("packer").startup(function()
 			require("nvim_comment").setup()
 		end,
 	})
+	use({ "ellisonleao/glow.nvim" })
 end)

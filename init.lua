@@ -16,6 +16,7 @@ require("lsp.ts-js-deno")
 -- Settings
 require("settings")
 
+vim.api.nvim_command([[autocmd BufReadPost * call FindRootDirectory()]])
 --Incremental live completion
 vim.o.inccommand = "nosplit"
 
@@ -28,16 +29,25 @@ vim.o.smartcase = true
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.cmd([[colorscheme onedark]])
+
+-- Example config in Lua
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+
+-- Change the "hint" color to the "orange" color, and make the "error" color bright red
+vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+
+-- Load the colorscheme
+vim.cmd([[colorscheme tokyonight]])
 
 --Set statusbar
-vim.g.lightline = {
-	colorscheme = "onedark",
-	active = { left = { { "mode", "paste" }, { "gitbranch", "readonly", "filename", "modified" } } },
-	component_function = { gitbranch = "fugitive#head" },
-}
-
+-- vim.g.lightline = {
+-- 	colorscheme = "onedark",
+-- 	active = { left = { { "mode", "paste" }, { "gitbranch", "readonly", "filename", "modified" } } },
+-- 	component_function = { gitbranch = "fugitive#head" },
+-- }
+--
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
@@ -73,6 +83,14 @@ vim.api.nvim_exec(
 
 -- Y yank until the end of line
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
+
+-- Map macOS specific keybinds
+if vim.fn.has("mac") == 1 then
+	MAP("n", "<A-Up>", "<C-Up>", {})
+	MAP("n", "<A-Down>", "<C-Down>", {})
+	MAP("n", "<A-Left>", "<C-Left>", {})
+	MAP("n", "<A-Right>", "<C-Right>", {})
+end
 
 -- Make runtime files discoverable to the server
 local runtime_path = vim.split(package.path, ";")
@@ -131,3 +149,5 @@ require("nvim-treesitter.configs").setup({
 		},
 	},
 })
+
+require("packer.settings.windline")

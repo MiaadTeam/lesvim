@@ -71,7 +71,7 @@ return {
 		["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
 		b = {
 			name = "Buffers",
-			j = { "<cmd>BufferPick<cr>", "jump to buffer" },
+			j = { "<cmd>BufferLinePick<cr>", "jump to buffer" },
 			f = { "<cmd>Telescope buffers<cr>", "Find buffer" },
 			w = { "<cmd>BufferWipeout<cr>", "wipeout buffer" },
 			e = {
@@ -79,17 +79,25 @@ return {
 				"close all but current buffer",
 			},
 			h = { "<cmd>BufferCloseBuffersLeft<cr>", "close all buffers to the left" },
-			l = {
-				"<cmd>BufferCloseBuffersRight<cr>",
+			r = {
+				"<cmd>BufferLineCloseRight<cr>",
 				"close all BufferLines to the right",
 			},
+			l = {
+				"<cmd>BufferLineCloseLeft<cr>",
+				"close all BufferLines to the left",
+			},
 			D = {
-				"<cmd>BufferOrderByDirectory<cr>",
+				"<cmd>BufferLineSortByDirectory<cr>",
 				"sort BufferLines automatically by directory",
 			},
 			L = {
-				"<cmd>BufferOrderByLanguage<cr>",
+				"<cmd>BufferLineSortByExtension<cr>",
 				"sort BufferLines automatically by language",
+			},
+			T = {
+				"<cmd>BufferLineSortByTabs<cr>",
+				"sort BufferLines automatically by Tabs",
 			},
 		},
 		p = {
@@ -131,6 +139,10 @@ return {
 			},
 		},
 
+		m = {
+			name = "+ Markdown Tools",
+			t = { "<cmd>Glow<cr>", "Preview in terminal directly" },
+		},
 		l = {
 			name = "LSP",
 			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -165,6 +177,10 @@ return {
 			S = {
 				"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 				"Workspace Symbols",
+			},
+			t = {
+				"<cmd>TroubleToggle<cr>",
+				"Find Document or Project troubles",
 			},
 		},
 		s = {

@@ -56,8 +56,27 @@ local javascript_filetypes = {
 -- which we will specify later.
 local javascript_lsp_config = {
 	name = "javascript",
-	cmd = { path_join(os.getenv("JAVASCRIPT_LANGUAGE_SERVER_DIRECTORY"), "lib", "language-server-stdio.js") },
+	-- cmd = { "deno", "lsp" },
+	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+	init_options = {
+		enable = true,
+		lint = true,
+		unstable = true,
+	},
 }
+
+--- Decodes from JSON.
+---
+---@param data string Data to decode
+---@returns table json_obj Decoded JSON object
+local json_decode = function(data)
+	local ok, result = pcall(vim.fn.json_decode, data)
+	if ok then
+		return result
+	else
+		return nil, result
+	end
+end
 
 -- This needs to be global so that we can call it from the autocmd.
 function Check_start_javascript_lsp()
@@ -69,14 +88,22 @@ function Check_start_javascript_lsp()
 	-- Try to find our root directory. We will define this as a directory which contains
 	-- node_modules. Another choice would be to check for `package.json`, or for `.git`.
 	local root_dir = buffer_find_root_dir(bufnr, function(dir)
-		return is_dir(path_join(dir, "node_modules"))
+		-- return is_dir(path_join(dir, "node_modules"))
 		-- return vim.fn.filereadable(path_join(dir, 'package.json')) == 1
+		return vim.fn.filereadable(path_join(dir, ".lsp.lua")) == 1
 		-- return is_dir(path_join(dir, '.git'))
 	end)
 	-- We couldn't find a root directory, so ignore this file.
 	if not root_dir then
 		return
 	end
+	javascript_lsp_config.cmd = { "deno", "lsp" }
+	-- javascript_lsp_config.autostart = false
+	-- local decoded, err = json_decode(vim.fn.readfile(root_dir))
+
+	-- javascript_lsp_config.cmd = decoded.cmd
+
+	print(root_dir)
 
 	-- Check if we have a client already or start and store it.
 	local client_id = javascript_lsps[root_dir]

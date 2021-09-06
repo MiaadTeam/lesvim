@@ -21,6 +21,11 @@ require("format").setup({
 			cmd = { "stylua" },
 		},
 	},
+	json = {
+		{
+			cmd = { "prettier -w" },
+		},
+	},
 	go = {
 		{
 			cmd = { "gofmt -w", "goimports -w" },
@@ -32,6 +37,9 @@ require("format").setup({
 	},
 	typescript = {
 		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+	},
+	html = {
+		{ cmd = { "prettier -w" } },
 	},
 	javascript = {
 		{ cmd = { "dprint fmt" } },
