@@ -9,3 +9,13 @@ firt of all thing is OS (operation system), so please install a `linux` or use `
 [[TODO]]
 
 first of all install Neovim :
+
+install `rust`
+
+install `dprint`
+
+install `node js`
+
+install `prettier`
+
+copy or clone this repo to `.config/nvim`
