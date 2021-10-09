@@ -11,7 +11,7 @@ require("keymap")
 -- LSP
 -- require "lsp.init"
 require("lsp.lspinstall")
-require("lsp.ts-js-deno")
+-- require("lsp.ts-js-deno")
 
 -- Settings
 require("settings")
@@ -22,6 +22,9 @@ vim.o.inccommand = "nosplit"
 
 --Save undo history
 -- vim.cmd([[set undofile]])
+
+-- Do not source the default filetype.vim
+vim.g.did_load_filetypes = 1
 
 --Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -151,3 +154,6 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("packer.settings.windline")
+
+-- project local config enabling
+vim.o.exrc = true

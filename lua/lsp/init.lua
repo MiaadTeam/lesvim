@@ -1,1 +1,2 @@
-require "lsp.lspinstall"
+require("lsp.lspinstall")
+-- require("ts-js-deno")

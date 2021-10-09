@@ -83,19 +83,56 @@ require("packer").startup(function()
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			local myTreeConfig = require("packer.settings.nvimtree")
-			local g = vim.g
+			-- local myTreeConfig = require("packer.settings.nvimtree")
 			local tree_cb = require("nvim-tree.config").nvim_tree_callback
-			for opt, val in pairs(myTreeConfig) do
-				g["nvim_tree_" .. opt] = val
-			end
-			g.nvim_tree_bindings = {
+			require("nvim-tree").setup({
+				-- local tree_cb = require("nvim-tree.config").nvim_tree_callback
+				-- local list = {
+				--     				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+				-- 				{ key = "h", cb = tree_cb("close_node") },
+				-- 				{ key = "v", cb = tree_cb("vsplit") },
+				-- }
+				view = {
+					mappings = {
+						custom_only = false,
+						list = {
+							{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+							{ key = "h", cb = tree_cb("close_node") },
+							{ key = "v", cb = tree_cb("vsplit") },
+						},
+					},
+				},
+			})
+			-- local g = vim.g
+			-- for opt, val in pairs(myTreeConfig) do
+			-- 	g["nvim_tree_" .. opt] = val
+			-- end
+			local list = {
 				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
 				{ key = "h", cb = tree_cb("close_node") },
 				{ key = "v", cb = tree_cb("vsplit") },
 			}
 		end,
 	})
+
+	-- use({
+	-- 	"kyazdani42/nvim-tree.lua",
+	-- 	requires = "kyazdani42/nvim-web-devicons",
+	-- 	config = function()
+	-- 		local myTreeConfig = require("packer.settings.nvimtree")
+	-- 		local g = vim.g
+	-- 		local tree_cb = require("nvim-tree.config").nvim_tree_callback
+	-- 		for opt, val in pairs(myTreeConfig) do
+	-- 			g["nvim_tree_" .. opt] = val
+	-- 		end
+	-- 		g.nvim_tree_bindings = {
+	-- 			{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
+	-- 			{ key = "h", cb = tree_cb("close_node") },
+	-- 			{ key = "v", cb = tree_cb("vsplit") },
+	-- 		}
+	-- 	end,
+	-- })
+	use("nathom/filetype.nvim")
 
 	-- dims inactive portions of the code you're editing
 	use({
