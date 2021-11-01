@@ -1,7 +1,8 @@
-require "keymap.global"
-require "keymap.buffer"
-require "keymap.window"
-require "keymap.resize"
-require "keymap.escape"
-require "keymap.move"
-require "keymap.toggleterm"
+require("keymap.global")
+require("keymap.buffer")
+require("keymap.window")
+require("keymap.resize")
+require("keymap.escape")
+require("keymap.move")
+require("keymap.toggleterm")
+require("keymap.lsp")

@@ -103,7 +103,7 @@ function Check_start_javascript_lsp()
 
 	-- javascript_lsp_config.cmd = decoded.cmd
 
-	print(root_dir)
+	-- echo root_dir
 
 	-- Check if we have a client already or start and store it.
 	local client_id = javascript_lsps[root_dir]

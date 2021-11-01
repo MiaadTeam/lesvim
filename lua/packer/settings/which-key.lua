@@ -54,10 +54,8 @@ return {
 		nowait = true, -- use `nowait` when creating keymaps
 	},
 
-	-- NOTE: Prefer using : over <cmd> as the latter avoids going back in normal-mode.
-	-- see https://neovim.io/doc/user/map.html#:map-cmd
 	vmappings = {
-		["/"] = { ":CommentToggle<CR>", "Comment" },
+		["/"] = { "<ESC><CMD>'<,'>CommentToggle<CR>", "Comment" },
 	},
 
 	mappings = {
@@ -65,7 +63,7 @@ return {
 		["q"] = { "<cmd>q!<CR>", "Quit" },
 		["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
 		["c"] = { "<cmd>bd<CR>", "Close Buffer" },
-		["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+		["e"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Explorer" },
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 		["r"] = { "<cmd>Format<CR>", "Reformat File" },
 		["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },

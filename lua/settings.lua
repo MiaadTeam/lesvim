@@ -9,7 +9,7 @@ vim.o.hidden = true --Do not save when switching buffers
 vim.o.titlestring = "%<%F%=%l/%L - nvim"
 vim.wo.wrap = true -- Display long lines as just one line
 vim.cmd("set whichwrap+=<,>,[,],h,l") -- move to next line with theses keys
-vim.cmd("syntax on") -- syntax highlighting
+-- vim.cmd("syntax on") -- syntax highlighting
 vim.o.pumheight = 10 -- Makes popup menu smaller
 vim.o.fileencoding = "utf-8" -- The encoding written to file
 vim.o.cmdheight = 2 -- More space for displaying messages

@@ -1,6 +1,9 @@
 DATA_PATH = vim.fn.stdpath("data")
 MAP = vim.api.nvim_set_keymap
 
+-- project local config enabling
+vim.o.exrc = true
+
 --Package configurations
 require("packer.loader")
 require("packer.plugins")
@@ -8,15 +11,16 @@ require("packer.plugins")
 -- Key Mappings
 require("keymap")
 
--- LSP
--- require "lsp.init"
-require("lsp.lspinstall")
--- require("lsp.ts-js-deno")
-
 -- Settings
 require("settings")
+-- require("terminal")
 
-vim.api.nvim_command([[autocmd BufReadPost * call FindRootDirectory()]])
+-- LSP
+require("lsp.init")
+-- require("lsp.lspinstall")
+-- require("lsp.ts-js-deno")
+
+-- vim.api.nvim_command([[autocmd BufReadPost * call FindRootDirectory()]])
 --Incremental live completion
 vim.o.inccommand = "nosplit"
 
@@ -154,6 +158,3 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("packer.settings.windline")
-
--- project local config enabling
-vim.o.exrc = true

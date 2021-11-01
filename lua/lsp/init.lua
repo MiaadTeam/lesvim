@@ -1,2 +1,6 @@
-require("lsp.lspinstall")
--- require("ts-js-deno")
+-- require("lsp.lspinstall")
+
+-- require("lsp.lsp-setup")
+-- require("lsp.ts-js-deno")
+
+require("lsp.config")

@@ -16,9 +16,10 @@ require("packer").startup(function()
 	use("tpope/vim-fugitive") -- Git commands in nvim
 	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 	use("hrsh7th/vim-vsnip")
+	use("yamatsum/nvim-cursorline")
 	use({ "turbio/bracey.vim", run = "npm install --prefix server" })
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
-	use("airblade/vim-rooter")
+	-- use("airblade/vim-rooter")
 	use({
 		"rafamadriz/friendly-snippets",
 		event = "InsertCharPre",
@@ -42,17 +43,83 @@ require("packer").startup(function()
 	use("nvim-treesitter/nvim-treesitter")
 	-- Additional textobjects for treesitter
 	use("nvim-treesitter/nvim-treesitter-textobjects")
+	-- use({
+	-- 	"hrsh7th/nvim-compe",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		require("packer.settings.compe")
+	-- 	end,
+	-- }) -- Autocompletion plugin
+
+	use("onsails/lspkind-nvim")
 	use({
-		"hrsh7th/nvim-compe",
+		"hrsh7th/nvim-cmp",
+
 		event = "InsertEnter",
 		config = function()
-			require("packer.settings.compe")
+			local cmp = require("cmp")
+			local lspkind = require("lspkind")
+
+			cmp.setup({
+				formatting = {
+					format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+				},
+				snippet = {
+					expand = function(args)
+						vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+						-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+						-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+						-- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+					end,
+				},
+				mapping = {
+					["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+					["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+
+					["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
+					["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
+
+					["<C-y>"] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
+					["<C-e>"] = cmp.mapping({
+						i = cmp.mapping.abort(),
+						c = cmp.mapping.close(),
+					}),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+				},
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+					{ name = "vsnip" }, -- For vsnip users.
+					-- { name = 'luasnip' }, -- For luasnip users.
+					-- { name = 'ultisnips' }, -- For ultisnips users.
+					-- { name = 'snippy' }, -- For snippy users.
+				}, {
+					{ name = "buffer" },
+				}),
+			})
+
+			-- Use buffer source for `/`.
+			cmp.setup.cmdline("/", {
+				sources = {
+					{ name = "buffer" },
+				},
+			})
+
+			-- Use cmdline & path source for ':'.
+			cmp.setup.cmdline(":", {
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{ name = "cmdline" },
+				}),
+			})
 		end,
 	}) -- Autocompletion plugin
+
 	use("norcalli/snippets.nvim") -- Snippets plugin
 	use({
 		"windwp/nvim-autopairs",
-		after = "nvim-compe",
+		after = "nvim-cmp",
 		config = function()
 			--			require("nvim-autopairs.completion.compe").setup({
 			--				map_complete = true, -- it will auto insert `(` after select function or method item
@@ -65,9 +132,11 @@ require("packer").startup(function()
 
 	-- Built-in Terminal
 	use({ "akinsho/nvim-toggleterm.lua" })
+	use("pianocomposer321/consolation.nvim")
 
 	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
-	use({ "kabouzeid/nvim-lspinstall" })
+	use("hrsh7th/cmp-nvim-lsp")
+	-- use({ "kabouzeid/nvim-lspinstall" })
 
 	use({
 		"akinsho/nvim-bufferline.lua",
@@ -176,7 +245,17 @@ require("packer").startup(function()
 			local vmappings = myWKConfig.vmappings
 
 			wk.register(mappings, opts)
-			wk.register(vmappings, vopts)
+			-- wk.register(vmappings, vopts)
+			wk.register({
+				["/"] = { "<ESC><CMD>'<,'>CommentToggle<CR>", "Comment" },
+			}, {
+				mode = "v", -- VISUAL mode
+				prefix = "<leader>",
+				buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+				silent = true, -- use `silent` when creating keymaps
+				noremap = true, -- use `noremap` when creating keymaps
+				nowait = true, -- use `nowait` when creating keymaps
+			})
 		end,
 	})
 	use({
