@@ -41,18 +41,27 @@ require("format").setup({
 	html = {
 		{ cmd = { "prettier -w" } },
 	},
+	javascriptreact = {
+		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+	},
 	javascript = {
-		{ cmd = { "dprint fmt" } },
+		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
 	},
+	-- javascript = {
+	-- 	{ cmd = { "dprint fmt" } },
+	-- },
 	markdown = {
-		{ cmd = { "prettier -w" } },
-		{
-			cmd = { "black" },
-			start_pattern = "^```python$",
-			end_pattern = "^```$",
-			target = "current",
-		},
+		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
 	},
+	-- markdown = {
+	-- 	{ cmd = { "prettier -w" } },
+	-- 	{
+	-- 		cmd = { "black" },
+	-- 		start_pattern = "^```python$",
+	-- 		end_pattern = "^```$",
+	-- 		target = "current",
+	-- 	},
+	-- },
 })
 
 vim.api.nvim_exec(

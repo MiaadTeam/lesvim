@@ -19,37 +19,108 @@ require("packer").startup(function()
 	use("yamatsum/nvim-cursorline")
 	use({ "turbio/bracey.vim", run = "npm install --prefix server" })
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
+
+	use({ "windwp/nvim-ts-autotag" })
+
+	use({
+		"phaazon/hop.nvim",
+		branch = "v1", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
+
+	-- a lua powered greeter like vim-startify / dashboard-nvim
+	use({
+		"p00f/nvim-ts-rainbow",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				highlight = {
+					-- ...
+				},
+				-- ...
+				rainbow = {
+					enable = true,
+					extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+					max_file_lines = nil, -- Do not enable for files with more than n lines, int
+					-- colors = {}, -- table of hex strings
+					-- termcolors = {} -- table of colour name strings
+				},
+			})
+		end,
+	})
+
+	-- a lua powered greeter like vim-startify / dashboard-nvim
+	use({
+		"goolord/alpha-nvim",
+		config = function()
+			require("packer.settings.alpha")
+		end,
+	})
+
+	-- Rearrange your windows with ease
+	use({
+		"sindrets/winshift.nvim",
+		config = function()
+			require("winshift").setup({
+				highlight_moving_win = true, -- Highlight the window being moved
+				focused_hl_group = "Visual", -- The highlight group used for the moving window
+				moving_win_options = {
+					-- These are local options applied to the moving window while it's
+					-- being moved. They are unset when you leave Win-Move mode.
+					wrap = false,
+					cursorline = false,
+					cursorcolumn = false,
+					colorcolumn = "",
+				},
+			})
+		end,
+	})
+
 	-- use("airblade/vim-rooter")
 	use({
 		"rafamadriz/friendly-snippets",
 		event = "InsertCharPre",
 	})
+
 	-- use("ludovicchabant/vim-gutentags") -- Automatic tags management
 	-- UI to select things (files, grep results, open buffers...)
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } } })
-	-- use("joshdick/onedark.vim") -- Theme inspired by Atom
+
 	use({
 		"folke/tokyonight.nvim",
 	})
-	-- use("itchyny/lightline.vim") -- Fancier statusline
+
 	use({
 		"windwp/windline.nvim",
+		config = function()
+			require("packer.settings.windline")
+		end,
 	}) -- Fancier statusline
+
 	-- Add indentation guides even on blank lines
 	use("lukas-reineke/indent-blankline.nvim")
+
 	-- Add git related info in the signs columns and popups
-	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+		-- tag = 'release' -- To use the latest release
+	})
+
 	-- Highlight, edit, and navigate code using a fast incremental parsing library
-	use("nvim-treesitter/nvim-treesitter")
+	use({
+		"nvim-treesitter/nvim-treesitter",
+
+		config = function()
+			require("packer.settings.treesitter")
+		end,
+	})
 	-- Additional textobjects for treesitter
 	use("nvim-treesitter/nvim-treesitter-textobjects")
-	-- use({
-	-- 	"hrsh7th/nvim-compe",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("packer.settings.compe")
-	-- 	end,
-	-- }) -- Autocompletion plugin
 
 	use("onsails/lspkind-nvim")
 	use({
@@ -117,6 +188,9 @@ require("packer").startup(function()
 	}) -- Autocompletion plugin
 
 	use("norcalli/snippets.nvim") -- Snippets plugin
+
+	use("tversteeg/registers.nvim") --
+
 	use({
 		"windwp/nvim-autopairs",
 		after = "nvim-cmp",
@@ -137,6 +211,21 @@ require("packer").startup(function()
 	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 	use("hrsh7th/cmp-nvim-lsp")
 	-- use({ "kabouzeid/nvim-lspinstall" })
+
+	use({
+		"glepnir/lspsaga.nvim",
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("lspsaga").init_lsp_saga()
+		end,
+	})
+
+	use("kosayoda/nvim-lightbulb")
+
+	use({
+		"weilbith/nvim-code-action-menu",
+		cmd = "CodeActionMenu",
+	})
 
 	use({
 		"akinsho/nvim-bufferline.lua",
@@ -184,23 +273,6 @@ require("packer").startup(function()
 		end,
 	})
 
-	-- use({
-	-- 	"kyazdani42/nvim-tree.lua",
-	-- 	requires = "kyazdani42/nvim-web-devicons",
-	-- 	config = function()
-	-- 		local myTreeConfig = require("packer.settings.nvimtree")
-	-- 		local g = vim.g
-	-- 		local tree_cb = require("nvim-tree.config").nvim_tree_callback
-	-- 		for opt, val in pairs(myTreeConfig) do
-	-- 			g["nvim_tree_" .. opt] = val
-	-- 		end
-	-- 		g.nvim_tree_bindings = {
-	-- 			{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-	-- 			{ key = "h", cb = tree_cb("close_node") },
-	-- 			{ key = "v", cb = tree_cb("vsplit") },
-	-- 		}
-	-- 	end,
-	-- })
 	use("nathom/filetype.nvim")
 
 	-- dims inactive portions of the code you're editing
@@ -215,11 +287,7 @@ require("packer").startup(function()
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			require("trouble").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
+			require("trouble").setup({})
 		end,
 	})
 
@@ -247,7 +315,7 @@ require("packer").startup(function()
 			wk.register(mappings, opts)
 			-- wk.register(vmappings, vopts)
 			wk.register({
-				["/"] = { "<ESC><CMD>'<,'>CommentToggle<CR>", "Comment" },
+				["/"] = { "<ESC><CMD>'<,'>lua require('Comment').toggle()<CR>", "Comment" },
 			}, {
 				mode = "v", -- VISUAL mode
 				prefix = "<leader>",
@@ -258,12 +326,39 @@ require("packer").startup(function()
 			})
 		end,
 	})
+
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+
 	use({
-		"terrortylor/nvim-comment",
-		event = "BufRead",
+		"numToStr/Comment.nvim",
 		config = function()
-			require("nvim_comment").setup()
+			require("Comment").setup({
+				-- -@param ctx Ctx
+				pre_hook = function(ctx)
+					-- Only calculate commentstring for tsx filetypes
+					if vim.bo.filetype == "typescriptreact" then
+						local U = require("Comment.utils")
+
+						-- Detemine whether to use linewise or blockwise commentstring
+						local type = ctx.ctype == U.ctype.line and "__default" or "__multiline"
+
+						-- Determine the location where to calculate commentstring from
+						local location = nil
+						if ctx.ctype == U.ctype.block then
+							location = require("ts_context_commentstring.utils").get_cursor_location()
+						elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+							location = require("ts_context_commentstring.utils").get_visual_start_location()
+						end
+
+						return require("ts_context_commentstring.internal").calculate_commentstring({
+							key = type,
+							location = location,
+						})
+					end
+				end,
+			})
 		end,
 	})
+
 	use({ "ellisonleao/glow.nvim" })
 end)

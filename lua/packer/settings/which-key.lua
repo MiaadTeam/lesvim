@@ -55,23 +55,24 @@ return {
 	},
 
 	vmappings = {
-		["/"] = { "<ESC><CMD>'<,'>CommentToggle<CR>", "Comment" },
+		["/"] = { "<ESC><CMD>'<,'>lua require('Comment').toggle()<CR>", "Comment" },
 	},
 
 	mappings = {
-		["w"] = { "<cmd>w!<CR>", "Save" },
+		["w"] = { "<cmd>WinShift<CR>", "Window manipulation" },
 		["q"] = { "<cmd>q!<CR>", "Quit" },
-		["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
+		["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
 		["c"] = { "<cmd>bd<CR>", "Close Buffer" },
 		["e"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Explorer" },
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 		["r"] = { "<cmd>Format<CR>", "Reformat File" },
-		["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
+		["h"] = { "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)" },
+		["t"] = { "<cmd>CodeActionMenu<CR>", "Code Action Menu" },
 		b = {
 			name = "Buffers",
-			j = { "<cmd>BufferLinePick<cr>", "jump to buffer" },
-			f = { "<cmd>Telescope buffers<cr>", "Find buffer" },
-			w = { "<cmd>BufferWipeout<cr>", "wipeout buffer" },
+			j = { "<cmd>BufferLinePick<CR>", "jump to buffer" },
+			f = { "<cmd>Telescope buffers<CR>", "Find buffer" },
+			w = { "<cmd>%bd|e#|bd#<CR>", "wipeout buffer" },
 			e = {
 				"<cmd>BufferCloseAllButCurrent<cr>",
 				"close all but current buffer",
