@@ -12,7 +12,6 @@ function file_exists(name)
 end
 
 if file_exists(os.getenv("PWD") .. "/package.json") then
-	print("here with packege json")
 	require("lspconfig").tsserver.setup({
 		capabilities = setup.capabilities,
 
@@ -33,7 +32,6 @@ if file_exists(os.getenv("PWD") .. "/package.json") then
 		-- },
 	})
 else
-	print("here without")
 	require("lspconfig").denols.setup({
 		capabilities = setup.capabilities,
 		-- autostart = true,
