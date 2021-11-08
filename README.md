@@ -2,13 +2,19 @@
 
 we want to create a pro development area so please do this instruction step by step :
 
-firt of all thing is OS (operation system), so please install a `linux` or use `mac os`
+first of all see some screen shot:
+
+<img width="1671" alt="Screen Shot 1400-08-18 at 00 19 33" src="https://user-images.githubusercontent.com/6236123/140816097-850f4503-6fe2-4db8-8b12-9a201a6974c2.png">
+
+Befor everything of chosing `Mac` or `Linux` OS
 
 # Why `Linux` or `Mac OS` :
 
 [[TODO]]
 
-We recommand :
+# Getting Start
+
+### We recommand :
 
 - [using `Wezterm` as your default Terminal emulator.](https://github.com/wez/wezterm)
 
