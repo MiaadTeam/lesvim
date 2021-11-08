@@ -23,7 +23,7 @@ require("format").setup({
 	},
 	json = {
 		{
-			cmd = { "prettier -w" },
+			cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" },
 		},
 	},
 	go = {
