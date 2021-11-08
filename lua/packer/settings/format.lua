@@ -33,25 +33,25 @@ require("format").setup({
 		},
 	},
 	typescriptreact = {
-		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
 	},
 	typescript = {
-		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
 	},
 	html = {
 		{ cmd = { "prettier -w" } },
 	},
 	javascriptreact = {
-		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
 	},
 	javascript = {
-		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
 	},
 	-- javascript = {
 	-- 	{ cmd = { "dprint fmt" } },
 	-- },
 	markdown = {
-		{ cmd = { "dprint fmt --config ~/.config/dpript/dprint.json" } },
+		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
 	},
 	-- markdown = {
 	-- 	{ cmd = { "prettier -w" } },
