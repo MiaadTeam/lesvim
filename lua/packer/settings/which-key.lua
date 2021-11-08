@@ -141,6 +141,7 @@ return {
 		m = {
 			name = "+ Markdown Tools",
 			t = { "<cmd>Glow<cr>", "Preview in terminal directly" },
+			p = { "<CMD>MarkdownPreviewToggle<CR>", "Start/Stop Preview in default browser" },
 		},
 		l = {
 			name = "LSP",
