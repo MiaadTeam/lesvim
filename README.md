@@ -8,14 +8,35 @@ firt of all thing is OS (operation system), so please install a `linux` or use `
 
 [[TODO]]
 
+We recommand :
+
+- [using `Fish SHELL` as your default Shell.](https://github.com/fish-shell/fish-shell)
+
+  It is he user-friendly command line shell.
+
+- [using `starship` as you default Shell prompt.](https://www.google.com)
+
+  It is the minimal, blazing-fast, and infinitely customizable prompt for any shell!
+
+- [using `Wezterm` as your default Terminal emulator.](https://github.com/wez/wezterm)
+
+  It is GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
+
 first of all install Neovim :
 
 install `rust`
 
-install `dprint`
-
 install `node js`
 
-install `prettier`
+install `prettier` globally
 
+The major problem of IDE or IDE-Like performance relate to formating document. So we try to speed up this procces as much as possible.
+
+We trying to format document with utils writen in rust `RUST`
+install `dprint` and set it to your `$PATH`
+install `stylua` and set it to your `$PATH`
 copy or clone this repo to `.config/nvim`
+
+after lunching neovim install these `TreeSitter` lib with `TSInstall` :
+
+- `TSInstall tsx`
