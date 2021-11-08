@@ -10,17 +10,21 @@ firt of all thing is OS (operation system), so please install a `linux` or use `
 
 We recommand :
 
+- [using `Wezterm` as your default Terminal emulator.](https://github.com/wez/wezterm)
+
+  It is GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
+
+  [It's my `wezterm.lua`](https://raw.githubusercontent.com/hemedani/dotfiles/main/wezterm/wezterm.lua), you should put it in `$HOME/.config/wezterm/wezterm.lua` :
+
 - [using `Fish SHELL` as your default Shell.](https://github.com/fish-shell/fish-shell)
 
   It is he user-friendly command line shell.
 
-- [using `starship` as you default Shell prompt.](https://www.google.com)
+- [using `starship` as you default Shell prompt.](https://github.com/starship/starship)
 
   It is the minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
-- [using `Wezterm` as your default Terminal emulator.](https://github.com/wez/wezterm)
-
-  It is GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
+  [It's my `starship.toml`](https://raw.githubusercontent.com/hemedani/dotfiles/main/starship.toml), you should pu it in `$HOME/.config/starship.toml`
 
 first of all install Neovim :
 
