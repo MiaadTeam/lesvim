@@ -38,6 +38,8 @@ First of all, see some screen shot:
 
 - Install `Neovim` and `Lua` [neovim and lua](https://github.com/neovim/neovim/wiki/Installing-Neovim), please install nightly version of neovim and install LuaJit.
 
+- Install [`Cascadia Code`](https://github.com/microsoft/cascadia-code), [`Hack Nerd`](https://github.com/ryanoasis/nerd-fonts) and [`Adobe Arabic`](https://www.download-free-fonts.com/details/75203/adobe-arabic-regular)
+
 ### Installing the Formatter:
 
 The major problem regarding performance of IDE or IDE-Like is owing to th process of formating document. So we aim to to speed up this procces as much as possible.
@@ -93,9 +95,9 @@ After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
 # Top thing to be noticed:
 
-## Wezterm :
+## Wezterm:
 
-### Tabs and Panes creation deletion :
+### Tabs and Panes creation deletion:
 
 - `command + shift + N` or `super + shift + N` shortkey create new terminal window.
 
@@ -111,7 +113,7 @@ After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
 - `command + z` or `super + z` shortkey toggle current terminal pane zoom.
 
-### Pane navigation :
+### Pane navigation:
 
 - `command + ctrl + h` or `super + ctrl + h` go to left avalibe pane.
 
@@ -123,7 +125,7 @@ After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
 - `command + shift + T` or `super + shift + T` show tab navigator options.
 
-### Pane resizing :
+### Pane resizing:
 
 - `command + shift + H` or `super + shift + H` increase right avalibe pane to left.
 
@@ -133,8 +135,10 @@ After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
 - `command + shift + J` or `super + shift + J` increase top avalibe pane to bottom.
 
-### Searching :
+### Searching:
 
 - `command + shift + F` or `super + shift + F` search for the string "hash" matching regardless of case.
 
 - `command + shift + space` or `super + shift + space` go to quick search tools.
+
+If you have noticed all the shortcuts here begin with `command` or `super` key exept the `ctrl + tab` which is switch beetwen avalibe tabs, so we try not use `command` or `super` key in `vim` shortkey.
