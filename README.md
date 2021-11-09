@@ -38,7 +38,7 @@ First of all, see some screen shot:
 
 - Install `Neovim` and `Lua` [neovim and lua](https://github.com/neovim/neovim/wiki/Installing-Neovim), please install nightly version of neovim and install LuaJit.
 
-- Install [`Cascadia Code`](https://github.com/microsoft/cascadia-code), [`Hack Nerd`](https://github.com/ryanoasis/nerd-fonts) and [`Adobe Arabic`](https://www.download-free-fonts.com/details/75203/adobe-arabic-regular)
+- Install [`Cascadia Code`](https://github.com/microsoft/cascadia-code), [`Hack Nerd`](https://github.com/ryanoasis/nerd-fonts) and [`Adobe Arabic`](https://www.download-free-fonts.com/details/75203/adobe-arabic-regular) fonts
 
 ### Installing the Formatter:
 
@@ -141,4 +141,21 @@ After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
 - `command + shift + space` or `super + shift + space` go to quick search tools.
 
-If you have noticed all the shortcuts here begin with `command` or `super` key exept the `ctrl + tab` which is switch beetwen avalibe tabs, so we try not use `command` or `super` key in `vim` shortkey.
+If you have noticed all the shortcuts here begin with `command` or `super` key exept the `ctrl + tab` which is switch beetwen avalibe tabs, so we try not to use `command` or `super` key in `vim` shortkey.
+
+## Vim or Neovim:
+
+### Core:
+
+- relative neovim number is set to true.
+  so for example you can easily jump beetwen line with a quick galance and `<number>j|k`.
+
+- as mentioned in setup section we mannage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
+
+      A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
+
+### Plugins:
+
+- we use `windline` for the status line
+
+### LSP:
