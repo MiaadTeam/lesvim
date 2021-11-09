@@ -74,4 +74,15 @@ We trying to format document with utils writen in rust `RUST`
 
 after lunching neovim install these `TreeSitter` lib with `TSInstall` :
 
+- `TSInstall comment`
+- `TSInstall css`
+- `TSInstall fish`
+- `TSInstall graphql`
+- `TSInstall javascript`
+- `TSInstall lua`
+- `TSInstall regex`
+- `TSInstall scss`
+- `TSInstall toml`
 - `TSInstall tsx`
+- `TSInstall vim`
+- and any other you wants
