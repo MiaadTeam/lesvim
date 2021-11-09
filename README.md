@@ -3,6 +3,7 @@
 First of all, see some screen shot:
 
 <img width="1671" alt="Screen Shot 1400-08-18 at 00 19 33" src="https://user-images.githubusercontent.com/6236123/140816097-850f4503-6fe2-4db8-8b12-9a201a6974c2.png">
+<img width="1680" alt="Screen Shot 1400-08-18 at 19 05 55" src="https://user-images.githubusercontent.com/6236123/140955086-c2236f06-c279-4430-b4a7-8e722d874bff.png">
 
 # Prerequisites:
 
@@ -72,17 +73,19 @@ We are trying to format documents with utils writen in rust `RUST`
   - `:PackerInstall`
   - `:PackerCompile`
 
-After launching neovim, install these `TreeSitter` lib with `TSInstall` :
+    please quit and reopen neovim and execute `:PackerUpdate` and `:PackerCompile` again
 
-- `TSInstall comment`
-- `TSInstall css`
-- `TSInstall fish`
-- `TSInstall graphql`
-- `TSInstall javascript`
-- `TSInstall lua`
-- `TSInstall regex`
-- `TSInstall scss`
-- `TSInstall toml`
-- `TSInstall tsx`
-- `TSInstall vim`
+After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
+
+- `:TSInstall comment`
+- `:TSInstall css`
+- `:TSInstall fish`
+- `:TSInstall graphql`
+- `:TSInstall javascript`
+- `:TSInstall lua`
+- `:TSInstall regex`
+- `:TSInstall scss`
+- `:TSInstall toml`
+- `:TSInstall tsx`
+- `:TSInstall vim`
 - and any other you wants
