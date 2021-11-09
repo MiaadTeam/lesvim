@@ -54,7 +54,23 @@ We trying to format document with utils writen in rust `RUST`
 
 - install `prettier` globally: `npm i -g prettier` (sorry for using this shamefull lib we need it just for a few filetype)
 
-copy or clone this repo to `.config/nvim`
+### Install LSPs :
+
+`Deno` and `Rust` LSP are installed and attaching to related buffer when you execute `nvim` command on proper root project;
+
+- for installing `tsserver` LSP just run : `npm install -g typescript typescript-language-server` read the rest of it's doc [here](https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver)
+
+- for installing `sumneko_lua` LSP read [this doc](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run) and [this doc](https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#sumneko_lua)
+
+### Setting Up:
+
+- copy or clone this repo to `.config/nvim` :
+
+  `git clone https://github.com/MiaadTeam/lesvim.git ~/.config/nvim`
+
+- install plugins :
+  - `:PackerInstall`
+  - `:PackerCompile`
 
 after lunching neovim install these `TreeSitter` lib with `TSInstall` :
 
