@@ -73,11 +73,6 @@ return {
 			j = { "<cmd>BufferLinePick<CR>", "jump to buffer" },
 			f = { "<cmd>Telescope buffers<CR>", "Find buffer" },
 			w = { "<cmd>%bd|e#|bd#<CR>", "wipeout buffer" },
-			e = {
-				"<cmd>BufferCloseAllButCurrent<cr>",
-				"close all but current buffer",
-			},
-			h = { "<cmd>BufferCloseBuffersLeft<cr>", "close all buffers to the left" },
 			r = {
 				"<cmd>BufferLineCloseRight<cr>",
 				"close all BufferLines to the right",
@@ -86,15 +81,15 @@ return {
 				"<cmd>BufferLineCloseLeft<cr>",
 				"close all BufferLines to the left",
 			},
-			D = {
+			d = {
 				"<cmd>BufferLineSortByDirectory<cr>",
 				"sort BufferLines automatically by directory",
 			},
-			L = {
+			n = {
 				"<cmd>BufferLineSortByExtension<cr>",
 				"sort BufferLines automatically by language",
 			},
-			T = {
+			t = {
 				"<cmd>BufferLineSortByTabs<cr>",
 				"sort BufferLines automatically by Tabs",
 			},
@@ -103,7 +98,6 @@ return {
 			name = "Packer",
 			c = { "<cmd>PackerCompile<cr>", "Compile" },
 			i = { "<cmd>PackerInstall<cr>", "Install" },
-			r = { "<cmd>lua require('utils').reload_lv_config()<cr>", "Reload" },
 			s = { "<cmd>PackerSync<cr>", "Sync" },
 			S = { "<cmd>PackerStatus<cr>", "Status" },
 			u = { "<cmd>PackerUpdate<cr>", "Update" },

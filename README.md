@@ -169,9 +169,14 @@ the `leader` as often set to `space` key, so when you press `space` and wait for
   - `h` searching in all help.
   - `k` searching in all keymaps.
 - `leader + b` buffer things
+  - `j` pick buffer by first character
   - `f` find buffer in telescope
-  - `h` close all buffer to left
+  - `w` wipe buffer exept the current one
   - `r` close all buffer to right
+  - `l` close all buffer to left
+  - `d` sort all automaticly by directory
+  - `n` sort all buffer by language
+  - `t` sort all automaticly by tabs
 
 ### Plugins:
 
