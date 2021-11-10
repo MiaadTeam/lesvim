@@ -148,14 +148,33 @@ If you have noticed all the shortcuts here begin with `command` or `super` key e
 ### Core:
 
 - relative neovim number is set to true.
+
   so for example you can easily jump beetwen line with a quick galance and `<number>j|k`.
 
 - as mentioned in setup section we mannage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
 
-      A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
+  A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
+
+- we used [`tokyonight`](https://github.com/folke/tokyonight.nvim) as a theme.
+
+  🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish
 
 ### Plugins:
 
-- we use `windline` for the status line
+- we use [`windline`](https://github.com/windwp/windline.nvim) for the status line:
+
+  Animation statusline, floating window statusline. Use lua + luv make some wind
+
+- we use [`Telescope`](https://github.com/nvim-telescope/telescope.nvim) as a finder modal:
+
+  Find, Filter, Preview, Pick. All lua, all the time.
+
+- we use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`] form commenting code:
+
+  🧠 💪 // Smart and powerful comment plugin for neovim. Supports commentstring, dot repeat, left-right/up-down motions, hooks, and more.
+
+  Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
 
 ### LSP:
+
+- press `gd` to jump to the definition word of under curser is
