@@ -175,6 +175,9 @@ the `leader` as often set to `space` key, so when you press `space` and wait for
 - `leader + /` comment just one line in `Normal and Visual` mode.(commenting keybinding has been explained below)
 - `leader + c` close current active buffer.
 - `leader + w` manipulate splited buffers in current window.(create and modify slipt window explained below)
+- `leader + f` open Telescope and find any file fuzzy in cwd.
+- `leader + q` quit nvim
+- `leader + t` show lsp action menu
 
 ### Plugins:
 
@@ -186,9 +189,13 @@ the `leader` as often set to `space` key, so when you press `space` and wait for
 
   Find, Filter, Preview, Pick. All lua, all the time.
 
-- we use [`which-key.nvim`] for amazing keybinding:
+- we use [`which-key.nvim`](https://github.com/folke/which-key.nvim) for amazing keybinding:
 
   💥 Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
+
+- we use [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for Dashboard like things:
+
+  a lua powered greeter like vim-startify / dashboard-nvim
 
 - we use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) form commenting code:
 
