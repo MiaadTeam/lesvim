@@ -22,11 +22,17 @@ First of all, see some screen shot:
 
   It is a user-friendly command line shell.
 
-- [using `starship` as you default Shell prompt.](https://github.com/starship/starship)
+- [Using `starship` as you default Shell prompt.](https://github.com/starship/starship)
 
   It is the minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
   [It's my `starship.toml`](https://raw.githubusercontent.com/hemedani/dotfiles/main/starship.toml), you should put it in `$HOME/.config/starship.toml`
+
+- Using [`lazygit`](https://github.com/jesseduffield/lazygit) or [`GitUI`](https://github.com/extrawurst/gitui) for interacting with GIT it's is:
+
+  simple terminal UI for git commands,
+
+  Blazing 💥 fast terminal-ui for git written in rust 🦀
 
 # Installing:
 
@@ -169,12 +175,16 @@ If you have noticed all the shortcuts here begin with `command` or `super` key e
 
   Find, Filter, Preview, Pick. All lua, all the time.
 
-- we use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`] form commenting code:
+- we use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) form commenting code:
 
   🧠 💪 // Smart and powerful comment plugin for neovim. Supports commentstring, dot repeat, left-right/up-down motions, hooks, and more.
 
   Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
 
+- we use [`fugitive`](https://github.com/tpope/vim-fugitive) as a git ui for vim:
+
+  fugitive.vim: A Git wrapper so awesome, it should be illegal
+
 ### LSP:
 
-- press `gd` to jump to the definition word of under curser is
+- press `gd` to jump to the definition word of under curser
