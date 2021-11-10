@@ -165,6 +165,17 @@ If you have noticed all the shortcuts here begin with `command` or `super` key e
 
   🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish
 
+### Keybinding:
+
+if you press any key which somthing bind to it and waiting for a few second `which-key` show you an awesome hint for continue press related keys
+
+the `leader` as often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of it's binding keys. here briefly introducing some of them:
+
+- `leader + e` toggle `Nvim Tree` explorer and immediatly find current active buffer file in tree.
+- `leader + /` comment just one line in `Normal and Visual` mode.(commenting keybinding has been explained below)
+- `leader + c` close current active buffer.
+- `leader + w` manipulate splited buffers in current window.(create and modify slipt window explained below)
+
 ### Plugins:
 
 - we use [`windline`](https://github.com/windwp/windline.nvim) for the status line:
@@ -175,15 +186,27 @@ If you have noticed all the shortcuts here begin with `command` or `super` key e
 
   Find, Filter, Preview, Pick. All lua, all the time.
 
+- we use [`which-key.nvim`] for amazing keybinding:
+
+  💥 Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
+
 - we use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) form commenting code:
 
   🧠 💪 // Smart and powerful comment plugin for neovim. Supports commentstring, dot repeat, left-right/up-down motions, hooks, and more.
 
   Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
 
+- we use [`format.nvim`](https://github.com/lukas-reineke/format.nvim) for formating document:
+
+  Neovim lua plugin to format the current buffer with external executables
+
 - we use [`fugitive`](https://github.com/tpope/vim-fugitive) as a git ui for vim:
 
   fugitive.vim: A Git wrapper so awesome, it should be illegal
+
+- we use [`nvim-cursorline`](https://github.com/yamatsum/nvim-cursorline) for highlight word:
+
+  A plugin for neovim that highlights cursor words and lines
 
 ### LSP:
 
