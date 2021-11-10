@@ -37,13 +37,9 @@ First of all, see some screen shot:
 # Installing:
 
 - Install `Rust` with the help of [own doc](https://www.rust-lang.org/tools/install)
-
 - Install `Node JS`, [using fnm](https://github.com/Schniz/fnm) for installing Node.js runtime as it's so fast.
-
 - Install `Deno` with the help of [own doc](https://deno.land/#installation)
-
 - Install `Neovim` and `Lua` [neovim and lua](https://github.com/neovim/neovim/wiki/Installing-Neovim), please install nightly version of neovim and install LuaJit.
-
 - Install [`Cascadia Code`](https://github.com/microsoft/cascadia-code), [`Hack Nerd`](https://github.com/ryanoasis/nerd-fonts) and [`Adobe Arabic`](https://www.download-free-fonts.com/details/75203/adobe-arabic-regular) fonts
 
 ### Installing the Formatter:
@@ -106,45 +102,31 @@ After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 ### Tabs and Panes creation deletion:
 
 - `command + shift + N` or `super + shift + N` shortkey create new terminal window.
-
 - `command + t` or `super + t` shortkey create new terminal tab.
-
 - `command + w` or `super + w` shortkey close current terminal tab.
-
 - `command + '` or `super + '` shortkey create new vertical terminal split pane.
-
 - `command + /` or `super + /` shortkey create new horizontal terminal split pane.
-
 - `command + x` or `super + x` shortkey close current terminal pane.
-
 - `command + z` or `super + z` shortkey toggle current terminal pane zoom.
 
 ### Pane navigation:
 
 - `command + ctrl + h` or `super + ctrl + h` go to left avalibe pane.
-
 - `command + ctrl + l` or `super + ctrl + l` go to right avalibe pane.
-
 - `command + ctrl + k` or `super + ctrl + k` go to top avalibe pane.
-
 - `command + ctrl + j` or `super + ctrl + j` go to bottom avalibe pane.
-
 - `command + shift + T` or `super + shift + T` show tab navigator options.
 
 ### Pane resizing:
 
 - `command + shift + H` or `super + shift + H` increase right avalibe pane to left.
-
 - `command + shift + L` or `super + shift + L` increase left avalibe pane to right.
-
 - `command + shift + K` or `super + shift + K` increase bottom avalibe pane to top.
-
 - `command + shift + J` or `super + shift + J` increase top avalibe pane to bottom.
 
 ### Searching:
 
 - `command + shift + F` or `super + shift + F` search for the string "hash" matching regardless of case.
-
 - `command + shift + space` or `super + shift + space` go to quick search tools.
 
 If you have noticed all the shortcuts here begin with `command` or `super` key exept the `ctrl + tab` which is switch beetwen avalibe tabs, so we try not to use `command` or `super` key in `vim` shortkey.
@@ -186,6 +168,10 @@ the `leader` as often set to `space` key, so when you press `space` and wait for
   - `f` find file in this cwd.
   - `h` searching in all help.
   - `k` searching in all keymaps.
+- `leader + b` buffer things
+  - `f` find buffer in telescope
+  - `h` close all buffer to left
+  - `r` close all buffer to right
 
 ### Plugins:
 
