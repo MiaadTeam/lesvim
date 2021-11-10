@@ -178,6 +178,14 @@ the `leader` as often set to `space` key, so when you press `space` and wait for
 - `leader + f` open Telescope and find any file fuzzy in cwd.
 - `leader + q` quit nvim
 - `leader + t` show lsp action menu
+- `leader + r` format current buffer.
+- `leader + s` searching sections
+  - `b` searching branch and checkout to it.
+  - `c` searching color schema and set it.
+  - `C` searching command and execute it.
+  - `f` find file in this cwd.
+  - `h` searching in all help.
+  - `k` searching in all keymaps.
 
 ### Plugins:
 
