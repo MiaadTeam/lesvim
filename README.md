@@ -34,6 +34,21 @@ First of all, see some screen shot:
 
   Blazing 💥 fast terminal-ui for git written in rust 🦀
 
+- Using [`exa`](https://github.com/ogham/exa) as a `ls` command in terminal:
+
+  A modern replacement for ‘ls’.
+
+  I personally set ll alias to `exa --tree --level=2 -a --long --header --accessed` with this functions:
+  ```fish
+  function ll --wraps=ls --wraps=exa --description 'List contents of directory using exa tree'
+      exa --tree --level=2 -a --long --header --accessed --git $argv
+  end
+  ```
+
+- Using [`zoxide`](https://github.com/ajeetdsouza/zoxide) as a `cd` command in terminal:
+
+  A smarter cd command. Supports all major shells.
+
 # Installing:
 
 - Install `Rust` with the help of [own doc](https://www.rust-lang.org/tools/install)
