@@ -38,7 +38,7 @@ First of all, see some screen shot:
 
   A modern replacement for ‘ls’.
 
-  I personally set ll alias to `exa --tree --level=2 -a --long --header --accessed` with this functions:
+  I personally set `ll` alias to `exa --tree --level=2 -a --long --header --accessed` with this functions:
   ```fish
   function ll --wraps=ls --wraps=exa --description 'List contents of directory using exa tree'
       exa --tree --level=2 -a --long --header --accessed --git $argv
