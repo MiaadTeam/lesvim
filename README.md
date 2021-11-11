@@ -44,9 +44,9 @@ First of all, see some screen shot:
 
 ### Installing the Formatter:
 
-The major problem regarding performance of IDE or IDE-Like is owing to th process of formating document. So we aim to to speed up this procces as much as possible.
+The major problem regarding performance of IDE or IDE-Like is owing to the process of formatting documents. So we aim to speed up this process as much as possible.
 
-We are trying to format documents with utils writen in rust `RUST`
+We are trying to format documents with utils written in rust `RUST`
 
 - [install `dprint`](https://github.com/dprint/dprint) and set it to your `$PATH` :
 
@@ -58,11 +58,11 @@ We are trying to format documents with utils writen in rust `RUST`
 
   An opinionated Lua code formatter written in rust
 
-- install `prettier` globally: `npm i -g prettier` (Sorry for using this unperformant package, however we need it just for a few filetype)
+- Install `prettier` globally: `npm i -g prettier` (Sorry for using this unperformant package, however we need it just for a few filetype)
 
 ### Install LSPs:
 
-`Deno` and `Rust` LSPs are installed and attached to the relavant buffer when you execute `nvim` command on your proper root project;
+`Deno` and `Rust` LSPs are installed and attached to the relevant buffer when you execute `nvim` command on your proper root project;
 
 - For installing `tsserver` LSP just run: `npm install -g typescript typescript-language-server`. You can read the rest of its doc [here](https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#tsserver)
 
@@ -74,11 +74,11 @@ We are trying to format documents with utils writen in rust `RUST`
 
   `git clone https://github.com/MiaadTeam/lesvim.git ~/.config/nvim`
 
-- install plugins :
+- Install plugins :
   - `:PackerInstall`
   - `:PackerCompile`
 
-    please quit and reopen neovim and execute `:PackerUpdate` and `:PackerCompile` again
+    Please quit and reopen neovim and execute `:PackerUpdate` and `:PackerCompile` again
 
 After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
@@ -101,57 +101,57 @@ After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
 ### Tabs and Panes creation deletion:
 
-- `command + shift + N` or `super + shift + N` shortkey create new terminal window.
-- `command + t` or `super + t` shortkey create new terminal tab.
-- `command + w` or `super + w` shortkey close current terminal tab.
-- `command + '` or `super + '` shortkey create new vertical terminal split pane.
-- `command + /` or `super + /` shortkey create new horizontal terminal split pane.
-- `command + x` or `super + x` shortkey close current terminal pane.
-- `command + z` or `super + z` shortkey toggle current terminal pane zoom.
+- `command + shift + N` or `super + shift + N` shortcut to create a new terminal window.
+- `command + t` or `super + t` shortcut to create a new terminal tab.
+- `command + w` or `super + w` shortcut to close the current terminal tab.
+- `command + '` or `super + '` shortcut to create a new vertical terminal split pane.
+- `command + /` or `super + /` shortcut to create new horizontal terminal split pane.
+- `command + x` or `super + x` shortcut to close the current terminal pane.
+- `command + z` or `super + z` shortcut to toggle the current terminal pane zoom.
 
 ### Pane navigation:
 
-- `command + ctrl + h` or `super + ctrl + h` go to left avalibe pane.
-- `command + ctrl + l` or `super + ctrl + l` go to right avalibe pane.
-- `command + ctrl + k` or `super + ctrl + k` go to top avalibe pane.
-- `command + ctrl + j` or `super + ctrl + j` go to bottom avalibe pane.
-- `command + shift + T` or `super + shift + T` show tab navigator options.
+- `command + ctrl + h` or `super + ctrl + h` goes to the left available pane.
+- `command + ctrl + l` or `super + ctrl + l` goes to the right available pane.
+- `command + ctrl + k` or `super + ctrl + k` goes to the top available pane.
+- `command + ctrl + j` or `super + ctrl + j` goes to the bottom available pane.
+- `command + shift + T` or `super + shift + T` shows tab navigator options.
 
 ### Pane resizing:
 
-- `command + shift + H` or `super + shift + H` increase right avalibe pane to left.
-- `command + shift + L` or `super + shift + L` increase left avalibe pane to right.
-- `command + shift + K` or `super + shift + K` increase bottom avalibe pane to top.
-- `command + shift + J` or `super + shift + J` increase top avalibe pane to bottom.
+- `command + shift + H` or `super + shift + H` increase right available pane to left.
+- `command + shift + L` or `super + shift + L` increase left available pane to right.
+- `command + shift + K` or `super + shift + K` increase the bottom available pane to the top.
+- `command + shift + J` or `super + shift + J` increase the top available pane to the bottom.
 
 ### Searching:
 
-- `command + shift + F` or `super + shift + F` search for the string "hash" matching regardless of case.
+- `command + shift + F` or `super + shift + F` search for the string **"hash"** matches regardless of case.
 - `command + shift + space` or `super + shift + space` go to quick search tools.
 
-If you have noticed all the shortcuts here begin with `command` or `super` key exept the `ctrl + tab` which is switch beetwen avalibe tabs, so we try not to use `command` or `super` key in `vim` shortkey.
+You might have already noticed that all the shortcuts here begin with `command` or `super` key except the `ctrl + tab` which is switched between available tabs, so we try not to use `command` or `super` key in `vim` shortkey.
 
 ## Vim or Neovim:
 
 ### Core:
 
-- relative neovim number is set to true.
+- Relative neovim number is set to true.
 
-  so for example you can easily jump beetwen line with a quick galance and `<number>j|k`.
+  For instance, you can easily jump between lines with a quick glance by pressing `<number>j|k`.
 
-- as mentioned in setup section we mannage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
+- As mentioned in the setup section, we manage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
 
   A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
 
-- we used [`tokyonight`](https://github.com/folke/tokyonight.nvim) as a theme.
+- We used [`tokyonight`](https://github.com/folke/tokyonight.nvim) as a theme.
 
-  🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish
+  🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. It includes additional themes for Kitty, Alacrity, iTerm and Fish
 
 ### Keybinding:
 
-if you press any key which somthing bind to it and waiting for a few second `which-key` show you an awesome hint for continue press related keys
+If you press any key which has something bound to it and wait for a few second, `which-key` shows you an awesome hint for continuing press related keys.
 
-the `leader` as often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of it's binding keys. here briefly introducing some of them:
+The `leader` as often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of its binding keys. The following section briefly introduces a few of them:
 
 - `leader + e` toggle `Nvim Tree` explorer and immediatly find current active buffer file in tree.
 - `leader + /` comment just one line in `Normal and Visual` mode.(commenting keybinding has been explained below)
@@ -180,40 +180,40 @@ the `leader` as often set to `space` key, so when you press `space` and wait for
 
 ### Plugins:
 
-- we use [`windline`](https://github.com/windwp/windline.nvim) for the status line:
+- We use [`windline`](https://github.com/windwp/windline.nvim) for the status line:
 
-  Animation statusline, floating window statusline. Use lua + luv make some wind
+  Animation status line, floating window status line. Use **lua + luv** would make some wind.
 
-- we use [`Telescope`](https://github.com/nvim-telescope/telescope.nvim) as a finder modal:
+- We use [`Telescope`](https://github.com/nvim-telescope/telescope.nvim) as a finder modal:
 
   Find, Filter, Preview, Pick. All lua, all the time.
 
-- we use [`which-key.nvim`](https://github.com/folke/which-key.nvim) for amazing keybinding:
+- We use [`which-key.nvim`](https://github.com/folke/which-key.nvim) for amazing keybinding:
 
   💥 Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
 
-- we use [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for Dashboard like things:
+- We use [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for Dashboard like things:
 
   a lua powered greeter like vim-startify / dashboard-nvim
 
-- we use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) form commenting code:
+- We use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) form commenting code:
 
   🧠 💪 // Smart and powerful comment plugin for neovim. Supports commentstring, dot repeat, left-right/up-down motions, hooks, and more.
 
   Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
 
-- we use [`format.nvim`](https://github.com/lukas-reineke/format.nvim) for formating document:
+- We use [`format.nvim`](https://github.com/lukas-reineke/format.nvim) for formatting document:
 
   Neovim lua plugin to format the current buffer with external executables
 
-- we use [`fugitive`](https://github.com/tpope/vim-fugitive) as a git ui for vim:
+- We use [`fugitive`](https://github.com/tpope/vim-fugitive) as a git ui for vim:
 
   fugitive.vim: A Git wrapper so awesome, it should be illegal
 
-- we use [`nvim-cursorline`](https://github.com/yamatsum/nvim-cursorline) for highlight word:
+- We use [`nvim-cursorline`](https://github.com/yamatsum/nvim-cursorline) for the highlighted word:
 
   A plugin for neovim that highlights cursor words and lines
 
 ### LSP:
 
-- press `gd` to jump to the definition word of under curser
+- Press `gd` to jump to the definition word under the curser.
