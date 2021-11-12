@@ -23,6 +23,13 @@ require("packer").startup(function()
 	use({ "windwp/nvim-ts-autotag" })
 
 	use({
+		"blackCauldron7/surround.nvim",
+		config = function()
+			require("surround").setup({ mappings_style = "sandwich" })
+		end,
+	})
+
+	use({
 		"phaazon/hop.nvim",
 		branch = "v1", -- optional but strongly recommended
 		config = function()
