@@ -97,6 +97,7 @@ return {
 		p = {
 			name = "Packer",
 			c = { "<cmd>PackerCompile<cr>", "Compile" },
+			r = { "<cmd>PackerClean<cr>", "Clean" },
 			i = { "<cmd>PackerInstall<cr>", "Install" },
 			s = { "<cmd>PackerSync<cr>", "Sync" },
 			S = { "<cmd>PackerStatus<cr>", "Status" },
@@ -197,6 +198,11 @@ return {
 		T = {
 			name = "Treesitter",
 			i = { ":TSConfigInfo<cr>", "Info" },
+		},
+		z = {
+			name = "Spell",
+			t = { "<CMD>set spell!<CR>", "toggle spell checker" },
+			p = { "<CMD>normal! mz[s1z=`z<CR>", "pick first suggest in spell checker" },
 		},
 	},
 }
