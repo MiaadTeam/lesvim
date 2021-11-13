@@ -30,7 +30,7 @@ First of all, see some screen shot:
 
 - Using [`lazygit`](https://github.com/jesseduffield/lazygit) or [`GitUI`](https://github.com/extrawurst/gitui) for interacting with GIT it's is:
 
-  simple terminal UI for git commands,
+  Simple terminal UI for git commands,
 
   Blazing 💥 fast terminal-ui for git written in rust 🦀
 
@@ -38,7 +38,7 @@ First of all, see some screen shot:
 
   A modern replacement for ‘ls’.
 
-  I personally set `ll` alias to `exa --tree --level=2 -a --long --header --accessed` with this functions:
+  I personally set `ll` alias to `exa --tree --level=2 -a --long --header --accessed` with this functions in `fish` shell:
   ```fish
   function ll --wraps=ls --wraps=exa --description 'List contents of directory using exa tree'
       exa --tree --level=2 -a --long --header --accessed --git $argv
@@ -186,12 +186,18 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 - `leader + b` buffer things
   - `j` pick buffer by first character
   - `f` find buffer in telescope
-  - `w` wipe buffer exept the current one
+  - `w` wipe buffer except the current one
   - `r` close all buffer to right
   - `l` close all buffer to left
-  - `d` sort all automaticly by directory
+  - `d` sort all buffer by directory
   - `n` sort all buffer by language
-  - `t` sort all automaticly by tabs
+  - `t` sort all buffer by tabs
+- `leader + g` is for git stuff
+  - `j` jump to the next hunk
+  - `k` jump to the previous hunk
+- `leader + z` for spell stuff
+  - `p` an special command that fixed spell and jump to the next misspelled word
+  - `t` toggle spell checker to on and off
 
 ### Plugins:
 
