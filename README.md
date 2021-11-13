@@ -237,4 +237,10 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 
 ### LSP:
 
-- Press `gd` to jump to the definition word under the curser.
+- Press `gd` to jump to the definition word under the cursor.
+- Press `gi` to jump to the implementation word under the cursor.
+- Press `gr` to show where this word is referenced and used.
+- Press `K` CAPEL K which mean `shift + k` to show declarations of the word under cursor.
+- Press `ctrl + k` to show signature of the word is available.
+- Press `[d` to jump to the next diagnostic of the opened buffers.
+- Press `]d` to jump to the previous diagnostic of the opened buffers.
