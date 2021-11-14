@@ -43,6 +43,13 @@ require("packer").startup(function()
 	use({ "windwp/nvim-ts-autotag" })
 
 	use({
+		"windwp/nvim-spectre",
+		config = function()
+			require("spectre").setup()
+		end,
+	})
+
+	use({
 		"blackCauldron7/surround.nvim",
 		config = function()
 			require("surround").setup({ mappings_style = "sandwich" })
@@ -167,6 +174,7 @@ require("packer").startup(function()
 		"windwp/windline.nvim",
 		config = function()
 			require("packer.settings.windline")
+			require("windline").add_status(require("spectre.state_utils").status_line())
 		end,
 	}) -- Fancier statusline
 

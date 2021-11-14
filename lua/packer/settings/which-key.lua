@@ -194,6 +194,15 @@ return {
 				"<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
 				"Colorscheme with Preview",
 			},
+			g = { "<CMD>lua require('spectre').open()<CR>", "Search and replace with rg" },
+			w = {
+				"<CMD>lua require('spectre').open_visual({select_word=true})<CR>",
+				"Search and replace with rg (select word under cursor)",
+			},
+			l = {
+				"<CMD>lua require('spectre').open_file_search()<CR>",
+				"Search and replace with rg (active buffer set to path)",
+			},
 		},
 		T = {
 			name = "Treesitter",
