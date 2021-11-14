@@ -49,6 +49,10 @@ First of all, see some screen shot:
 
   A smarter cd command. Supports all major shells.
 
+- Using [`RipGrep`](https://github.com/BurntSushi/ripgrep) as a replacement for `grep`:
+
+  ripgrep recursively searches directories for a regex pattern while respecting your gitignore
+
 # Installing:
 
 - Install `Rust` with the help of [own doc](https://www.rust-lang.org/tools/install)
