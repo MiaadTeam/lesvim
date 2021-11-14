@@ -185,6 +185,11 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `f` find file in this cwd.
   - `h` searching in all help.
   - `k` searching in all keymaps.
+  - `M` finding in all MAN pages and open it
+  - `p` searching all color schemes with preview
+  - `R` searching in registers
+  - `r` open recent files with telescope
+  - `t` search text in all files in current cwd
 - `leader + b` buffer things
   - `j` pick buffer by first character
   - `f` find buffer in telescope
@@ -207,6 +212,13 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `R` reset current buffer
   - `s` stage current hunk
   - `u` unstage hunk
+- `leader + p` is for packer things:
+  - `i` install package if new package available
+  - `c` compile packer and create `plugin/packer_compiled.lua` file
+  - `s` sysnc packages with git repos
+  - `u` update packages
+  - `r` clean unused package
+  - `S` packer status
 - `leader + z` for spell stuff
   - `p` an special command that fixed spell and jump to the next misspelled word
   - `t` toggle spell checker to on and off
