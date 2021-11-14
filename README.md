@@ -166,6 +166,8 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
 If you press any key which has something bound to it and wait for a few second, `which-key` shows you an awesome hint for continuing press related keys.
 
+#### Leader Key:
+
 The `leader` as often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of its binding keys. The following section briefly introduces a few of them:
 
 - `leader + e` toggle `Nvim Tree` explorer and immediatly find current active buffer file in tree.
@@ -193,8 +195,18 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `n` sort all buffer by language
   - `t` sort all buffer by tabs
 - `leader + g` is for git stuff
+  - `b` checkout branch with telescope
+  - `c` checkout commit with telescope
+  - `C` checkout commit for current file with telescope
   - `j` jump to the next hunk
   - `k` jump to the previous hunk
+  - `l` show git blame of current line
+  - `o` open changed files in telescope
+  - `p` preview hunk
+  - `r` reset current hunk
+  - `R` reset current buffer
+  - `s` stage current hunk
+  - `u` unstage hunk
 - `leader + z` for spell stuff
   - `p` an special command that fixed spell and jump to the next misspelled word
   - `t` toggle spell checker to on and off
