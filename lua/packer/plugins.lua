@@ -318,6 +318,11 @@ require("packer").startup(function()
 				-- 				{ key = "h", cb = tree_cb("close_node") },
 				-- 				{ key = "v", cb = tree_cb("vsplit") },
 				-- }
+				update_cwd = true,
+				update_focused_file = {
+					enable = true,
+					update_cwd = true,
+				},
 				view = {
 					mappings = {
 						custom_only = false,
@@ -338,6 +343,18 @@ require("packer").startup(function()
 				{ key = "h", cb = tree_cb("close_node") },
 				{ key = "v", cb = tree_cb("vsplit") },
 			}
+		end,
+	})
+
+	use({
+		"ahmedkhalf/project.nvim",
+		config = function()
+			require("project_nvim").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+				require("telescope").load_extension("projects"),
+			})
 		end,
 	})
 
