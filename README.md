@@ -178,7 +178,7 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 - `leader + q` quit nvim
 - `leader + t` show lsp action menu
 - `leader + r` format current buffer.
-- `leader + s` searching sections
+- `leader + s` searching sections:
   - `b` searching branch and checkout to it.
   - `c` searching color schema and set it.
   - `C` searching command and execute it.
@@ -190,7 +190,7 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `R` searching in registers
   - `r` open recent files with telescope
   - `t` search text in all files in current cwd
-- `leader + b` buffer things
+- `leader + b` buffer things:
   - `j` pick buffer by first character
   - `f` find buffer in telescope
   - `w` wipe buffer except the current one
@@ -199,7 +199,7 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `d` sort all buffer by directory
   - `n` sort all buffer by language
   - `t` sort all buffer by tabs
-- `leader + g` is for git stuff
+- `leader + g` is for git stuff:
   - `b` checkout branch with telescope
   - `c` checkout commit with telescope
   - `C` checkout commit for current file with telescope
@@ -212,6 +212,19 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `R` reset current buffer
   - `s` stage current hunk
   - `u` unstage hunk
+- `leader + l` for lsp things:
+  - `a` show code action for the word is under cursor if it available
+  - `d` show document diagnostics
+  - `f` for format document with attached lsps
+  - `i` show configured and attached lsps
+  - `j` jump to next diagnostic in ducoment
+  - `k` jump to previous diagnostic in ducoment
+  - `q` select first actions in code actions (quick fixed)
+  - `r` rename word with referenced with lsp (just like F2 in vscode)
+  - `S` show workspace symbols with telescope
+  - `s` show document symbols with telescope
+  - `t` find document or project troubles
+  - `w` show workspace diagnostics
 - `leader + p` is for packer things:
   - `i` install package if new package available
   - `c` compile packer and create `plugin/packer_compiled.lua` file
@@ -222,6 +235,10 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 - `leader + z` for spell stuff
   - `p` an special command that fixed spell and jump to the next misspelled word
   - `t` toggle spell checker to on and off
+
+#### `Insert MODE` keybinds:
+
+- press `;;` to quit insert mode and got to normal
 
 ### Plugins:
 
