@@ -194,6 +194,9 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `R` searching in registers
   - `r` open recent files with telescope
   - `t` search text in all files in current cwd
+  - `g` search and replace text with ripgrep in current cwd
+  - `w` search and replace word under cursor with ripgrep in current cwd
+  - `w` search and replace text in active with ripgrep
 - `leader + b` buffer things:
   - `j` pick buffer by first character
   - `f` find buffer in telescope
