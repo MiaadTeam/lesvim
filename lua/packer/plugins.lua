@@ -17,6 +17,7 @@ require("packer").startup(function()
 	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 	use("hrsh7th/vim-vsnip")
 	use("yamatsum/nvim-cursorline")
+
 	use({ "turbio/bracey.vim", run = "npm install --prefix server" })
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install" })
 

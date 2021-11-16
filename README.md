@@ -196,7 +196,7 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `t` search text in all files in current cwd
   - `g` search and replace text with ripgrep in current cwd
   - `w` search and replace word under cursor with ripgrep in current cwd
-  - `w` search and replace text in active with ripgrep
+  - `l` search and replace text in active with ripgrep
 - `leader + b` buffer things:
   - `j` pick buffer by first character
   - `f` find buffer in telescope
@@ -282,6 +282,14 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 - We use [`nvim-cursorline`](https://github.com/yamatsum/nvim-cursorline) for the highlighted word:
 
   A plugin for neovim that highlights cursor words and lines
+
+- We use [`renamer`](https://github.com/filipdutescu/renamer.nvim) for search and rename a variable|method and etc
+
+  VS Code-like renaming UI for Neovim, writen in Lua.
+
+- We use [`nvim-spectre`](https://github.com/windwp/nvim-spectre) for search and with ripgrep
+
+  Find the enemy and replace them with dark power.
 
 ### LSP:
 
