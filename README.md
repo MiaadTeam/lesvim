@@ -222,10 +222,10 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 - `leader + l` for lsp things:
   - `a` show code action for the word is under cursor if it available
   - `d` show document diagnostics
-  - `f` for format document with attached lsps
+  - `f` for format document with attached lsp's
   - `i` show configured and attached lsps
-  - `j` jump to next diagnostic in ducoment
-  - `k` jump to previous diagnostic in ducoment
+  - `j` jump to next diagnostic in document
+  - `k` jump to previous diagnostic in document
   - `q` select first actions in code actions (quick fixed)
   - `r` rename word with referenced with lsp (just like F2 in vscode)
   - `S` show workspace symbols with telescope
@@ -239,9 +239,12 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
   - `u` update packages
   - `r` clean unused package
   - `S` packer status
-- `leader + z` for spell stuff
+- `leader + z` for spell stuff:
   - `p` an special command that fixed spell and jump to the next misspelled word
   - `t` toggle spell checker to on and off
+- `leader + m` for markdown tools
+  - `p` start/stop live server for preview current markdown file in default browser
+  - `t` preview markdown directly in modal window in terminal
 
 #### `Insert MODE` keybinds:
 
