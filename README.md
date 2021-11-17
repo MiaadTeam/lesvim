@@ -286,13 +286,25 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 
   A plugin for neovim that highlights cursor words and lines
 
-- We use [`renamer`](https://github.com/filipdutescu/renamer.nvim) for search and rename a variable|method and etc
+- We use [`renamer`](https://github.com/filipdutescu/renamer.nvim) for search and rename a variable|method and etc:
 
   VS Code-like renaming UI for Neovim, writen in Lua.
 
-- We use [`nvim-spectre`](https://github.com/windwp/nvim-spectre) for search and with ripgrep
+- We use [`nvim-spectre`](https://github.com/windwp/nvim-spectre) for search and with ripgrep:
 
   Find the enemy and replace them with dark power.
+
+- We use [`bracey`](https://github.com/turbio/bracey.vim) for http live server:
+
+  live edit html, css, and javascript in vim
+
+- We use [`markdown-preview`](https://github.com/iamcco/markdown-preview.nvim) for preview markdown in browser:
+
+  markdown preview plugin for (neo)vim
+
+- We use [`nvim-ts-autotag`](https://github.com/windwp/nvim-ts-autotag) for close and rename html tags:
+
+  Use treesitter to auto close and auto rename html tag
 
 ### LSP:
 
