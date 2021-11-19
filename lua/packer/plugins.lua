@@ -15,7 +15,6 @@ require("packer").startup(function()
 	use("nvim-lua/popup.nvim")
 	use("tpope/vim-fugitive") -- Git commands in nvim
 	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
-	use("hrsh7th/vim-vsnip")
 	use("yamatsum/nvim-cursorline")
 
 	use({ "turbio/bracey.vim", run = "npm install --prefix server" })
@@ -158,11 +157,6 @@ require("packer").startup(function()
 	})
 
 	-- use("airblade/vim-rooter")
-	use({
-		"rafamadriz/friendly-snippets",
-		event = "InsertCharPre",
-	})
-
 	-- use("ludovicchabant/vim-gutentags") -- Automatic tags management
 	-- UI to select things (files, grep results, open buffers...)
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } } })
@@ -200,24 +194,34 @@ require("packer").startup(function()
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 
 	use("onsails/lspkind-nvim")
+
+	-- LSP things autocomplition and etc
+	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-cmdline")
+	use("L3MON4D3/LuaSnip")
 	use({
 		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+		},
 
-		event = "InsertEnter",
+		-- event = "InsertEnter",
 		config = function()
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
 
 			cmp.setup({
-				formatting = {
-					format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
-				},
 				snippet = {
 					expand = function(args)
-						vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-						-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-						-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-						-- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+						require("luasnip").lsp_expand(args.body)
 					end,
 				},
 				mapping = {
@@ -235,15 +239,19 @@ require("packer").startup(function()
 					}),
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				},
+
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-					{ name = "vsnip" }, -- For vsnip users.
-					-- { name = 'luasnip' }, -- For luasnip users.
+					-- { name = "vsnip" }, -- For vsnip users.
+					{ name = "luasnip" }, -- For luasnip users.
 					-- { name = 'ultisnips' }, -- For ultisnips users.
 					-- { name = 'snippy' }, -- For snippy users.
 				}, {
 					{ name = "buffer" },
 				}),
+				formatting = {
+					format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+				},
 			})
 
 			-- Use buffer source for `/`.
@@ -263,8 +271,7 @@ require("packer").startup(function()
 			})
 		end,
 	}) -- Autocompletion plugin
-
-	use("norcalli/snippets.nvim") -- Snippets plugin
+	use("saadparwaiz1/cmp_luasnip")
 
 	use("tversteeg/registers.nvim") --
 
@@ -285,8 +292,6 @@ require("packer").startup(function()
 	use({ "akinsho/nvim-toggleterm.lua" })
 	use("pianocomposer321/consolation.nvim")
 
-	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
-	use("hrsh7th/cmp-nvim-lsp")
 	-- use({ "kabouzeid/nvim-lspinstall" })
 
 	use({
