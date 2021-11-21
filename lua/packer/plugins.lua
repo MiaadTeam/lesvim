@@ -185,7 +185,7 @@ require("packer").startup(function()
 	-- Highlight, edit, and navigate code using a fast incremental parsing library
 	use({
 		"nvim-treesitter/nvim-treesitter",
-
+		run = ":TSUpdate",
 		config = function()
 			require("packer.settings.treesitter")
 		end,
