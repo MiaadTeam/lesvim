@@ -86,6 +86,17 @@ We are trying to format documents with utils written in rust `RUST`
 - For installing `tsserver` LSP just run: `npm install -g typescript typescript-language-server`. You can read the rest of its doc [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver)
 
 - For installing `sumneko_lua` LSP read [this doc](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run) and [this doc](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua)
+  - briefly i used this way for mac and linux:
+
+  ```fish-shell
+  git clone https://github.com/sumneko/lua-language-server ~/.config/sumneko
+  cd ~/.config/sumneko
+  git submodule update --init --recursive
+  cd 3rd/luamake
+  ./compile/install.sh
+  cd ../..
+  ./3rd/luamake/luamake rebuild
+  ```
 
 ### Setting Up:
 
@@ -101,17 +112,7 @@ We are trying to format documents with utils written in rust `RUST`
 
 After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
-- `:TSInstall comment`
-- `:TSInstall css`
-- `:TSInstall fish`
-- `:TSInstall graphql`
-- `:TSInstall javascript`
-- `:TSInstall lua`
-- `:TSInstall regex`
-- `:TSInstall scss`
-- `:TSInstall toml`
-- `:TSInstall tsx`
-- `:TSInstall vim`
+- `:TSInstall comment css fish graphql javascript lua regex scss toml tsx vim`
 - and any other you wants
 
 # Top thing to be noticed:
