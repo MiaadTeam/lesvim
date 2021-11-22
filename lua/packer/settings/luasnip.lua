@@ -158,6 +158,24 @@ ls.snippets = {
 	-- are searched in that order.
 	all = {
 		-- trigger is fn.
+		s("llog", {
+			-- Simple static text.
+			t("//Parameters: "),
+			-- function, first parameter is the function, second the Placeholders
+			-- whose text it gets as input.
+			f(copy, 1),
+			t({ "", 'console.group("' }),
+			f(copy, 1),
+			t({ ' ------") ', "" }),
+			t({ 'console.log("================")', "" }),
+			t({ "console.log(" }),
+			i(1),
+			t({ ")", "" }),
+			t({ 'console.log("================")', "" }),
+			-- Last Placeholder, exit Point of the snippet. EVERY 'outer' SNIPPET NEEDS Placeholder 0.
+			i(0),
+			t({ "console.groupEnd() " }),
+		}),
 		s("fn", {
 			-- Simple static text.
 			t("//Parameters: "),
