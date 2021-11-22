@@ -112,7 +112,7 @@ We are trying to format documents with utils written in rust `RUST`
 
 After launching neovim, install these `TreeSitter` lib with `:TSInstall` :
 
-- `:TSInstall comment css fish graphql javascript lua regex scss toml tsx vim`
+- `:TSInstall comment css fish graphql javascript lua regex scss toml tsx vim http json`
 - and any other you wants
 
 # Top thing to be noticed:

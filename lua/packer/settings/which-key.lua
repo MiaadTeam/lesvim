@@ -67,6 +67,12 @@ return {
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 		["r"] = { "<cmd>Format<CR>", "Reformat File" },
 		["h"] = { "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)" },
+		H = {
+			name = "Http things",
+			r = { "<CMD>lua require('rest-nvim').run()<CR>", "run the request under the cursor" },
+			p = { "<CMD>lua require('rest-nvim').run(true)<CR>", "preview the request cURL command" },
+			l = { "<CMD>lua require('rest-nvim').last()<CR>", "re-run the last request" },
+		},
 		["t"] = { "<cmd>CodeActionMenu<CR>", "Code Action Menu" },
 		b = {
 			name = "Buffers",
@@ -153,11 +159,11 @@ return {
 			f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
 			i = { "<cmd>LspInfo<cr>", "Info" },
 			j = {
-				"<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+				"<CMD>lua vim.lsp.diagnostic.goto_next()<CR>",
 				"Next Diagnostic",
 			},
 			k = {
-				"<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+				"<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>",
 				"Prev Diagnostic",
 			},
 			p = {
