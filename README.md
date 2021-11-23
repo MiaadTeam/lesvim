@@ -1,5 +1,7 @@
 ![alah-copy](https://user-images.githubusercontent.com/6236123/140812913-ccad531c-2f55-4ef8-908e-bba2387da714.jpg)
 
+We want to create an awesome Development Environment's so some big part of this document is not about Neovim, we briefly talk about the terminal emulator and prompt and other terminal tools, that makes possible whole Development Life live in Terminal
+
 First of all, see some screen shot:
 
 <img width="1671" alt="Screen Shot 1400-08-18 at 00 19 33" src="https://user-images.githubusercontent.com/6236123/140816097-850f4503-6fe2-4db8-8b12-9a201a6974c2.png">
@@ -97,6 +99,8 @@ We are trying to format documents with utils written in rust `RUST`
   cd ../..
   ./3rd/luamake/luamake rebuild
   ```
+
+  To be noticed your executables bin PATH of sumneko should be place at `~/.config/sumneko .. "/bin/" .. system_name .. "/lua-language-server" (your system_name is macOS or Linux or Windows)`
 
 ### Setting Up:
 
