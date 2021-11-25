@@ -184,9 +184,14 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 - `leader + c` close current active buffer.
 - `leader + w` manipulate splited buffers in current window.(create and modify slipt window explained below)
 - `leader + f` open Telescope and find any file fuzzy in cwd.
+- `leader + h` jump to any word with the help of HOP plugin (like sneak but much better)
 - `leader + q` quit nvim
 - `leader + t` show lsp action menu
 - `leader + r` format current buffer.
+- `leader + H` HTTP request things
+  - `r` run the request under the cursor.
+  - `p` preview the request cURL command.
+  - `l` re-run the last request.
 - `leader + s` searching sections:
   - `b` searching branch and checkout to it.
   - `c` searching color schema and set it.
