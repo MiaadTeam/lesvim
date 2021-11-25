@@ -21,8 +21,8 @@ map(
 	{ noremap = true, silent = true }
 )
 
-vim.cmd('vnoremap p "0p')
-vim.cmd('vnoremap P "0P')
+-- vim.cmd('vnoremap p "0p')
+-- vim.cmd('vnoremap P "0P')
 
 return {
 	map = map,
