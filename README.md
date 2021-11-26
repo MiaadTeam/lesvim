@@ -89,16 +89,18 @@ We are trying to format documents with utils written in rust `RUST`
 
 - For installing `sumneko_lua` LSP read [this doc](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run) and [this doc](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua)
   - briefly i used this way for mac and linux:
-
-  ```fish-shell
-  git clone https://github.com/sumneko/lua-language-server ~/.config/sumneko
-  cd ~/.config/sumneko
-  git submodule update --init --recursive
-  cd 3rd/luamake
-  ./compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-  ```
+    1. Install [ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
+    2. Make sure you have C++17
+    3. execute thease commands line by line in terminal
+    ```fish-shell
+    git clone https://github.com/sumneko/lua-language-server ~/.config/sumneko
+    cd ~/.config/sumneko
+    git submodule update --init --recursive
+    cd 3rd/luamake
+    ./compile/install.sh
+    cd ../..
+    ./3rd/luamake/luamake rebuild
+    ```
 
   To be noticed your executables bin PATH of sumneko should be place at `~/.config/sumneko .. "/bin/" .. system_name .. "/lua-language-server" (your system_name is macOS or Linux or Windows)`
 
