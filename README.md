@@ -59,6 +59,10 @@ First of all, see some screen shot:
 
   A cat(1) clone with wings.
 
+- Using [`fd`](https://github.com/sharkdp/fd) as a replacement for `find`:
+
+  A simple, fast and user-friendly alternative to 'find'
+
 # Installing:
 
 - Install `Rust` with the help of [own doc](https://www.rust-lang.org/tools/install)
