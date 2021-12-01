@@ -33,12 +33,12 @@ vim.o.smartcase = true
 vim.o.termguicolors = true
 
 -- Example config in Lua
-vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_style = "night"
 vim.g.tokyonight_italic_functions = true
 vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 
 -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
+-- vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 -- Load the colorscheme
 vim.cmd([[colorscheme tokyonight]])
@@ -61,16 +61,16 @@ vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_char_highlight = "LineNr"
 vim.g.indent_blankline_show_trailing_blankline_indent = false
 
--- Gitsigns
-require("gitsigns").setup({
-	signs = {
-		add = { hl = "GitGutterAdd", text = "+" },
-		change = { hl = "GitGutterChange", text = "~" },
-		delete = { hl = "GitGutterDelete", text = "_" },
-		topdelete = { hl = "GitGutterDelete", text = "‾" },
-		changedelete = { hl = "GitGutterChange", text = "~" },
-	},
-})
+-- -- Gitsigns
+-- require("gitsigns").setup({
+-- 	signs = {
+-- 		add = { hl = "GitGutterAdd", text = "+" },
+-- 		change = { hl = "GitGutterChange", text = "~" },
+-- 		delete = { hl = "GitGutterDelete", text = "_" },
+-- 		topdelete = { hl = "GitGutterDelete", text = "‾" },
+-- 		changedelete = { hl = "GitGutterChange", text = "~" },
+-- 	},
+-- })
 
 -- Highlight on yank
 vim.api.nvim_exec(

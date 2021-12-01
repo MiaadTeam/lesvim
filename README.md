@@ -55,6 +55,10 @@ First of all, see some screen shot:
 
   ripgrep recursively searches directories for a regex pattern while respecting your gitignore
 
+- Using [`Bat`](https://github.com/sharkdp/bat) as a replacement for `cat`:
+
+  A cat(1) clone with wings.
+
 # Installing:
 
 - Install `Rust` with the help of [own doc](https://www.rust-lang.org/tools/install)
@@ -263,6 +267,14 @@ The `leader` as often set to `space` key, so when you press `space` and wait for
 - press `;;` to quit insert mode and got to normal
 
 ### Plugins:
+
+- We use [`packer`](https://github.com/wbthomason/packer.nvim) for manage plugins:
+
+  A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
+
+- We use [`plenary`](https://github.com/nvim-lua/plenary.nvim) as dependencies for many plugins and lua utils:
+
+  plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
 
 - We use [`windline`](https://github.com/windwp/windline.nvim) for the status line:
 

@@ -179,7 +179,9 @@ require("packer").startup(function()
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
-		-- tag = 'release' -- To use the latest release
+		config = function()
+			require("gitsigns").setup()
+		end,
 	})
 
 	-- Highlight, edit, and navigate code using a fast incremental parsing library
@@ -496,6 +498,13 @@ require("packer").startup(function()
 					end
 				end,
 			})
+		end,
+	})
+
+	use({
+		"luukvbaal/stabilize.nvim",
+		config = function()
+			require("stabilize").setup()
 		end,
 	})
 
