@@ -428,7 +428,11 @@ require("packer").startup(function()
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			require("trouble").setup({})
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
 		end,
 	})
 
@@ -457,6 +461,7 @@ require("packer").startup(function()
 			-- wk.register(vmappings, vopts)
 			wk.register({
 				["/"] = { "<ESC><CMD>'<,'>lua require('Comment').toggle()<CR>", "Comment" },
+				["s"] = { "<ESC><CMD>'<,'>lua require('spectre').open_visual()<CR>", "Search and replace" },
 			}, {
 				mode = "v", -- VISUAL mode
 				prefix = "<leader>",
@@ -535,6 +540,14 @@ require("packer").startup(function()
 				env_file = ".env",
 				custom_dynamic_variables = {},
 			})
+		end,
+	})
+	use({ "kevinhwang91/nvim-hlslens" })
+
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
 		end,
 	})
 end)
