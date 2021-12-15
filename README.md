@@ -136,20 +136,22 @@ We want to create an awesome Development Environment's so a big part of this doc
   - For installing `tsserver` LSP just run: `npm install -g typescript typescript-language-server`. You can read the rest of its doc [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver)
 
   - For installing `sumneko_lua` LSP read [this doc](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run) and [this doc](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua)
-    - briefly i used this way for mac and linux:
-      1. Install [ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
-      2. Make sure you have C++17
-      3. Execute these commands line by line in terminal
-         ```fish-shell
-         git clone https://github.com/sumneko/lua-language-server ~/.config/sumneko
-         cd ~/.config/sumneko
-         git submodule update --init --recursive
-         cd 3rd/luamake
-         ./compile/install.sh
-         cd ../..
-         ./3rd/luamake/luamake rebuild
-         ```
-         To be noticed your executables bin PATH of sumneko should be placed at `~/.config/sumneko .. "/bin/" .. system_name .. "/lua-language-server" (your system_name is macOS or Linux or Windows)`
+
+    briefly i used this way for mac and linux:
+
+    1. Install [ninja](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages)
+    2. Make sure you have C++17
+    3. Execute these commands line by line in terminal
+       ```fish-shell
+       git clone https://github.com/sumneko/lua-language-server ~/.config/sumneko
+       cd ~/.config/sumneko
+       git submodule update --init --recursive
+       cd 3rd/luamake
+       ./compile/install.sh
+       cd ../..
+       ./3rd/luamake/luamake rebuild
+       ```
+       To be noticed your executables bin PATH of sumneko should be placed at `~/.config/sumneko .. "/bin/" .. system_name .. "/lua-language-server" (your system_name is macOS or Linux or Windows)`
 
 ### Installation
 
