@@ -35,6 +35,9 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
+  - [_Wezterm_](#wezterm)
+  - [_Vim or Neovim_](#vim-or-neovim)
+  - [_LSP_](#lsp)
 - [Plugins](#plugins)
 - [Show your support](#show-your-support)
 
@@ -169,153 +172,154 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 ## Usage
 
-- _Wezterm_
+### _Wezterm_
 
-  - Tabs and Pane's creation deletion:
+- Tabs and Pane's creation deletion:
 
-    - `command + shift + N` or `super + shift + N` shortcut to create a new terminal window.
-    - `command + t` or `super + t` shortcut to create a new terminal tab.
-    - `command + w` or `super + w` shortcut to close the current terminal tab.
-    - `command + '` or `super + '` shortcut to create a new vertical terminal split pane.
-    - `command + /` or `super + /` shortcut to create new horizontal terminal split pane.
-    - `command + x` or `super + x` shortcut to close the current terminal pane.
-    - `command + z` or `super + z` shortcut to toggle the current terminal pane zoom.
+  - `command + shift + N` or `super + shift + N` shortcut to create a new terminal window.
+  - `command + t` or `super + t` shortcut to create a new terminal tab.
+  - `command + w` or `super + w` shortcut to close the current terminal tab.
+  - `command + '` or `super + '` shortcut to create a new vertical terminal split pane.
+  - `command + /` or `super + /` shortcut to create new horizontal terminal split pane.
+  - `command + x` or `super + x` shortcut to close the current terminal pane.
+  - `command + z` or `super + z` shortcut to toggle the current terminal pane zoom.
 
-  - _Pane navigation_
+- _Pane navigation_
 
-    - `command + ctrl + h` or `super + ctrl + h` goes to the left available pane.
-    - `command + ctrl + l` or `super + ctrl + l` goes to the right available pane.
-    - `command + ctrl + k` or `super + ctrl + k` goes to the top available pane.
-    - `command + ctrl + j` or `super + ctrl + j` goes to the bottom available pane.
-    - `command + shift + T` or `super + shift + T` shows tab navigator options.
+  - `command + ctrl + h` or `super + ctrl + h` goes to the left available pane.
+  - `command + ctrl + l` or `super + ctrl + l` goes to the right available pane.
+  - `command + ctrl + k` or `super + ctrl + k` goes to the top available pane.
+  - `command + ctrl + j` or `super + ctrl + j` goes to the bottom available pane.
+  - `command + shift + T` or `super + shift + T` shows tab navigator options.
 
-  - _Pane resizing_
+- _Pane resizing_
 
-    - `command + shift + H` or `super + shift + H` increase right available pane to left.
-    - `command + shift + L` or `super + shift + L` increase left available pane to right.
-    - `command + shift + K` or `super + shift + K` increase the bottom available pane to the top.
-    - `command + shift + J` or `super + shift + J` increase the top available pane to the bottom.
+  - `command + shift + H` or `super + shift + H` increase right available pane to left.
+  - `command + shift + L` or `super + shift + L` increase left available pane to right.
+  - `command + shift + K` or `super + shift + K` increase the bottom available pane to the top.
+  - `command + shift + J` or `super + shift + J` increase the top available pane to the bottom.
 
-  - _Searching_
+- _Searching_
 
-    - `command + shift + F` or `super + shift + F` search for the string **"hash"** matches regardless of case.
-    - `command + shift + space` or `super + shift + space` go to quick search tools.
+  - `command + shift + F` or `super + shift + F` search for the string **"hash"** matches regardless of case.
+  - `command + shift + space` or `super + shift + space` go to quick search tools.
 
-  You might have already noticed that all the shortcuts here begin with `command` or `super` key except the `ctrl + tab` which is switched between available tabs, so we try not to use `command` or `super` key in `vim` shortkey.
+You might have already noticed that all the shortcuts here begin with `command` or `super` key except the `ctrl + tab` which is switched between available tabs, so we try not to use `command` or `super` key in `vim` shortkey.
 
-- _Vim or Neovim_
+### _Vim or Neovim_
 
-  - Core:
+- Core:
 
-    - Relative Neovim number is set to true.
+  - Relative Neovim number is set to true.
 
-      For instance, you can easily jump between lines with a quick glance by pressing `<number>j|k`.
+    For instance, you can easily jump between lines with a quick glance by pressing `<number>j|k`.
 
-    - As mentioned in the setup section, we manage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
+  - As mentioned in the setup section, we manage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
 
-      A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
+    A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
 
-    - We used [`tokyonight`](https://github.com/folke/tokyonight.nvim) as a theme.
+  - We used [`tokyonight`](https://github.com/folke/tokyonight.nvim) as a theme.
 
-      🏙 A clean, dark Neovim theme written in Lua, with support for LSP, treesitter, and lots of plugins. It includes additional themes for Kitty, Alacrity, iTerm, and Fish
+    🏙 A clean, dark Neovim theme written in Lua, with support for LSP, treesitter, and lots of plugins. It includes additional themes for Kitty, Alacrity, iTerm, and Fish
 
-  - Keybinding:
+- Keybinding:
 
-    If you press any key which has something bound to it and wait for a few seconds, `which-key` shows you an awesome hint for continuing press-related keys.
+  If you press any key which has something bound to it and wait for a few seconds, `which-key` shows you an awesome hint for continuing press-related keys.
 
-  - Leader Key:
+- Leader Key:
 
-    The `leader` is often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of its binding keys. The following section briefly introduces a few of them:
+  The `leader` is often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of its binding keys. The following section briefly introduces a few of them:
 
-    - `leader + e` toggle `Nvim Tree` explorer and immediately find the current active buffer file in the tree.
-    - `leader + /` comment just one line in `Normal and Visual` mode.(commenting keybinding has been explained below)
-    - `leader + c` close current active buffer.
-    - `leader + w` manipulate splited buffers in current window.(create and modify slipt window explained below)
-    - `leader + f` open Telescope and find any file fuzzy in cwd.
-    - `leader + h` jump to any word with the help of HOP plugin (like sneak but much better)
-    - `leader + q` quit nvim
-    - `leader + t` show lsp action menu
-    - `leader + r` format current buffer.
-    - `leader + H` HTTP request things
-      - `r` run the request under the cursor.
-      - `p` preview the request cURL command.
-      - `l` re-run the last request.
-    - `leader + s` searching sections:
-      - `b` searching branch and checkout to it.
-      - `c` searching color schema and set it.
-      - `C` searching command and execute it.
-      - `f` find file in this cwd.
-      - `h` searching in all help.
-      - `k` searching in all keymaps.
-      - `M` finding in all MAN pages and open it
-      - `p` searching all color schemes with preview
-      - `R` searching in registers
-      - `r` open recent files with telescope
-      - `t` search text in all files in current cwd
-      - `g` search and replace text with ripgrep in current cwd
-      - `w` search and replace word under cursor with ripgrep in current cwd
-      - `l` search and replace text in active with ripgrep
-    - `leader + b` buffer things:
-      - `j` pick buffer by first character
-      - `f` find buffer in telescope
-      - `w` wipe buffer except the current one
-      - `r` close all buffer to right
-      - `l` close all buffer to left
-      - `d` sort all buffer by directory
-      - `n` sort all buffer by language
-      - `t` sort all buffer by tabs
-    - `leader + g` is for git stuff:
-      - `b` checkout branch with telescope
-      - `c` checkout commit with telescope
-      - `C` checkout commit for current file with telescope
-      - `j` jump to the next hunk
-      - `k` jump to the previous hunk
-      - `l` show git blame of current line
-      - `o` open changed files in telescope
-      - `p` preview hunk
-      - `r` reset current hunk
-      - `R` reset current buffer
-      - `s` stage current hunk
-      - `u` unstage hunk
-    - `leader + l` for lsp things:
-      - `a` show code action for the word is under cursor if it available
-      - `d` show document diagnostics
-      - `f` for format document with attached lsp's
-      - `i` show configured and attached lsps
-      - `j` jump to next diagnostic in document
-      - `k` jump to previous diagnostic in document
-      - `q` select first actions in code actions (quick fixed)
-      - `r` rename word with referenced with lsp (just like F2 in vscode)
-      - `S` show workspace symbols with telescope
-      - `s` show document symbols with telescope
-      - `t` find document or project troubles
-      - `w` show workspace diagnostics
-    - `leader + p` is for packer things:
-      - `i` install package if new package available
-      - `c` compile packer and create `plugin/packer_compiled.lua` file
-      - `s` sysnc packages with git repos
-      - `u` update packages
-      - `r` clean unused package
-      - `S` packer status
-    - `leader + z` for spell stuff:
-      - `p` an special command that fixed spell and jump to the next misspelled word
-      - `t` toggle spell checker to on and off
-    - `leader + m` for markdown tools
-      - `p` start/stop the live server for preview current markdown file in the default browser
-      - `t` preview markdown directly in a modal window in the terminal
+  - `leader + e` toggle `Nvim Tree` explorer and immediately find the current active buffer file in the tree.
+  - `leader + /` comment just one line in `Normal and Visual` mode.(commenting keybinding has been explained below)
+  - `leader + c` close current active buffer.
+  - `leader + w` manipulate splited buffers in current window.(create and modify slipt window explained below)
+  - `leader + f` open Telescope and find any file fuzzy in cwd.
+  - `leader + h` jump to any word with the help of HOP plugin (like sneak but much better)
+  - `leader + q` quit nvim
+  - `leader + t` show lsp action menu
+  - `leader + r` format current buffer.
+  - `leader + H` HTTP request things
+    - `r` run the request under the cursor.
+    - `p` preview the request cURL command.
+    - `l` re-run the last request.
+  - `leader + s` searching sections:
+    - `b` searching branch and checkout to it.
+    - `c` searching color schema and set it.
+    - `C` searching command and execute it.
+    - `f` find file in this cwd.
+    - `h` searching in all help.
+    - `k` searching in all keymaps.
+    - `M` finding in all MAN pages and open it
+    - `p` searching all color schemes with preview
+    - `R` searching in registers
+    - `r` open recent files with telescope
+    - `t` search text in all files in current cwd
+    - `g` search and replace text with ripgrep in current cwd
+    - `w` search and replace word under cursor with ripgrep in current cwd
+    - `l` search and replace text in active with ripgrep
+  - `leader + b` buffer things:
+    - `j` pick buffer by first character
+    - `f` find buffer in telescope
+    - `w` wipe buffer except the current one
+    - `r` close all buffer to right
+    - `l` close all buffer to left
+    - `d` sort all buffer by directory
+    - `n` sort all buffer by language
+    - `t` sort all buffer by tabs
+  - `leader + g` is for git stuff:
+    - `b` checkout branch with telescope
+    - `c` checkout commit with telescope
+    - `C` checkout commit for current file with telescope
+    - `j` jump to the next hunk
+    - `k` jump to the previous hunk
+    - `l` show git blame of current line
+    - `o` open changed files in telescope
+    - `p` preview hunk
+    - `r` reset current hunk
+    - `R` reset current buffer
+    - `s` stage current hunk
+    - `u` unstage hunk
+  - `leader + l` for lsp things:
+    - `a` show code action for the word is under cursor if it available
+    - `d` show document diagnostics
+    - `f` for format document with attached lsp's
+    - `i` show configured and attached lsps
+    - `j` jump to next diagnostic in document
+    - `k` jump to previous diagnostic in document
+    - `q` select first actions in code actions (quick fixed)
+    - `r` rename word with referenced with lsp (just like F2 in vscode)
+    - `S` show workspace symbols with telescope
+    - `s` show document symbols with telescope
+    - `t` find document or project troubles
+    - `w` show workspace diagnostics
+  - `leader + p` is for packer things:
+    - `i` install package if new package available
+    - `c` compile packer and create `plugin/packer_compiled.lua` file
+    - `s` sysnc packages with git repos
+    - `u` update packages
+    - `r` clean unused package
+    - `S` packer status
+  - `leader + z` for spell stuff:
+    - `p` an special command that fixed spell and jump to the next misspelled word
+    - `t` toggle spell checker to on and off
+  - `leader + m` for markdown tools
+    - `p` start/stop the live server for preview current markdown file in the default browser
+    - `t` preview markdown directly in a modal window in the terminal
 
-  - `Insert MODE` keybinds:
+- `Insert MODE` keybinds:
 
-    press `;;` to quit insert mode and get to normal
+  press `;;` to quit insert mode and get to normal
 
-- _LSP_
-  - Press `gd` to jump to the definition word under the cursor.
-  - Press `gi` to jump to the implementation word under the cursor.
-  - Press `gr` to show where this word is referenced and used.
-  - Press `K` CAPEL K which means `shift + k` to show declarations of the word under the cursor.
-  - Press `ctrl + k` to show the signature of the word is available.
-  - Press `[d` to jump to the next diagnostic of the opened buffers.
-  - Press `]d` to jump to the previous diagnostic of the opened buffers.
+### _LSP_
+
+- Press `gd` to jump to the definition word under the cursor.
+- Press `gi` to jump to the implementation word under the cursor.
+- Press `gr` to show where this word is referenced and used.
+- Press `K` CAPEL K which means `shift + k` to show declarations of the word under the cursor.
+- Press `ctrl + k` to show the signature of the word is available.
+- Press `[d` to jump to the next diagnostic of the opened buffers.
+- Press `]d` to jump to the previous diagnostic of the opened buffers.
 
 ## Plugins
 
