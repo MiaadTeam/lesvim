@@ -436,6 +436,7 @@ require("packer").startup(function()
 		end,
 	})
 
+	-- TODO replace this plugin with mhartington/formatter.nvim
 	use({
 		"lukas-reineke/format.nvim",
 		config = function()
