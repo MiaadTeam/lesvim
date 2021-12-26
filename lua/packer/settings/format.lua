@@ -16,6 +16,11 @@ require("format").setup({
 			end_pattern = "^}}}$",
 		},
 	},
+	rust = {
+		{
+			cmd = { "rustfmt" },
+		},
+	},
 	lua = {
 		{
 			cmd = { "stylua" },
