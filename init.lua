@@ -83,6 +83,14 @@ vim.api.nvim_exec(
 	false
 )
 
+-- Autocmd for toml file completion whit crate plugin for nvim-cmp plugin
+vim.api.nvim_exec(
+	[[
+        autocmd FileType toml lua require('cmp').setup.buffer { sources = { { name = 'crates' } } }
+]],
+	false
+)
+
 -- Y yank until the end of line
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true })
 
