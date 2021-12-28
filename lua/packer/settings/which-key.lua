@@ -146,7 +146,10 @@ return {
 		},
 		l = {
 			name = "LSP",
-			a = { "<cmd>Telescope lsp_code_actions<cr>", "Code Action" },
+			a = {
+				"<cmd>lua require'telescope.builtin'.lsp_code_actions(require('telescope.themes').get_dropdown({}))<cr>",
+				"Code Action",
+			},
 			d = {
 				"<cmd>Telescope lsp_document_diagnostics<cr>",
 				"Document Diagnostics",
