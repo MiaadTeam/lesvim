@@ -561,4 +561,11 @@ require("packer").startup(function()
 			require("colorizer").setup()
 		end,
 	})
+
+	use({
+		"VonHeikemen/fine-cmdline.nvim",
+		requires = {
+			{ "MunifTanjim/nui.nvim" },
+		},
+	})
 end)
