@@ -96,48 +96,36 @@ require("formatter").setup({
 		javascript = {
 			function()
 				return {
-					exe = "dprint",
-					args = {
-						"fmt",
-						"--config ~/.config/dotfiles/dpript/dprint.json",
-					},
-					stdin = false,
+					exe = "prettier",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+					stdin = true,
 				}
 			end,
 		},
 		javascriptreact = {
 			function()
 				return {
-					exe = "dprint",
-					args = {
-						"fmt",
-						"--config ~/.config/dotfiles/dpript/dprint.json",
-					},
-					stdin = false,
+					exe = "prettier",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+					stdin = true,
 				}
 			end,
 		},
 		typescript = {
 			function()
 				return {
-					exe = "dprint",
-					args = {
-						"fmt",
-						"--config ~/.config/dotfiles/dpript/dprint.json",
-					},
-					stdin = false,
+					exe = "prettier",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+					stdin = true,
 				}
 			end,
 		},
 		typescriptreact = {
 			function()
 				return {
-					exe = "dprint",
-					args = {
-						"fmt",
-						"--config ~/.config/dotfiles/dpript/dprint.json",
-					},
-					stdin = false,
+					exe = "prettier",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+					stdin = true,
 				}
 			end,
 		},

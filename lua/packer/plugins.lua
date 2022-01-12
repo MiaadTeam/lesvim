@@ -606,10 +606,10 @@ require("packer").startup(function()
 		end,
 	})
 
-	use({
-		"VonHeikemen/fine-cmdline.nvim",
-		requires = {
-			{ "MunifTanjim/nui.nvim" },
-		},
-	})
+	-- use({
+	-- 	"VonHeikemen/fine-cmdline.nvim",
+	-- 	requires = {
+	-- 		{ "MunifTanjim/nui.nvim" },
+	-- 	},
+	-- })
 end)

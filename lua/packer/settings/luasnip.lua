@@ -166,15 +166,15 @@ ls.snippets = {
 			f(copy, 1),
 			t({ "", 'console.group("' }),
 			f(copy, 1),
-			t({ ' ------") ', "" }),
-			t({ 'console.log("================")', "" }),
+			t({ ' ------");', "" }),
+			t({ 'console.log("================");', "" }),
 			t({ "console.log(" }),
 			i(1),
-			t({ ")", "" }),
-			t({ 'console.log("================")', "" }),
+			t({ ");", "" }),
+			t({ 'console.log("================");', "" }),
 			-- Last Placeholder, exit Point of the snippet. EVERY 'outer' SNIPPET NEEDS Placeholder 0.
 			i(0),
-			t({ "console.groupEnd() " }),
+			t({ "console.groupEnd();" }),
 		}),
 		s("fn", {
 			-- Simple static text.
