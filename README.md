@@ -7,7 +7,7 @@
 <p align="center">
   <h1 align="center"><a href="https://github.com/MiaadTeam/lesvim"><span align='center'>LESVIM</span> </a></h1>
 
-  <h3 align="center"> <code>LESVIM</code> hosts custom <a href="https://github.com/neovim/neovim"><span align='center'>Nvim</span> </a> configuration for all the platforms, focused on JavaScript, TypeScript, Rust and Lua</h3>
+<h3 align="center"> <code>LESVIM</code> hosts custom <a href="https://github.com/neovim/neovim"><span align='center'>Nvim</span> </a> configuration for all the platforms, focused on JavaScript, TypeScript, Rust and Lua</h3>
   <br />
 <p align="center">
   <a href='https://github.com/MiaadTeam/lesvim/graphs/contributors'>
@@ -168,7 +168,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 - After launching Neovim, install these `TreeSitter` lib with `:TSInstall` :
 
-  `:TSInstall comment CSS fish graphql javascript lua regex scss toml tsx vim http json`
+  `:TSInstall comment css fish graphql javascript lua regex scss toml tsx vim http json`
 
 - And any other you want
 
