@@ -1,0 +1,45 @@
+snippet llog
+	/*
+	*	@LOG @DEBUG @INFO
+	*	This log written by ::==> {{ `$USER` }}
+	*
+	*	Please remove your log after debugging
+	*/
+	console.group("${1} ------ ");
+	console.log(" ============= ");
+	console.log();
+	console.info({${1}}, " ------ ");
+	console.log();
+	console.log(" ============= ");
+	console.groupEnd();
+
+snippet llow
+	/*
+	*	@LOG @DEBUG @WARN
+	*	This log written by ::==> {{ `$USER` }}
+	*
+	*	Please remove your log after debugging
+	*/
+	console.group("${1} ------ ");
+	console.warn(" ============= ");
+	console.warn();
+	console.warn({${1}}, " ------ ");
+	console.warn();
+	console.warn(" ============= ");
+	console.groupEnd();
+
+snippet lloe
+	/*
+	*	@LOG @DEBUG @ERROR
+	*	This log written by ::==> {{ `$USER` }}
+	*
+	*	Please remove your log after debugging
+	*/
+	console.group("${1} ------ ");
+	console.error(" ============= ");
+	console.error();
+	console.error({${1}}, " ------ ");
+	console.error();
+	console.error(" ============= ");
+	console.groupEnd();
+

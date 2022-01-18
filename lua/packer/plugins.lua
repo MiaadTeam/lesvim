@@ -203,12 +203,31 @@ require("packer").startup(function()
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
+	-- disable luasnip because of issue on coupling entire documents relates to this issue https://github.com/L3MON4D3/LuaSnip/issues/265
+	-- use({
+	-- 	"L3MON4D3/LuaSnip",
+	-- 	config = function()
+	-- 		require("packer.settings.luasnip")
+	-- 	end,
+	-- })
+
 	use({
-		"L3MON4D3/LuaSnip",
+		"dcampos/nvim-snippy",
 		config = function()
-			require("packer.settings.luasnip")
+			require("snippy").setup({
+				mappings = {
+					is = {
+						["<Tab>"] = "expand_or_advance",
+						["<S-Tab>"] = "previous",
+					},
+					nx = {
+						["<leader>x"] = "cut_text",
+					},
+				},
+			})
 		end,
 	})
+
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
@@ -216,8 +235,10 @@ require("packer").startup(function()
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
+			-- "L3MON4D3/LuaSnip",
+			-- "saadparwaiz1/cmp_luasnip",
+			"dcampos/nvim-snippy",
+			"dcampos/cmp-snippy",
 		},
 
 		-- event = "InsertEnter",
@@ -228,14 +249,18 @@ require("packer").startup(function()
 					and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 			end
 
-			local luasnip = require("luasnip")
+			-- local luasnip = require("luasnip")
+			local snippy = require("snippy")
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
 
 			cmp.setup({
 				snippet = {
+					-- expand = function(args)
+					-- 	require("luasnip").lsp_expand(args.body)
+					-- end,
 					expand = function(args)
-						require("luasnip").lsp_expand(args.body)
+						snippy.expand_snippet(args.body)
 					end,
 				},
 				mapping = {
@@ -246,8 +271,8 @@ require("packer").startup(function()
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
+							-- elseif luasnip.expand_or_jumpable() then
+							-- 	luasnip.expand_or_jump()
 						elseif has_words_before() then
 							cmp.complete()
 						else
@@ -261,8 +286,8 @@ require("packer").startup(function()
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
+							-- elseif luasnip.jumpable(-1) then
+							-- 	luasnip.jump(-1)
 						else
 							fallback()
 						end
@@ -285,9 +310,9 @@ require("packer").startup(function()
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					-- { name = "vsnip" }, -- For vsnip users.
-					{ name = "luasnip" }, -- For luasnip users.
+					-- { name = "luasnip" }, -- For luasnip users.
 					-- { name = 'ultisnips' }, -- For ultisnips users.
-					-- { name = 'snippy' }, -- For snippy users.
+					{ name = "snippy" }, -- For snippy users.
 				}, {
 					{ name = "buffer" },
 				}),
@@ -313,7 +338,9 @@ require("packer").startup(function()
 			})
 		end,
 	}) -- Autocompletion plugin
-	use("saadparwaiz1/cmp_luasnip")
+
+	-- use("saadparwaiz1/cmp_luasnip")
+	use("dcampos/cmp-snippy")
 
 	use("tversteeg/registers.nvim") --
 
