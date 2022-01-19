@@ -633,6 +633,13 @@ require("packer").startup(function()
 		end,
 	})
 
+	use({
+		"beauwilliams/focus.nvim",
+		config = function()
+			require("focus").setup({ relativenumber = true, excluded_filetypes = { "toggleterm" } })
+		end,
+	})
+
 	-- use({
 	-- 	"VonHeikemen/fine-cmdline.nvim",
 	-- 	requires = {

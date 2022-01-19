@@ -59,7 +59,6 @@ return {
 	},
 
 	mappings = {
-		["w"] = { "<cmd>WinShift<CR>", "Window manipulation" },
 		["q"] = { "<cmd>q!<CR>", "Quit" },
 		["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
 		["c"] = { "<cmd>bd<CR>", "Close Buffer" },
@@ -67,6 +66,17 @@ return {
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 		["r"] = { "<cmd>Format<CR>", "Reformat File" },
 		["h"] = { "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)" },
+		w = {
+			name = "Windows Mannager",
+			m = { "<cmd>WinShift<CR>", "Window manipulation" },
+			c = { "<cmd>FocusSplitCycle<CR>", "Cycles Windows" },
+			e = { "<cmd>FocusMaxOrEqual<CR>", "Maximize or equalize Windows" },
+			n = { "<cmd>FocusSplitNicely<CR>", "Split Windows nicely" },
+			l = { "<cmd>FocusSplitRight<CR>", "Split Windows Right" },
+			h = { "<cmd>FocusSplitLeft<CR>", "Split Windows Left" },
+			j = { "<cmd>FocusSplitUp<CR>", "Split Windows Up" },
+			k = { "<cmd>FocusSplitDown<CR>", "Split Windows Down" },
+		},
 		H = {
 			name = "Http things",
 			r = { "<CMD>lua require('rest-nvim').run()<CR>", "run the request under the cursor" },
