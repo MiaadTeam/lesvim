@@ -77,6 +77,7 @@ We want to create an awesome Development Environment's so a big part of this doc
   Simple terminal UI for git commands,
 
   Blazing 💥 fast terminal-UI for git written in rust 🦀
+
   [It's my `GitUI` `VIM Like` keybinding](https://raw.githubusercontent.com/hemedani/dotfiles/main/gitui/key_bindings.ron), you should put it in `$HOME/.config/gitui/key_bindings.ron`
 
 - Using [`exa`](https://github.com/ogham/exa) as a `ls` command in terminal:
