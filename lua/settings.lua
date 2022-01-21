@@ -34,7 +34,7 @@ vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shif
 -- vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
 vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
 vim.cmd("filetype plugin on") -- filetype detection
-vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h18")
+vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h16")
 
 -- vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
 -- vim.o.guifont = "Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h24"
