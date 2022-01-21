@@ -93,39 +93,67 @@ require("formatter").setup({
 				}
 			end,
 		},
+		-- SAMPLE for prettier
+		-- javascript = {
+		-- 	function()
+		-- 		return {
+		-- 			exe = "prettier",
+		-- 			args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+		-- 			stdin = true,
+		-- 		}
+		-- 	end,
+		-- },
 		javascript = {
 			function()
 				return {
-					exe = "prettier",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
-					stdin = true,
+					exe = "dprint fmt ",
+					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					stdin = false,
 				}
 			end,
 		},
 		javascriptreact = {
 			function()
 				return {
-					exe = "prettier",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
-					stdin = true,
+					exe = "dprint fmt ",
+					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					stdin = false,
 				}
 			end,
 		},
 		typescript = {
 			function()
 				return {
-					exe = "prettier",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
-					stdin = true,
+					exe = "dprint fmt ",
+					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					stdin = false,
 				}
 			end,
 		},
 		typescriptreact = {
 			function()
 				return {
-					exe = "prettier",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
-					stdin = true,
+					exe = "dprint fmt ",
+					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					stdin = false,
+				}
+			end,
+		},
+		markdown = {
+			function()
+				return {
+					exe = "dprint fmt ",
+					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					stdin = false,
+				}
+			end,
+		},
+		json = {
+			function()
+				return {
+					exe = "dprint fmt ",
+					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					stdin = false,
 				}
 			end,
 		},
