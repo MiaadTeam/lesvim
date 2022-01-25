@@ -76,7 +76,9 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "rustfmt",
-					args = { "--emit=stdout" },
+					args = {
+						"--emit=stdout",
+					},
 					stdin = true,
 				}
 			end,
@@ -86,9 +88,28 @@ require("formatter").setup({
 				return {
 					exe = "stylua",
 					args = {
-						-- "--config-path " .. os.getenv("XDG_CONFIG_HOME") .. "/stylua/stylua.toml",
+						"--config-path ",
+						"~/.config/dotfiles/stylua.toml",
 						"-",
 					},
+					stdin = true,
+				}
+			end,
+		},
+		html = {
+			function()
+				return {
+					exe = "prettier",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+					stdin = true,
+				}
+			end,
+		},
+		css = {
+			function()
+				return {
+					exe = "prettier",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
 					stdin = true,
 				}
 			end,
@@ -107,7 +128,10 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "dprint fmt ",
-					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					args = {
+						"--config ",
+						"~/.config/dotfiles/dpript/dprint.json",
+					},
 					stdin = false,
 				}
 			end,
@@ -116,7 +140,10 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "dprint fmt ",
-					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					args = {
+						"--config ",
+						"~/.config/dotfiles/dpript/dprint.json",
+					},
 					stdin = false,
 				}
 			end,
@@ -125,7 +152,10 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "dprint fmt ",
-					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					args = {
+						"--config ",
+						"~/.config/dotfiles/dpript/dprint.json",
+					},
 					stdin = false,
 				}
 			end,
@@ -134,7 +164,10 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "dprint fmt ",
-					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					args = {
+						"--config ",
+						"~/.config/dotfiles/dpript/dprint.json",
+					},
 					stdin = false,
 				}
 			end,
@@ -143,7 +176,10 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "dprint fmt ",
-					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					args = {
+						"--config ",
+						"~/.config/dotfiles/dpript/dprint.json",
+					},
 					stdin = false,
 				}
 			end,
@@ -152,7 +188,10 @@ require("formatter").setup({
 			function()
 				return {
 					exe = "dprint fmt ",
-					args = { "--config ", "~/.config/dotfiles/dpript/dprint.json" },
+					args = {
+						"--config ",
+						"~/.config/dotfiles/dpript/dprint.json",
+					},
 					stdin = false,
 				}
 			end,
