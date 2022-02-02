@@ -11,7 +11,7 @@ function file_exists(name)
 	end
 end
 
-if file_exists(os.getenv("PWD") .. "/package.json") then
+if file_exists(os.getenv("PWD") .. "/package.json") or file_exists(os.getenv("PWD") .. "/tsconfig.json") then
 	require("lspconfig").tsserver.setup({
 		capabilities = setup.capabilities,
 
