@@ -8,6 +8,7 @@ local configs = require("lspconfig/configs")
 
 lspconfig.cssls.setup({
 	capabilities = setup.capabilities,
+	filetypes = { "css", "scss", "less", "jsx", "tsx", "javascriptreact", "typescriptreact" },
 })
 
 lspconfig.html.setup({
@@ -18,7 +19,7 @@ if not lspconfig.emmet_ls then
 	configs.emmet_ls = {
 		default_config = {
 			cmd = { "emmet-ls", "--stdio" },
-			filetypes = { "html", "css", "blade" },
+			filetypes = { "html", "css", "blade", "jsx", "tsx", "javascriptreact", "typescriptreact" },
 			root_dir = function(fname)
 				return vim.loop.cwd()
 			end,
