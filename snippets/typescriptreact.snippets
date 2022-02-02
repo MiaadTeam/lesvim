@@ -36,10 +36,10 @@ snippet lloe
 	*	Please remove your log after debugging
 	*/
 	console.group("${1} ------ ");
-	console.error(" ============= ");
-	console.error();
-	console.error({${1}}, " ------ ");
-	console.error();
-	console.error(" ============= ");
+	console.debug(" ============= ");
+	console.debug();
+	console.debug({${1}}, " ------ ");
+	console.debug();
+	console.debug(" ============= ");
 	console.groupEnd();
 
