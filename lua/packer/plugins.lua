@@ -194,6 +194,8 @@ require("packer").startup(function()
 	})
 	-- Additional textobjects for treesitter
 	use("nvim-treesitter/nvim-treesitter-textobjects")
+	-- Show code context in the above
+	use("romgrk/nvim-treesitter-context")
 
 	use("onsails/lspkind-nvim")
 
