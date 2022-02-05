@@ -132,7 +132,7 @@ require("packer").startup(function()
 					"IndentBlanklineIndent3",
 					"IndentBlanklineIndent4",
 				},
-				show_trailing_blankline_indent = false,
+				show_trailing_blankline_indent = true,
 			})
 		end,
 	})
@@ -245,8 +245,7 @@ require("packer").startup(function()
 		config = function()
 			local has_words_before = function()
 				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-				return col ~= 0
-					and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+				return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 			end
 
 			-- local luasnip = require("luasnip")
@@ -616,6 +615,14 @@ require("packer").startup(function()
 							checkOnSave = {
 								command = "clippy",
 							},
+							lens = {
+								enumVariantReferences = true,
+								methodReferences = true,
+								references = true,
+							},
+							rustfmt = {
+								enableRangeFormatting = true,
+							},
 						},
 					},
 				},
@@ -636,7 +643,8 @@ require("packer").startup(function()
 	use({
 		"beauwilliams/focus.nvim",
 		config = function()
-			require("focus").setup({ relativenumber = true, excluded_filetypes = { "toggleterm" } })
+			-- require("focus").setup({ relativenumber = true, excluded_filetypes = { "toggleterm" } })
+			require("focus").setup()
 		end,
 	})
 
