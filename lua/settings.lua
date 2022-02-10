@@ -28,7 +28,7 @@ vim.o.showtabline = 2 -- Always show tabs
 vim.o.showmode = false -- We don't need to see things like -- INSERT -- anymore
 vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
-vim.o.updatetime = 500 -- Faster completion
+vim.o.updatetime = 300 -- Faster completion
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
 -- vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
@@ -43,3 +43,12 @@ vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h
 -- vim.o.guifont = "FiraCode Nerd Font:h37"
 
 -- vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+vim.api.nvim_exec(
+	[[
+augroup ShowDiagnostic
+  autocmd!
+  autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focusable = false })
+augroup END
+]],
+	true
+)
