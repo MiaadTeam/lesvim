@@ -129,6 +129,8 @@ We want to create an awesome Development Environment's so a big part of this doc
 
   - Install [`stylua`](https://github.com/JohnnyMorganz/StyLua) and set it to your `$PATH` (An opinionated Lua code formatter written in rust)
 
+  - It's my [`stylua.toml`](https://raw.githubusercontent.com/hemedani/dotfiles/main/stylua.toml) file, you should put it in `$HOME/.config/dotfiles/stylua.toml`
+
   - Install `prettier` globally: `npm i -g prettier` (Sorry for using this poorly performing package, however, we need it just for a few filetypes)
 
 - _Install LSPs_
