@@ -61,7 +61,8 @@ return {
 	mappings = {
 		["q"] = { "<cmd>q!<CR>", "Quit" },
 		["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
-		["c"] = { "<cmd>bd<CR>", "Close Buffer" },
+		["c"] = { "<CMD>bd<CR>", "Close Buffer (bd)" },
+		["C"] = { "<CMD>close<CR>", "Close Buffer (close)" },
 		["e"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Explorer" },
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 		["r"] = { "<cmd>Format<CR>", "Reformat File" },
@@ -231,6 +232,17 @@ return {
 			name = "Spell",
 			t = { "<CMD>set spell!<CR>", "toggle spell checker" },
 			p = { "<CMD>normal! mz[s1z=`z<CR>", "pick first suggest in spell checker" },
+		},
+		y = {
+			name = "+ Yode Plugin",
+			c = { "<CMD>YodeCreateSeditorFloating<CR>", "Create floatin section" },
+			r = { "<CMD>YodeCreateSeditorReplace<CR>", "Create replace section" },
+			d = { "<CMD>YodeBufferDelete<CR>", "Delete Yoda buffer" },
+			-- split window keys
+			j = { "<CMD>YodeLayoutShiftWinDown<CR>", "Shift down" },
+			k = { "<CMD>YodeLayoutShiftWinUp<CR>", "Shift up" },
+			l = { "<CMD>YodeLayoutShiftWinBottom<CR>", "Shift bottom" },
+			h = { "<CMD>YodeLayoutShiftWinTop<CR>", "Shift top" },
 		},
 	},
 }

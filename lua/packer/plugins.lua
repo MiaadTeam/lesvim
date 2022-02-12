@@ -497,6 +497,17 @@ require("packer").startup(function()
 			wk.register({
 				["/"] = { "<ESC><CMD>'<,'>lua require('Comment').toggle()<CR>", "Comment" },
 				["s"] = { "<ESC><CMD>'<,'>lua require('spectre').open_visual()<CR>", "Search and replace" },
+				y = {
+					name = "+ Yode Plugin",
+					c = { "<ESC><CMD>'<,'>YodeCreateSeditorFloating<CR>", "Create floatin section" },
+					r = { "<ESC><CMD>'<,'>YodeCreateSeditorReplace<CR>", "Create replace section" },
+					d = { "<CMD>YodeBufferDelete<CR>", "Delete Yoda buffer" },
+					-- split window keys
+					j = { "<CMD>YodeLayoutShiftWinDown<CR>", "Shift down" },
+					k = { "<CMD>YodeLayoutShiftWinUp<CR>", "Shift up" },
+					l = { "<CMD>YodeLayoutShiftWinBottom<CR>", "Shift bottom" },
+					h = { "<CMD>YodeLayoutShiftWinTop<CR>", "Shift top" },
+				},
 			}, {
 				mode = "v", -- VISUAL mode
 				prefix = "<leader>",
@@ -642,11 +653,18 @@ require("packer").startup(function()
 		end,
 	})
 
+	-- use({
+	-- 	"beauwilliams/focus.nvim",
+	-- 	config = function()
+	-- 		-- require("focus").setup({ relativenumber = true, excluded_filetypes = { "toggleterm" } })
+	-- 		require("focus").setup()
+	-- 	end,
+	-- })
+
 	use({
-		"beauwilliams/focus.nvim",
+		"hoschi/yode-nvim",
 		config = function()
-			-- require("focus").setup({ relativenumber = true, excluded_filetypes = { "toggleterm" } })
-			require("focus").setup()
+			require("yode-nvim").setup({})
 		end,
 	})
 
