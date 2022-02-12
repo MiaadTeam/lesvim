@@ -21,6 +21,7 @@ vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 vim.cmd("set ts=4") -- Insert 2 spaces for a tab
 vim.cmd("set sw=4") -- Change the number of space characters inserted for indentation
 vim.cmd("set expandtab") -- Converts tabs to spaces
+vim.cmd("set shiftwidth=2") -- change tab size to 2 space
 vim.bo.smartindent = true -- Makes indenting smart
 vim.wo.relativenumber = true -- set relative number
 vim.wo.cursorline = true -- Enable highlighting of the current line
