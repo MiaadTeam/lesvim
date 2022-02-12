@@ -672,6 +672,9 @@ require("packer").startup(function()
 			require("yode-nvim").setup({})
 		end,
 	})
+	use({
+		"haringsrob/nvim_context_vt",
+	})
 
 	-- use({
 	-- 	"VonHeikemen/fine-cmdline.nvim",

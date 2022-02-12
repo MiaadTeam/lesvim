@@ -67,6 +67,7 @@ return {
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
 		["r"] = { "<cmd>Format<CR>", "Reformat File" },
 		["h"] = { "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)" },
+		["v"] = { "<CMD>NvimContextVtToggle<CR>", "Virtual text by treesitter" },
 		w = {
 			name = "Windows Mannager",
 			m = { "<cmd>WinShift<CR>", "Window manipulation" },
