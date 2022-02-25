@@ -130,7 +130,7 @@ require("formatter").setup({
 					exe = "dprint fmt ",
 					args = {
 						"--config ",
-						"~/.config/dotfiles/dpript/dprint.json",
+						"~/.config/dotfiles/dprint/dprint.json",
 					},
 					stdin = false,
 				}
@@ -142,7 +142,7 @@ require("formatter").setup({
 					exe = "dprint fmt ",
 					args = {
 						"--config ",
-						"~/.config/dotfiles/dpript/dprint.json",
+						"~/.config/dotfiles/dprint/dprint.json",
 					},
 					stdin = false,
 				}
@@ -154,7 +154,7 @@ require("formatter").setup({
 					exe = "dprint fmt ",
 					args = {
 						"--config ",
-						"~/.config/dotfiles/dpript/dprint.json",
+						"~/.config/dotfiles/dprint/dprint.json",
 					},
 					stdin = false,
 				}
@@ -166,7 +166,7 @@ require("formatter").setup({
 					exe = "dprint fmt ",
 					args = {
 						"--config ",
-						"~/.config/dotfiles/dpript/dprint.json",
+						"~/.config/dotfiles/dprint/dprint.json",
 					},
 					stdin = false,
 				}
@@ -178,7 +178,7 @@ require("formatter").setup({
 					exe = "dprint fmt ",
 					args = {
 						"--config ",
-						"~/.config/dotfiles/dpript/dprint.json",
+						"~/.config/dotfiles/dprint/dprint.json",
 					},
 					stdin = false,
 				}
@@ -190,7 +190,7 @@ require("formatter").setup({
 					exe = "dprint fmt ",
 					args = {
 						"--config ",
-						"~/.config/dotfiles/dpript/dprint.json",
+						"~/.config/dotfiles/dprint/dprint.json",
 					},
 					stdin = false,
 				}
