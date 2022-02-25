@@ -54,12 +54,9 @@ require("packer").startup(function()
 		end,
 	})
 
-	use({
-		"blackCauldron7/surround.nvim",
-		config = function()
-			require("surround").setup({ mappings_style = "sandwich" })
-		end,
-	})
+    use({
+      "tpope/vim-surround"
+    })
 
 	use({
 		"phaazon/hop.nvim",
@@ -675,6 +672,8 @@ require("packer").startup(function()
 	use({
 		"haringsrob/nvim_context_vt",
 	})
+
+    use({"pgdouyon/vim-yin-yang"})
 
 	-- use({
 	-- 	"VonHeikemen/fine-cmdline.nvim",
