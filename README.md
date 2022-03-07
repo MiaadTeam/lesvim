@@ -315,7 +315,7 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
 - `Insert MODE` keybinds:
 
-  press `ii` in either Insert or Visual mode to enter Normal mode (Can be changed in /lua/keymap/escape.lua)
+  press `jk | kj` in either Insert or Visual mode to enter Normal mode (Can be changed in /lua/keymap/escape.lua)
 
 ### _LSP_
 
