@@ -320,7 +320,7 @@ require("packer").startup(function()
 					{ name = "buffer" },
 				}),
 				formatting = {
-					format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
+					format = lspkind.cmp_format({ mode = "symbol", with_text = false, maxwidth = 50 }),
 				},
 			})
 
@@ -373,8 +373,6 @@ require("packer").startup(function()
 			require("lspsaga").init_lsp_saga()
 		end,
 	})
-
-	use("kosayoda/nvim-lightbulb")
 
 	use({
 		"weilbith/nvim-code-action-menu",

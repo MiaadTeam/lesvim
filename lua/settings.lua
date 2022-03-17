@@ -44,7 +44,6 @@ vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
 -- vim.o.guifont = "FiraCode Nerd Font:h37"
 
--- vim.cmd([[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
 vim.api.nvim_exec(
 	[[
 augroup ShowDiagnostic
