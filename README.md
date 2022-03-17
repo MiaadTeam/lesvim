@@ -116,7 +116,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 - Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
   - please install the nightly version of Neovim and install LuaJit.
 - Install [`Cascadia Code`](https://github.com/microsoft/cascadia-code), [`Hack Nerd`](https://github.com/ryanoasis/nerd-fonts) and [`Adobe Arabic`](https://www.download-free-fonts.com/details/75203/adobe-arabic-regular) fonts
-- Install Meslo Nerd Font patched for Powerlevel10k
+- Install Meslo Nerd Font patched
   - Manual Meslo font installation:
     1. Download these four ttf files:
        - [MesloLGS NF Regular.ttf](
