@@ -110,12 +110,25 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 ### Prerequisites
 
-- _Install [Rust](https://www.rust-lang.org/tools/install)_
-- _Install [Node JS](https://github.com/Schniz/fnm)_
-- _Install [Deno](https://deno.land/#installation)_
-- _Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)_
+- Install [Rust](https://www.rust-lang.org/tools/install)
+- Install [Node JS](https://github.com/Schniz/fnm)
+- Install [Deno](https://deno.land/#installation)
+- Install [Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
   - please install the nightly version of Neovim and install LuaJit.
-- _Install [`Cascadia Code`](https://github.com/microsoft/cascadia-code), [`Hack Nerd`](https://github.com/ryanoasis/nerd-fonts) and [`Adobe Arabic`](https://www.download-free-fonts.com/details/75203/adobe-arabic-regular) fonts_
+- Install [`Cascadia Code`](https://github.com/microsoft/cascadia-code), [`Hack Nerd`](https://github.com/ryanoasis/nerd-fonts) and [`Adobe Arabic`](https://www.download-free-fonts.com/details/75203/adobe-arabic-regular) fonts
+- Install Meslo Nerd Font patched for Powerlevel10k
+  - Manual Meslo font installation:
+    1. Download these four ttf files:
+       - [MesloLGS NF Regular.ttf](
+           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+       - [MesloLGS NF Bold.ttf](
+           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+       - [MesloLGS NF Italic.ttf](
+           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+       - [MesloLGS NF Bold Italic.ttf](
+           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+    2. Double-click on each file and click "Install". This will make `MesloLGS NF` font available to all
+       applications on your system.
 
 - _Installing the Formatter_
 
