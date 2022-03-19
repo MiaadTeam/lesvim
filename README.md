@@ -31,14 +31,14 @@
 
 - [About The Project](#about-the-project)
 - [Getting Started](#getting-started)
-  - [Recommendation](#recommendation)
+  - [Recommendation](#recommendation) Read this section for having best experience in this development environment
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
   - [_Wezterm_](#wezterm)
   - [_Vim or Neovim_](#vim-or-neovim)
   - [_LSP_](#lsp)
-- [Plugins](#plugins)
+- [Plugins](#plugins) Read this section to increase your mastery of this development environment
 - [Show your support](#show-your-support)
 
 </details>
@@ -341,6 +341,7 @@ You might have already noticed that all the shortcuts here begin with `command` 
 - Press `]d` to jump to the previous diagnostic of the opened buffers.
 
 ## Plugins
+_We tried to use Lua plugins as much as possible_
 
 - We use [`packer`](https://github.com/wbthomason/packer.nvim) for manage plugins:
 
@@ -349,6 +350,10 @@ You might have already noticed that all the shortcuts here begin with `command` 
 - We use [`plenary`](https://github.com/nvim-lua/plenary.nvim) as dependencies for many plugins and Lua utils:
 
   plenary: full; complete; entire; absolute; unqualified. All the Lua functions I don't want to write twice.
+  
+- We use [`popup`](https://github.com/nvim-lua/popup.nvim) as a Popup tools :
+
+  [WIP] An implementation of the Popup API from vim in Neovim. Hope to upstream when complete 
 
 - We use [`windline`](https://github.com/windwp/windline.nvim) for the status line:
 
@@ -403,6 +408,14 @@ You might have already noticed that all the shortcuts here begin with `command` 
 - We use [`nvim-ts-autotag`](https://github.com/windwp/nvim-ts-autotag) for close and rename HTML tags:
 
   Use treesitter to auto-close and auto-rename HTML tag
+
+- We use [`vim-surround`](https://github.com/tpope/vim-surround) for manage word inside parentheses/quotes/XML-tags etc :
+
+  surround.vim: Delete/change/add parentheses/quotes/XML-tags/much more with ease 
+
+- We use [`hop.nvim`](https://github.com/phaazon/hop.nvim) for motion beetween words:
+
+  Neovim motions on speed!
 
 ## Show your support
 
