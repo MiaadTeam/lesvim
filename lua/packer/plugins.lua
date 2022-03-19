@@ -14,7 +14,6 @@ require("packer").startup(function()
 	use("nvim-lua/plenary.nvim")
 	use("nvim-lua/popup.nvim")
 	use("tpope/vim-fugitive") -- Git commands in nvim
-	use("tpope/vim-rhubarb") -- Fugitive-companion to interact with github
 	use("yamatsum/nvim-cursorline")
 
 	use({ "turbio/bracey.vim", run = "npm install --prefix server" })
@@ -65,7 +64,7 @@ require("packer").startup(function()
 			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 		end,
-	})
+	}) -- documents plugins in readme until here
 
 	-- a lua powered greeter like vim-startify / dashboard-nvim
 	use({
