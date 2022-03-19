@@ -547,6 +547,50 @@ _We tried to use Lua plugins as much as possible_
 
   A markdown preview directly in your neovim. 
 
+- We use [`rest.nvim`](https://github.com/NTBBloodbath/rest.nvim) for sending http request:
+
+  A fast Neovim http client written in Lua
+
+- We use [`nvim-hlslens`](https://github.com/kevinhwang91/nvim-hlslens) for better search highlights in buffer:
+
+  nvim-hlslens helps you better glance at matched information, seamlessly jump between matched instances.
+
+- We use [`rust-tools.nvim`](https://github.com/simrat39/rust-tools.nvim) rust development utils:
+
+  Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
+
+- We use [`crates.nvim`](https://github.com/saecki/crates.nvim) for getting information of cargo crates in toml files:
+
+  A neovim plugin that helps managing crates.io dependencies
+
+- We use [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
+
+  Debug Adapter Protocol client implementation for Neovim (>= 0.5) 
+
+- We use [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
+
+  Debug Adapter Protocol client implementation for Neovim (>= 0.5) 
+
+- We use [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua) a color highlighter:
+
+  A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
+
+- We use [`yode-nvim`](https://github.com/hoschi/yode-nvim) for focus on some part of code:
+
+  Focus on the important parts of the code. Hide the rest, literally.
+
+- We use [`nvim_context_v`](https://github.com/haringsrob/nvim_context_vt) extra virtual text:
+
+  Shows virtual text of the current context after functions, methods, statements, etc.
+
+- We use [`vim-yin-yang`](https://github.com/pgdouyon/vim-yin-yang) low contrast theme:
+
+  Yin-Yang is a black and white color scheme for Vim and is heavily inspired by preto and base16-grayscale.
+
+- We use [`better-escape.nvim`](https://github.com/max397574/better-escape.nvim) for better escape with `jk` or `kj`:
+
+  Escape from insert mode without delay when typing 
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!

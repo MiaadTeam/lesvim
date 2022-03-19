@@ -377,7 +377,7 @@ require("packer").startup(function()
 
 			require("packer.settings.autopairs")
 		end,
-	}) -- documents plugins in readme until here
+	})
 
 	-- Built-in Terminal
 	use({ "akinsho/nvim-toggleterm.lua" })
@@ -589,16 +589,6 @@ require("packer").startup(function()
 	})
 	use({ "kevinhwang91/nvim-hlslens" })
 
-	-- cargo crates for rust toml file
-	use({
-		"saecki/crates.nvim",
-		event = { "BufRead Cargo.toml" },
-		requires = { { "nvim-lua/plenary.nvim" } },
-		config = function()
-			require("crates").setup()
-		end,
-	})
-
 	use({
 		"simrat39/rust-tools.nvim",
 		config = function()
@@ -643,6 +633,17 @@ require("packer").startup(function()
 			require("rust-tools").setup(opts)
 		end,
 	})
+
+	-- cargo crates for rust toml file
+	use({
+		"saecki/crates.nvim",
+		event = { "BufRead Cargo.toml" },
+		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("crates").setup()
+		end,
+	})
+
 	use({ "mfussenegger/nvim-dap" })
 
 	use({
