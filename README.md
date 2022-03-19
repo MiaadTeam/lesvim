@@ -417,6 +417,18 @@ _We tried to use Lua plugins as much as possible_
 
   Neovim motions on speed!
 
+- We use [`nvim-ts-rainbow`](https://github.com/p00f/nvim-ts-rainbow) for coloring matches parentheses/braces and etc in variety of rainbow color:
+
+  Rainbow parentheses for neovim using tree-sitter. Also at https://sr.ht/~p00f/nvim-ts-rainbow
+
+- We use [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for greeter page:
+
+  a lua powered greeter like vim-startify / dashboard-nvim
+
+- We use [`indent-blankline.nvim`](https://github.com/lukas-reineke/indent-blankline.nvim) for coloring indent blankline:
+
+  Indent guides for Neovim
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
