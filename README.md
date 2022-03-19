@@ -193,9 +193,10 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 ### _Wezterm_
 
-- Tabs and Pane's creation deletion:
+- _Tabs and Pane's creation deletion_
 
   - `command + shift + N` or `super + shift + N` shortcut to create a new terminal window.
+  - `command + shift + Z` or `super + shift + Z` toggle full screen windows. 
   - `command + t` or `super + t` shortcut to create a new terminal tab.
   - `command + w` or `super + w` shortcut to close the current terminal tab.
   - `command + '` or `super + '` shortcut to create a new vertical terminal split pane.
@@ -203,6 +204,12 @@ We want to create an awesome Development Environment's so a big part of this doc
   - `command + x` or `super + x` shortcut to close the current terminal pane.
   - `command + z` or `super + z` shortcut to toggle the current terminal pane zoom.
 
+- _Tabs navigation_
+
+  - `command + ,` or `super + ,` goes to the right available tab.
+  - `command + m` or `super + m` goes to the left available tab.
+  - `command shift + T` or `super + shift + T` show tabs navigator menu.
+  
 - _Pane navigation_
 
   - `command + ctrl + h` or `super + ctrl + h` goes to the left available pane.
@@ -210,6 +217,11 @@ We want to create an awesome Development Environment's so a big part of this doc
   - `command + ctrl + k` or `super + ctrl + k` goes to the top available pane.
   - `command + ctrl + j` or `super + ctrl + j` goes to the bottom available pane.
   - `command + shift + T` or `super + shift + T` shows tab navigator options.
+
+- _Pane cycles_
+
+  - `command + ctrl + n` or `super + ctrl + n` goes to the next available pane.
+  - `command + ctrl + p` or `super + ctrl + p` goes to the prev available pane.
 
 - _Pane resizing_
 
