@@ -64,7 +64,7 @@ require("packer").startup(function()
 			-- you can configure Hop the way you like here; see :h hop-config
 			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 		end,
-	}) -- documents plugins in readme until here
+	})
 
 	-- a lua powered greeter like vim-startify / dashboard-nvim
 	use({
@@ -196,7 +196,7 @@ require("packer").startup(function()
 	-- Additional textobjects for treesitter
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	-- Show code context in the above
-	use("romgrk/nvim-treesitter-context")
+	use("romgrk/nvim-treesitter-context") -- documents plugins in readme until here
 
 	use("onsails/lspkind-nvim")
 

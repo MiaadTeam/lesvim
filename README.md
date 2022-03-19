@@ -31,14 +31,14 @@
 
 - [About The Project](#about-the-project)
 - [Getting Started](#getting-started)
-  - [Recommendation](#recommendation) Read this section for having best experience in this development environment
+  - [Recommendation](#recommendation) _Read this section for having best experience in this development environment_
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
   - [_Wezterm_](#wezterm)
   - [_Vim or Neovim_](#vim-or-neovim)
   - [_LSP_](#lsp)
-- [Plugins](#plugins) Read this section to increase your mastery of this development environment
+- [Plugins](#plugins) _Read this section to increase your mastery of this development environment_
 - [Show your support](#show-your-support)
 
 </details>
@@ -428,6 +428,26 @@ _We tried to use Lua plugins as much as possible_
 - We use [`indent-blankline.nvim`](https://github.com/lukas-reineke/indent-blankline.nvim) for coloring indent blankline:
 
   Indent guides for Neovim
+
+- We use [`winshift.nvim`](https://github.com/sindrets/winshift.nvim) for managing Windows:
+
+  Rearrange your windows with ease.
+
+- We use [`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim) for git integration:
+
+  Git integration for buffers
+
+- We use [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) Highlight, edit, and navigate code using a fast incremental parsing library:
+
+  Nvim Treesitter configurations and abstraction layer
+
+- We use [`nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) Additional textobjects for treesitter:
+
+  Syntax aware text-objects, select, move, swap, and peek support.
+
+- We use [`nvim-treesitter-context`](https://github.com/romgrk/nvim-treesitter-context) Show code context in the above:
+
+  Lightweight alternative to context.vim implemented with nvim-treesitter.
 
 ## Show your support
 
