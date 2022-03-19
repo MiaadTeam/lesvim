@@ -449,6 +449,50 @@ _We tried to use Lua plugins as much as possible_
 
   Lightweight alternative to context.vim implemented with nvim-treesitter.
 
+- We use [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) Collection of configurations for built-in LSP client:
+
+  Quickstart configurations for the Nvim LSP client
+
+- We use [`lspkind-nvim`](https://github.com/onsails/lspkind-nvim) Pictograms for built-in LSP client:
+
+  vscode-like pictograms for neovim lsp completion items
+
+- We use [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) Completion plugin :
+
+  A completion plugin for neovim coded in Lua.
+
+- We use [`cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) Completion plugin for LSP:
+
+  nvim-cmp source for neovim builtin LSP client
+
+- We use [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) Completion plugin for buffer:
+
+  nvim-cmp source for buffer words
+
+- We use [`cmp-path`](https://github.com/hrsh7th/cmp-path) Completion plugin for PATH:
+
+  nvim-cmp source for path
+
+- We use [`cmp-cmdline`](https://github.com/hrsh7th/cmp-cmdline) Completion plugin for command-line:
+
+  nvim-cmp source for vim's cmdline
+
+- We use [`nvim-snippy`](https://github.com/dcampos/nvim-snippy) for handling Snippets:
+
+  Snippet plugin for Neovim
+
+- We use [`cmp-snippy`](https://github.com/dcampos/cmp-snippy) for handling nvim-snippy in nvim-cmp:
+
+  nvim-snippy completion source for nvim-cmp.
+
+- We use [`registers.nvim`](https://github.com/tversteeg/registers.nvim) for handling vim registers:
+
+  📑 Neovim plugin to preview the contents of the registers 
+
+- We use [`nvim-autopairs`](https://github.com/windwp/nvim-autopairs) for handling autopairs:
+
+  autopairs for neovim written by lua
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!

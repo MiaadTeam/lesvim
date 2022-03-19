@@ -196,7 +196,7 @@ require("packer").startup(function()
 	-- Additional textobjects for treesitter
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	-- Show code context in the above
-	use("romgrk/nvim-treesitter-context") -- documents plugins in readme until here
+	use("romgrk/nvim-treesitter-context")
 
 	use("onsails/lspkind-nvim")
 
@@ -357,7 +357,7 @@ require("packer").startup(function()
 
 			require("packer.settings.autopairs")
 		end,
-	})
+	}) -- documents plugins in readme until here
 
 	-- Built-in Terminal
 	use({ "akinsho/nvim-toggleterm.lua" })
