@@ -342,252 +342,253 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
 ## Plugins
 _We tried to use Lua plugins as much as possible_
+So We use this plugins:
 
-- We use [`packer`](https://github.com/wbthomason/packer.nvim) for manage plugins:
+- [`packer`](https://github.com/wbthomason/packer.nvim) for manage plugins:
 
   A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
 
-- We use [`plenary`](https://github.com/nvim-lua/plenary.nvim) as dependencies for many plugins and Lua utils:
+- [`plenary`](https://github.com/nvim-lua/plenary.nvim) as dependencies for many plugins and Lua utils:
 
   plenary: full; complete; entire; absolute; unqualified. All the Lua functions I don't want to write twice.
   
-- We use [`popup`](https://github.com/nvim-lua/popup.nvim) as a Popup tools :
+- [`popup`](https://github.com/nvim-lua/popup.nvim) as a Popup tools :
 
   [WIP] An implementation of the Popup API from vim in Neovim. Hope to upstream when complete 
 
-- We use [`windline`](https://github.com/windwp/windline.nvim) for the status line:
+- [`windline`](https://github.com/windwp/windline.nvim) for the status line:
 
   Animation status line, floating window status line. Using **lua + luv** would make some wind.
 
-- We use [`Telescope`](https://github.com/nvim-telescope/telescope.nvim) as a finder modal:
+- [`Telescope`](https://github.com/nvim-telescope/telescope.nvim) as a finder modal:
 
   Find, Filter, Preview, Pick. All Lua, all the time.
 
-- We use [`which-key.nvim`](https://github.com/folke/which-key.nvim) for amazing keybinding:
+- [`which-key.nvim`](https://github.com/folke/which-key.nvim) for amazing keybinding:
 
   💥 Create key bindings that stick. WhichKey is a Lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
 
-- We use [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for Dashboard like things:
+- [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for Dashboard like things:
 
   a Lua powered greeter like vim-startify / dashboard-nvim
 
-- We use [`format.nvim`](https://github.com/lukas-reineke/format.nvim) for formatting document:
+- [`format.nvim`](https://github.com/lukas-reineke/format.nvim) for formatting document:
 
   Neovim Lua plugin to format the current buffer with external executables
 
-- We use [`fugitive`](https://github.com/tpope/vim-fugitive) as a git ui for vim:
+- [`fugitive`](https://github.com/tpope/vim-fugitive) as a git ui for vim:
 
   fugitive.vim: A Git wrapper so awesome, it should be illegal
 
-- We use [`nvim-cursorline`](https://github.com/yamatsum/nvim-cursorline) for the highlighted word:
+- [`nvim-cursorline`](https://github.com/yamatsum/nvim-cursorline) for the highlighted word:
 
   A plugin for neovim that highlights cursor words and lines
 
-- We use [`renamer`](https://github.com/filipdutescu/renamer.nvim) for search and rename a variable|method and etc:
+- [`renamer`](https://github.com/filipdutescu/renamer.nvim) for search and rename a variable|method and etc:
 
   VS Code-like renaming UI for Neovim, written in Lua.
 
-- We use [`nvim-spectre`](https://github.com/windwp/nvim-spectre) for search and with ripgrep:
+- [`nvim-spectre`](https://github.com/windwp/nvim-spectre) for search and with ripgrep:
 
   Find the enemy and replace them with dark power.
 
-- We use [`bracey`](https://github.com/turbio/bracey.vim) for HTTP live server:
+- [`bracey`](https://github.com/turbio/bracey.vim) for HTTP live server:
 
   live edit HTML, CSS, and javascript in vim
 
-- We use [`markdown-preview`](https://github.com/iamcco/markdown-preview.nvim) for preview markdown in browser:
+- [`markdown-preview`](https://github.com/iamcco/markdown-preview.nvim) for preview markdown in browser:
 
   markdown preview plugin for (neo)vim
 
-- We use [`nvim-ts-autotag`](https://github.com/windwp/nvim-ts-autotag) for close and rename HTML tags:
+- [`nvim-ts-autotag`](https://github.com/windwp/nvim-ts-autotag) for close and rename HTML tags:
 
   Use treesitter to auto-close and auto-rename HTML tag
 
-- We use [`vim-surround`](https://github.com/tpope/vim-surround) for manage word inside parentheses/quotes/XML-tags etc :
+- [`vim-surround`](https://github.com/tpope/vim-surround) for manage word inside parentheses/quotes/XML-tags etc :
 
   surround.vim: Delete/change/add parentheses/quotes/XML-tags/much more with ease 
 
-- We use [`hop.nvim`](https://github.com/phaazon/hop.nvim) for motion beetween words:
+- [`hop.nvim`](https://github.com/phaazon/hop.nvim) for motion beetween words:
 
   Neovim motions on speed!
 
-- We use [`nvim-ts-rainbow`](https://github.com/p00f/nvim-ts-rainbow) for coloring matches parentheses/braces and etc in variety of rainbow color:
+- [`nvim-ts-rainbow`](https://github.com/p00f/nvim-ts-rainbow) for coloring matches parentheses/braces and etc in variety of rainbow color:
 
   Rainbow parentheses for neovim using tree-sitter. Also at https://sr.ht/~p00f/nvim-ts-rainbow
 
-- We use [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for greeter page:
+- [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for greeter page:
 
   a lua powered greeter like vim-startify / dashboard-nvim
 
-- We use [`indent-blankline.nvim`](https://github.com/lukas-reineke/indent-blankline.nvim) for coloring indent blankline:
+- [`indent-blankline.nvim`](https://github.com/lukas-reineke/indent-blankline.nvim) for coloring indent blankline:
 
   Indent guides for Neovim
 
-- We use [`winshift.nvim`](https://github.com/sindrets/winshift.nvim) for managing Windows:
+- [`winshift.nvim`](https://github.com/sindrets/winshift.nvim) for managing Windows:
 
   Rearrange your windows with ease.
 
-- We use [`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim) for git integration:
+- [`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim) for git integration:
 
   Git integration for buffers
 
-- We use [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) Highlight, edit, and navigate code using a fast incremental parsing library:
+- [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) Highlight, edit, and navigate code using a fast incremental parsing library:
 
   Nvim Treesitter configurations and abstraction layer
 
-- We use [`nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) Additional textobjects for treesitter:
+- [`nvim-treesitter-textobjects`](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) Additional textobjects for treesitter:
 
   Syntax aware text-objects, select, move, swap, and peek support.
 
-- We use [`nvim-treesitter-context`](https://github.com/romgrk/nvim-treesitter-context) Show code context in the above:
+- [`nvim-treesitter-context`](https://github.com/romgrk/nvim-treesitter-context) Show code context in the above:
 
   Lightweight alternative to context.vim implemented with nvim-treesitter.
 
-- We use [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) Collection of configurations for built-in LSP client:
+- [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) Collection of configurations for built-in LSP client:
 
   Quickstart configurations for the Nvim LSP client
 
-- We use [`lspkind-nvim`](https://github.com/onsails/lspkind-nvim) Pictograms for built-in LSP client:
+- [`lspkind-nvim`](https://github.com/onsails/lspkind-nvim) Pictograms for built-in LSP client:
 
   vscode-like pictograms for neovim lsp completion items
 
-- We use [`lspsaga.nvim`](https://github.com/glepnir/lspsaga.nvim) a lsp plugin:
+- [`lspsaga.nvim`](https://github.com/glepnir/lspsaga.nvim) a lsp plugin:
 
   A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
 
-- We use [`trouble.nvim`](https://github.com/folke/trouble.nvim) a diagnostics tools:
+- [`trouble.nvim`](https://github.com/folke/trouble.nvim) a diagnostics tools:
 
   🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing. 
 
-- We use [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) Completion plugin :
+- [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) Completion plugin :
 
   A completion plugin for neovim coded in Lua.
 
-- We use [`cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) Completion plugin for LSP:
+- [`cmp-nvim-lsp`](https://github.com/hrsh7th/cmp-nvim-lsp) Completion plugin for LSP:
 
   nvim-cmp source for neovim builtin LSP client
 
-- We use [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) Completion plugin for buffer:
+- [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer) Completion plugin for buffer:
 
   nvim-cmp source for buffer words
 
-- We use [`cmp-path`](https://github.com/hrsh7th/cmp-path) Completion plugin for PATH:
+- [`cmp-path`](https://github.com/hrsh7th/cmp-path) Completion plugin for PATH:
 
   nvim-cmp source for path
 
-- We use [`cmp-cmdline`](https://github.com/hrsh7th/cmp-cmdline) Completion plugin for command-line:
+- [`cmp-cmdline`](https://github.com/hrsh7th/cmp-cmdline) Completion plugin for command-line:
 
   nvim-cmp source for vim's cmdline
 
-- We use [`nvim-snippy`](https://github.com/dcampos/nvim-snippy) for handling Snippets:
+- [`nvim-snippy`](https://github.com/dcampos/nvim-snippy) for handling Snippets:
 
   Snippet plugin for Neovim
 
-- We use [`cmp-snippy`](https://github.com/dcampos/cmp-snippy) for handling nvim-snippy in nvim-cmp:
+- [`cmp-snippy`](https://github.com/dcampos/cmp-snippy) for handling nvim-snippy in nvim-cmp:
 
   nvim-snippy completion source for nvim-cmp.
 
-- We use [`registers.nvim`](https://github.com/tversteeg/registers.nvim) for handling vim registers:
+- [`registers.nvim`](https://github.com/tversteeg/registers.nvim) for handling vim registers:
 
   📑 Neovim plugin to preview the contents of the registers 
 
-- We use [`nvim-autopairs`](https://github.com/windwp/nvim-autopairs) for handling autopairs:
+- [`nvim-autopairs`](https://github.com/windwp/nvim-autopairs) for handling autopairs:
 
   autopairs for neovim written by lua
 
-- We use [`nvim-toggleterm.lua`](https://github.com/akinsho/nvim-toggleterm.lua) for managing multiple terminal:
+- [`nvim-toggleterm.lua`](https://github.com/akinsho/nvim-toggleterm.lua) for managing multiple terminal:
 
   A neovim lua plugin to help easily manage multiple terminal windows 
 
-- We use [`consolation.nvim`](https://github.com/pianocomposer321/consolation.nvim) a built-in neovim terminal:
+- [`consolation.nvim`](https://github.com/pianocomposer321/consolation.nvim) a built-in neovim terminal:
 
   A general-purpose terminal wrapper and management plugin for neovim, written in lua 
 
-- We use [`nvim-code-action-menu`](https://github.com/weilbith/nvim-code-action-menu) a better code action:
+- [`nvim-code-action-menu`](https://github.com/weilbith/nvim-code-action-menu) a better code action:
 
   Pop-up menu for code actions to show meta-information and diff preview
 
-- We use [`nvim-bufferline.lua`](https://github.com/akinsho/nvim-bufferline.lua) a buffer line to show nice data in buffer header:
+- [`nvim-bufferline.lua`](https://github.com/akinsho/nvim-bufferline.lua) a buffer line to show nice data in buffer header:
 
   A snazzy 💅 buffer line (with tabpage integration) for Neovim built using lua.
 
-- We use [`nvim-tree.lua`](https://github.com/kyazdani42/nvim-tree.lua) a tree like file explorer:
+- [`nvim-tree.lua`](https://github.com/kyazdani42/nvim-tree.lua) a tree like file explorer:
 
   A file explorer tree for neovim written in lua
 
-- We use [`project.nvim`](https://github.com/ahmedkhalf/project.nvim) a project management:
+- [`project.nvim`](https://github.com/ahmedkhalf/project.nvim) a project management:
 
   🗃️  project.nvim is an all in one neovim plugin written in lua that provides superior project management.
 
-- We use [`filetype.nvim`](https://github.com/nathom/filetype.nvim) speed up neovim startup:
+- [`filetype.nvim`](https://github.com/nathom/filetype.nvim) speed up neovim startup:
 
   Easily speed up your neovim startup time!
 
-- We use [`twilight.nvim`](https://github.com/folke/twilight.nvim) dims inactive portions of the code you're editing:
+- [`twilight.nvim`](https://github.com/folke/twilight.nvim) dims inactive portions of the code you're editing:
 
   🌅 Twilight is a Lua plugin for Neovim 0.5 that dims inactive portions of the code you're editing using TreeSitter. 
 
-- We use [`formatter.nvim`](https://github.com/mhartington/formatter.nvim) for format documents:
+- [`formatter.nvim`](https://github.com/mhartington/formatter.nvim) for format documents:
 
   A format runner for neovim, written in lua.
 
-- We use [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) for correctly handling code commenting:
+- [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) for correctly handling code commenting:
 
   Neovim treesitter plugin for setting the commentstring based on the cursor location in a file. 
 
-- We use [`Comment.nvim`](https://github.com/numToStr/Comment.nvim) for code commenting:
+- [`Comment.nvim`](https://github.com/numToStr/Comment.nvim) for code commenting:
 
   🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
-- We use [`stabilize.nvim`](https://github.com/luukvbaal/stabilize.nvim) for fixing little jump when a modal open/close from bottom or top:
+- [`stabilize.nvim`](https://github.com/luukvbaal/stabilize.nvim) for fixing little jump when a modal open/close from bottom or top:
 
   Neovim plugin to stabilize buffer content on window open/close events.
 
-- We use [`glow.nvim`](https://github.com/ellisonleao/glow.nvim) for preview markdown directly in neovim:
+- [`glow.nvim`](https://github.com/ellisonleao/glow.nvim) for preview markdown directly in neovim:
 
   A markdown preview directly in your neovim. 
 
-- We use [`rest.nvim`](https://github.com/NTBBloodbath/rest.nvim) for sending http request:
+- [`rest.nvim`](https://github.com/NTBBloodbath/rest.nvim) for sending http request:
 
   A fast Neovim http client written in Lua
 
-- We use [`nvim-hlslens`](https://github.com/kevinhwang91/nvim-hlslens) for better search highlights in buffer:
+- [`nvim-hlslens`](https://github.com/kevinhwang91/nvim-hlslens) for better search highlights in buffer:
 
   nvim-hlslens helps you better glance at matched information, seamlessly jump between matched instances.
 
-- We use [`rust-tools.nvim`](https://github.com/simrat39/rust-tools.nvim) rust development utils:
+- [`rust-tools.nvim`](https://github.com/simrat39/rust-tools.nvim) rust development utils:
 
   Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
 
-- We use [`crates.nvim`](https://github.com/saecki/crates.nvim) for getting information of cargo crates in toml files:
+- [`crates.nvim`](https://github.com/saecki/crates.nvim) for getting information of cargo crates in toml files:
 
   A neovim plugin that helps managing crates.io dependencies
 
-- We use [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
+- [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
 
   Debug Adapter Protocol client implementation for Neovim (>= 0.5) 
 
-- We use [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
+- [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
 
   Debug Adapter Protocol client implementation for Neovim (>= 0.5) 
 
-- We use [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua) a color highlighter:
+- [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua) a color highlighter:
 
   A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
 
-- We use [`yode-nvim`](https://github.com/hoschi/yode-nvim) for focus on some part of code:
+- [`yode-nvim`](https://github.com/hoschi/yode-nvim) for focus on some part of code:
 
   Focus on the important parts of the code. Hide the rest, literally.
 
-- We use [`nvim_context_v`](https://github.com/haringsrob/nvim_context_vt) extra virtual text:
+- [`nvim_context_v`](https://github.com/haringsrob/nvim_context_vt) extra virtual text:
 
   Shows virtual text of the current context after functions, methods, statements, etc.
 
-- We use [`vim-yin-yang`](https://github.com/pgdouyon/vim-yin-yang) low contrast theme:
+- [`vim-yin-yang`](https://github.com/pgdouyon/vim-yin-yang) low contrast theme:
 
   Yin-Yang is a black and white color scheme for Vim and is heavily inspired by preto and base16-grayscale.
 
-- We use [`better-escape.nvim`](https://github.com/max397574/better-escape.nvim) for better escape with `jk` or `kj`:
+- [`better-escape.nvim`](https://github.com/max397574/better-escape.nvim) for better escape with `jk` or `kj`:
 
   Escape from insert mode without delay when typing 
 
