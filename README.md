@@ -371,12 +371,6 @@ _We tried to use Lua plugins as much as possible_
 
   a Lua powered greeter like vim-startify / dashboard-nvim
 
-- We use [`Comment`](https://github.com/numToStr/Comment.nvim) and [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) form commenting code:
-
-  🧠 💪 Smart and powerful comment plugin for Neovim. Supports commentstring, dot repeat, left-right/up-down motions, hooks, and more.
-
-  Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
-
 - We use [`format.nvim`](https://github.com/lukas-reineke/format.nvim) for formatting document:
 
   Neovim Lua plugin to format the current buffer with external executables
@@ -457,6 +451,14 @@ _We tried to use Lua plugins as much as possible_
 
   vscode-like pictograms for neovim lsp completion items
 
+- We use [`lspsaga.nvim`](https://github.com/glepnir/lspsaga.nvim) a lsp plugin:
+
+  A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
+
+- We use [`trouble.nvim`](https://github.com/folke/trouble.nvim) a diagnostics tools:
+
+  🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing. 
+
 - We use [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) Completion plugin :
 
   A completion plugin for neovim coded in Lua.
@@ -492,6 +494,58 @@ _We tried to use Lua plugins as much as possible_
 - We use [`nvim-autopairs`](https://github.com/windwp/nvim-autopairs) for handling autopairs:
 
   autopairs for neovim written by lua
+
+- We use [`nvim-toggleterm.lua`](https://github.com/akinsho/nvim-toggleterm.lua) for managing multiple terminal:
+
+  A neovim lua plugin to help easily manage multiple terminal windows 
+
+- We use [`consolation.nvim`](https://github.com/pianocomposer321/consolation.nvim) a built-in neovim terminal:
+
+  A general-purpose terminal wrapper and management plugin for neovim, written in lua 
+
+- We use [`nvim-code-action-menu`](https://github.com/weilbith/nvim-code-action-menu) a better code action:
+
+  Pop-up menu for code actions to show meta-information and diff preview
+
+- We use [`nvim-bufferline.lua`](https://github.com/akinsho/nvim-bufferline.lua) a buffer line to show nice data in buffer header:
+
+  A snazzy 💅 buffer line (with tabpage integration) for Neovim built using lua.
+
+- We use [`nvim-tree.lua`](https://github.com/kyazdani42/nvim-tree.lua) a tree like file explorer:
+
+  A file explorer tree for neovim written in lua
+
+- We use [`project.nvim`](https://github.com/ahmedkhalf/project.nvim) a project management:
+
+  🗃️  project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+
+- We use [`filetype.nvim`](https://github.com/nathom/filetype.nvim) speed up neovim startup:
+
+  Easily speed up your neovim startup time!
+
+- We use [`twilight.nvim`](https://github.com/folke/twilight.nvim) dims inactive portions of the code you're editing:
+
+  🌅 Twilight is a Lua plugin for Neovim 0.5 that dims inactive portions of the code you're editing using TreeSitter. 
+
+- We use [`formatter.nvim`](https://github.com/mhartington/formatter.nvim) for format documents:
+
+  A format runner for neovim, written in lua.
+
+- We use [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) for correctly handling code commenting:
+
+  Neovim treesitter plugin for setting the commentstring based on the cursor location in a file. 
+
+- We use [`Comment.nvim`](https://github.com/numToStr/Comment.nvim) for code commenting:
+
+  🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+
+- We use [`stabilize.nvim`](https://github.com/luukvbaal/stabilize.nvim) for fixing little jump when a modal open/close from bottom or top:
+
+  Neovim plugin to stabilize buffer content on window open/close events.
+
+- We use [`glow.nvim`](https://github.com/ellisonleao/glow.nvim) for preview markdown directly in neovim:
+
+  A markdown preview directly in your neovim. 
 
 ## Show your support
 

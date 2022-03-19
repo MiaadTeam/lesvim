@@ -200,6 +200,26 @@ require("packer").startup(function()
 
 	use("onsails/lspkind-nvim")
 
+	use({
+		"glepnir/lspsaga.nvim",
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("lspsaga").init_lsp_saga()
+		end,
+	})
+
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
 	-- LSP things autocomplition and etc
 	use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
 	use("hrsh7th/cmp-nvim-lsp")
@@ -366,14 +386,6 @@ require("packer").startup(function()
 	-- use({ "kabouzeid/nvim-lspinstall" })
 
 	use({
-		"glepnir/lspsaga.nvim",
-		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
-			require("lspsaga").init_lsp_saga()
-		end,
-	})
-
-	use({
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
 	})
@@ -448,18 +460,6 @@ require("packer").startup(function()
 		"folke/twilight.nvim",
 		config = function()
 			require("twilight").setup({})
-		end,
-	})
-
-	use({
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			})
 		end,
 	})
 
