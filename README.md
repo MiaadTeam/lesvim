@@ -580,10 +580,6 @@ So We use this plugins:
 
   Debug Adapter Protocol client implementation for Neovim (>= 0.5) 
 
-- [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
-
-  Debug Adapter Protocol client implementation for Neovim (>= 0.5) 
-
 - [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua) a color highlighter:
 
   A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
