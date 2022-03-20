@@ -354,7 +354,10 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
 ## Plugins
 _We tried to use Lua plugins as much as possible_
-So We use this plugins:
+<br />
+Some of the plugin have the uniq configuration, some of them just copied configuration from it's readme file, and some other we want's to add best config we can piece by piece in the future
+
+##### So We use this plugins:
 
 - [`packer`](https://github.com/wbthomason/packer.nvim) for manage plugins:
 
