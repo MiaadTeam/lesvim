@@ -7,7 +7,9 @@ TERMINAL = vim.fn.expand("$TERMINAL")
 vim.cmd('let &titleold="' .. TERMINAL .. '"')
 vim.o.hidden = true --Do not save when switching buffers
 vim.o.titlestring = "%<%F%=%l/%L - nvim"
-vim.wo.wrap = false -- Display long lines as just one line
+vim.wo.wrap = true -- Display long lines as just one line
+vim.wo.linebreak = true
+-- vim.wo.nolist = true
 vim.cmd("set whichwrap+=<,>,[,],h,l") -- move to next line with theses keys
 vim.o.pumheight = 10 -- Makes popup menu smaller
 vim.o.fileencoding = "utf-8" -- The encoding written to file
