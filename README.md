@@ -603,6 +603,10 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
   Escape from insert mode without delay when typing 
 
+- [`numb.nvim`](https://github.com/nacro90/numb.nvim) for peek lines just when you intend :
+
+  numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
