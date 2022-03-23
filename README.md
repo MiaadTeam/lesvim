@@ -38,6 +38,7 @@
   - [_Wezterm_](#wezterm)
   - [_Vim or Neovim_](#vim-or-neovim)
   - [_LSP_](#lsp)
+  - [_Copilot_](#copilot)
 - [Plugins](#plugins) _Read this section to increase your mastery of this development environment_
 - [Show your support](#show-your-support)
 
