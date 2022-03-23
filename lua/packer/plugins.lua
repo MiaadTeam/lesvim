@@ -701,4 +701,5 @@ require("packer").startup(function()
 			require("numb").setup()
 		end,
 	})
+	use({ "github/copilot.vim" })
 end)
