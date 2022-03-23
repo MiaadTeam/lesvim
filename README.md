@@ -352,6 +352,11 @@ You might have already noticed that all the shortcuts here begin with `command` 
 - Press `[d` to jump to the next diagnostic of the opened buffers.
 - Press `]d` to jump to the previous diagnostic of the opened buffers.
 
+### _Copilot_
+
+  - to setup `copilot` jus enter `:Copilot setup` in the command line. everything should worked fine if you have invite to [GitHub Copilot](https://copilot.github.com) project.
+  - to accept it suggest just press `<C-j>` or `contrl + j`.
+
 ## Plugins
 _We tried to use Lua plugins as much as possible_
 <br />
