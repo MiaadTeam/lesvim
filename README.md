@@ -355,7 +355,7 @@ You might have already noticed that all the shortcuts here begin with `command` 
 ### _Copilot_
 
   - to setup `copilot` jus enter `:Copilot setup` in the command line. everything should worked fine if you have invite to [GitHub Copilot](https://copilot.github.com) project.
-  - to accept it suggest just press `<C-j>` or `contrl + j`.
+  - to accept it suggest just press `<C-j>` or `ctrl + j`.
 
 ## Plugins
 _We tried to use Lua plugins as much as possible_
