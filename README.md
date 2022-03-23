@@ -612,6 +612,10 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
   numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
 
+- [`copilot.vim`](https://github.com/github/copilot.vim) for AI code suggestion :
+
+  GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type. 
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
