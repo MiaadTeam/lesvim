@@ -120,14 +120,10 @@ We want to create an awesome Development Environment's so a big part of this doc
 - Install Meslo Nerd Font patched
   - Manual Meslo font installation:
     1. Download these four ttf files:
-       - [MesloLGS NF Regular.ttf](
-           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
-       - [MesloLGS NF Bold.ttf](
-           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
-       - [MesloLGS NF Italic.ttf](
-           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
-       - [MesloLGS NF Bold Italic.ttf](
-           https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
+       - [MesloLGS NF Regular.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)
+       - [MesloLGS NF Bold.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)
+       - [MesloLGS NF Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)
+       - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
     2. Double-click on each file and click "Install". This will make `MesloLGS NF` font available to all
        applications on your system.
 
@@ -139,7 +135,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 
   - Install [`dprint`](https://github.com/dprint/dprint) and set it to your `$PATH` (Pluggable and configurable code formatting platform written in Rust.)
 
-  - It's my [`dprint.json`](https://raw.githubusercontent.com/hemedani/dotfiles/main/dpript/dprint.json) file, you should put it in `$HOME/.config/dotfiles/dpript/dprint.json`
+  - It's my [`dprint.json`](https://raw.githubusercontent.com/hemedani/dotfiles/main/dprint/dprint.json) file, you should put it in `$HOME/.config/dotfiles/dprint/dprint.json`
 
   - Install [`stylua`](https://github.com/JohnnyMorganz/StyLua) and set it to your `$PATH` (An opinionated Lua code formatter written in rust)
 
@@ -197,7 +193,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 - _Tabs and Pane's creation deletion_
 
   - `command + shift + N` or `super + shift + N` shortcut to create a new terminal window.
-  - `command + shift + Z` or `super + shift + Z` toggle full screen windows. 
+  - `command + shift + Z` or `super + shift + Z` toggle full screen windows.
   - `command + t` or `super + t` shortcut to create a new terminal tab.
   - `command + w` or `super + w` shortcut to close the current terminal tab.
   - `command + '` or `super + '` shortcut to create a new vertical terminal split pane.
@@ -210,7 +206,7 @@ We want to create an awesome Development Environment's so a big part of this doc
   - `command + ,` or `super + ,` goes to the right available tab.
   - `command + m` or `super + m` goes to the left available tab.
   - `command shift + T` or `super + shift + T` show tabs navigator menu.
-  
+
 - _Pane navigation_
 
   - `command + ctrl + h` or `super + ctrl + h` goes to the left available pane.
@@ -355,10 +351,11 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
 ### _Copilot_
 
-  - to setup `copilot` jus enter `:Copilot setup` in the command line. everything should worked fine if you have invite to [GitHub Copilot](https://copilot.github.com) project.
-  - to accept it suggest just press `<C-j>` or `ctrl + j`.
+- to setup `copilot` jus enter `:Copilot setup` in the command line. everything should worked fine if you have invite to [GitHub Copilot](https://copilot.github.com) project.
+- to accept it suggest just press `<C-j>` or `ctrl + j`.
 
 ## Plugins
+
 _We tried to use Lua plugins as much as possible_
 <br />
 Some of the plugin have the uniq configuration, some of them just copied configuration from it's readme file, and some other we want's to add best config we can piece by piece in the future
@@ -372,10 +369,10 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 - [`plenary`](https://github.com/nvim-lua/plenary.nvim) as dependencies for many plugins and Lua utils:
 
   plenary: full; complete; entire; absolute; unqualified. All the Lua functions I don't want to write twice.
-  
+
 - [`popup`](https://github.com/nvim-lua/popup.nvim) as a Popup tools :
 
-  [WIP] An implementation of the Popup API from vim in Neovim. Hope to upstream when complete 
+  [WIP] An implementation of the Popup API from vim in Neovim. Hope to upstream when complete
 
 - [`windline`](https://github.com/windwp/windline.nvim) for the status line:
 
@@ -427,7 +424,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`vim-surround`](https://github.com/tpope/vim-surround) for manage word inside parentheses/quotes/XML-tags etc :
 
-  surround.vim: Delete/change/add parentheses/quotes/XML-tags/much more with ease 
+  surround.vim: Delete/change/add parentheses/quotes/XML-tags/much more with ease
 
 - [`hop.nvim`](https://github.com/phaazon/hop.nvim) for motion beetween words:
 
@@ -479,7 +476,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`trouble.nvim`](https://github.com/folke/trouble.nvim) a diagnostics tools:
 
-  🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing. 
+  🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
 
 - [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) Completion plugin :
 
@@ -511,7 +508,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`registers.nvim`](https://github.com/tversteeg/registers.nvim) for handling vim registers:
 
-  📑 Neovim plugin to preview the contents of the registers 
+  📑 Neovim plugin to preview the contents of the registers
 
 - [`nvim-autopairs`](https://github.com/windwp/nvim-autopairs) for handling autopairs:
 
@@ -519,11 +516,11 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`nvim-toggleterm.lua`](https://github.com/akinsho/nvim-toggleterm.lua) for managing multiple terminal:
 
-  A neovim lua plugin to help easily manage multiple terminal windows 
+  A neovim lua plugin to help easily manage multiple terminal windows
 
 - [`consolation.nvim`](https://github.com/pianocomposer321/consolation.nvim) a built-in neovim terminal:
 
-  A general-purpose terminal wrapper and management plugin for neovim, written in lua 
+  A general-purpose terminal wrapper and management plugin for neovim, written in lua
 
 - [`nvim-code-action-menu`](https://github.com/weilbith/nvim-code-action-menu) a better code action:
 
@@ -539,7 +536,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`project.nvim`](https://github.com/ahmedkhalf/project.nvim) a project management:
 
-  🗃️  project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+  🗃️ project.nvim is an all in one neovim plugin written in lua that provides superior project management.
 
 - [`filetype.nvim`](https://github.com/nathom/filetype.nvim) speed up neovim startup:
 
@@ -547,7 +544,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`twilight.nvim`](https://github.com/folke/twilight.nvim) dims inactive portions of the code you're editing:
 
-  🌅 Twilight is a Lua plugin for Neovim 0.5 that dims inactive portions of the code you're editing using TreeSitter. 
+  🌅 Twilight is a Lua plugin for Neovim 0.5 that dims inactive portions of the code you're editing using TreeSitter.
 
 - [`formatter.nvim`](https://github.com/mhartington/formatter.nvim) for format documents:
 
@@ -555,7 +552,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) for correctly handling code commenting:
 
-  Neovim treesitter plugin for setting the commentstring based on the cursor location in a file. 
+  Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.
 
 - [`Comment.nvim`](https://github.com/numToStr/Comment.nvim) for code commenting:
 
@@ -567,7 +564,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`glow.nvim`](https://github.com/ellisonleao/glow.nvim) for preview markdown directly in neovim:
 
-  A markdown preview directly in your neovim. 
+  A markdown preview directly in your neovim.
 
 - [`rest.nvim`](https://github.com/NTBBloodbath/rest.nvim) for sending http request:
 
@@ -587,7 +584,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
 
-  Debug Adapter Protocol client implementation for Neovim (>= 0.5) 
+  Debug Adapter Protocol client implementation for Neovim (>= 0.5)
 
 - [`nvim-colorizer.lua`](https://github.com/norcalli/nvim-colorizer.lua) a color highlighter:
 
@@ -607,7 +604,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`better-escape.nvim`](https://github.com/max397574/better-escape.nvim) for better escape with `jk` or `kj`:
 
-  Escape from insert mode without delay when typing 
+  Escape from insert mode without delay when typing
 
 - [`numb.nvim`](https://github.com/nacro90/numb.nvim) for peek lines just when you intend :
 
@@ -615,7 +612,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`copilot.vim`](https://github.com/github/copilot.vim) for AI code suggestion :
 
-  GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type. 
+  GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type.
 
 ## Show your support
 
