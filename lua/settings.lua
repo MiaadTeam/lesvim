@@ -2,6 +2,7 @@ vim.cmd("set iskeyword+=-") -- treat dash separated words as a word text object"
 vim.cmd("set shortmess+=c") -- Don't pass messages to |ins-completion-menu|.
 vim.cmd("set inccommand=split") -- Make substitution work in realtime
 vim.cmd("set clipboard+=unnamedplus") -- Make substitution work in realtime
+vim.o.so = 5
 vim.o.title = true
 TERMINAL = vim.fn.expand("$TERMINAL")
 vim.cmd('let &titleold="' .. TERMINAL .. '"')
