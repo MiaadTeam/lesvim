@@ -67,7 +67,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 
   It is a user-friendly command-line shell.
 
-- [Using `starship` as you default Shell prompt.](https://github.com/starship/starship)
+- [Using `starship` as your default Shell prompt.](https://github.com/starship/starship)
 
   It is the minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
@@ -81,7 +81,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 
   [It's my `GitUI` `VIM Like` keybinding](https://raw.githubusercontent.com/hemedani/dotfiles/main/gitui/key_bindings.ron), you should put it in `$HOME/.config/gitui/key_bindings.ron`
 
-- Using [`exa`](https://github.com/ogham/exa) as a `ls` command in terminal:
+- Using [`exa`](https://github.com/ogham/exa) as a `ls` command in the terminal:
 
   A modern replacement for ‘ls’.
 
@@ -182,7 +182,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 - After launching Neovim, install these `TreeSitter` lib with `:TSInstall` :
 
-  `:TSInstall comment css fish graphql javascript lua regex scss toml tsx vim http json`
+  `:TSInstall comment CSS fish graphql javascript lua regex scss toml tsx vim http json`
 
 - And any other you want
 
@@ -240,7 +240,7 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
   - Relative Neovim number is set to true.
 
-    For instance, you can easily jump between lines with a quick glance by pressing `<number>j|k`.
+    For instance, you can easily jump between lines with a glance by pressing `<number>j|k`.
 
   - As mentioned in the setup section, we manage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
 
@@ -252,18 +252,18 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
 - Keybinding:
 
-  If you press any key which has something bound to it and wait for a few seconds, `which-key` shows you an awesome hint for continuing press-related keys.
+  If you press any key which has something bound to it and waits for a few seconds, `which-key` shows you an awesome hint for continuing press-related keys.
 
 - Leader Key:
 
   The `leader` is often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of its binding keys. The following section briefly introduces a few of them:
 
-  - `leader + e` toggle `Nvim Tree` explorer and immediately find the current active buffer file in the tree.
-  - `leader + /` comment just one line in `Normal and Visual` mode.(commenting keybinding has been explained below)
+  - `leader + e` toggle `Nvim Tree` explorer and immediately find the currently active buffer file in the tree.
+  - `leader + /` comment just one line in `Normal and Visual` mode. (commenting keybinding has been explained below)
   - `leader + c` close current active buffer.
-  - `leader + w` manipulate splited buffers in current window.(create and modify slipt window explained below)
-  - `leader + f` open Telescope and find any file fuzzy in cwd.
-  - `leader + h` jump to any word with the help of HOP plugin (like sneak but much better)
+  - `leader + w` manipulate splited buffers in the current window.(create and modify the slipt window explained below)
+  - `leader + f` open Telescope and find any file fuzzy in CWD.
+  - `leader + h` jump to any word with the help of the HOP plugin (like sneak but much better)
   - `leader + q` quit nvim
   - `leader + t` show lsp action menu
   - `leader + r` format current buffer.
@@ -275,64 +275,64 @@ You might have already noticed that all the shortcuts here begin with `command` 
     - `b` searching branch and checkout to it.
     - `c` searching color schema and set it.
     - `C` searching command and execute it.
-    - `f` find file in this cwd.
+    - `f` find a file in this CWD.
     - `h` searching in all help.
     - `k` searching in all keymaps.
     - `M` finding in all MAN pages and open it
     - `p` searching all color schemes with preview
     - `R` searching in registers
-    - `r` open recent files with telescope
-    - `t` search text in all files in current cwd
-    - `g` search and replace text with ripgrep in current cwd
-    - `w` search and replace word under cursor with ripgrep in current cwd
+    - `r` open recent files with the telescope
+    - `t` search text in all files in the current CWD
+    - `g` search and replace text with ripgrep in current CWD
+    - `w` search and replace word under the cursor with ripgrep in current CWD
     - `l` search and replace text in active with ripgrep
   - `leader + b` buffer things:
-    - `j` pick buffer by first character
-    - `f` find buffer in telescope
-    - `w` wipe buffer except the current one
-    - `r` close all buffer to right
+    - `j` pick buffer by the first character
+    - `f` find buffer in the telescope
+    - `w` wipe buffer except for the current one
+    - `r` close all buffer to the right
     - `l` close all buffer to left
     - `d` sort all buffer by directory
     - `n` sort all buffer by language
     - `t` sort all buffer by tabs
   - `leader + g` is for git stuff:
-    - `b` checkout branch with telescope
-    - `c` checkout commit with telescope
-    - `C` checkout commit for current file with telescope
+    - `b` checkout branch with the telescope
+    - `c` checkout commit with the telescope
+    - `C` checkout commit for the current file with the telescope
     - `j` jump to the next hunk
     - `k` jump to the previous hunk
     - `l` show git blame of current line
-    - `o` open changed files in telescope
+    - `o` open changed files in the telescope
     - `p` preview hunk
     - `r` reset current hunk
-    - `R` reset current buffer
+    - `R` reset the current buffer
     - `s` stage current hunk
     - `u` unstage hunk
   - `leader + l` for lsp things:
-    - `a` show code action for the word is under cursor if it available
+    - `a` show code action for the word is under the cursor if it is available
     - `d` show document diagnostics
-    - `f` for format document with attached lsp's
-    - `i` show configured and attached lsps
-    - `j` jump to next diagnostic in document
-    - `k` jump to previous diagnostic in document
+    - `f` for format document with attached LSPs
+    - `i` show configured and attached LSPs
+    - `j` jump to the next diagnostic in the document
+    - `k` jump to the previous diagnostic in the document
     - `q` select first actions in code actions (quick fixed)
-    - `r` rename word with referenced with lsp (just like F2 in vscode)
-    - `S` show workspace symbols with telescope
-    - `s` show document symbols with telescope
+    - `r` rename word with referenced with LSP (just like F2 in vscode)
+    - `S` shows workspace symbols with the telescope
+    - `s` show document symbols with the telescope
     - `t` find document or project troubles
     - `w` show workspace diagnostics
   - `leader + p` is for packer things:
-    - `i` install package if new package available
+    - `i` install the package if a new package is available
     - `c` compile packer and create `plugin/packer_compiled.lua` file
-    - `s` sysnc packages with git repos
+    - `s` sync packages with git repos
     - `u` update packages
     - `r` clean unused package
     - `S` packer status
   - `leader + z` for spell stuff:
-    - `p` an special command that fixed spell and jump to the next misspelled word
+    - `p` a special command that fixed a spell and jumps to the next misspelled word
     - `t` toggle spell checker to on and off
   - `leader + m` for markdown tools
-    - `p` start/stop the live server for preview current markdown file in the default browser
+    - `p` start/stop the live server to preview the current markdown file in the default browser
     - `t` preview markdown directly in a modal window in the terminal
 
 - `Insert MODE` keybinds:
@@ -351,14 +351,14 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
 ### _Copilot_
 
-- to setup `copilot` jus enter `:Copilot setup` in the command line. everything should worked fine if you have invite to [GitHub Copilot](https://copilot.github.com) project.
+- to setup `copilot` just enter `: Copilot setup` in the command line. everything should work fine if you have an invite to [GitHub Copilot](https://copilot.github.com) project.
 - to accept it suggest just press `<C-j>` or `ctrl + j`.
 
 ## Plugins
 
 _We tried to use Lua plugins as much as possible_
 <br />
-Some of the plugin have the uniq configuration, some of them just copied configuration from it's readme file, and some other we want's to add best config we can piece by piece in the future
+Some of the plugins have a unique configuration, some of them just copied configuration from its readme file, and some others we want's to add the best config we can piece by piece in the future
 
 ##### So We use this plugins:
 
@@ -468,15 +468,15 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`lspkind-nvim`](https://github.com/onsails/lspkind-nvim) Pictograms for built-in LSP client:
 
-  vscode-like pictograms for neovim lsp completion items
+  vscode-like pictograms for neovim LSP completion items
 
 - [`lspsaga.nvim`](https://github.com/glepnir/lspsaga.nvim) a lsp plugin:
 
-  A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
+  A light-weight LSP plugin based on neovim built-in LSP with highly a performant UI.
 
 - [`trouble.nvim`](https://github.com/folke/trouble.nvim) a diagnostics tools:
 
-  🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
+  🚦 A pretty diagnostics, references, telescope results, quick-fix and location list to help you solve all the trouble your code is causing.
 
 - [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) Completion plugin :
 
@@ -526,17 +526,17 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
   Pop-up menu for code actions to show meta-information and diff preview
 
-- [`nvim-bufferline.lua`](https://github.com/akinsho/nvim-bufferline.lua) a buffer line to show nice data in buffer header:
+- [`nvim-bufferline.lua`](https://github.com/akinsho/nvim-bufferline.lua) a buffer line to show nice data in the buffer header:
 
   A snazzy 💅 buffer line (with tabpage integration) for Neovim built using lua.
 
 - [`nvim-tree.lua`](https://github.com/kyazdani42/nvim-tree.lua) a tree like file explorer:
 
-  A file explorer tree for neovim written in lua
+  A file explorer tree for neovim written in Lua
 
 - [`project.nvim`](https://github.com/ahmedkhalf/project.nvim) a project management:
 
-  🗃️ project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+  🗃️ project.nvim is an all-in-one neovim plugin written in Lua that provides superior project management.
 
 - [`filetype.nvim`](https://github.com/nathom/filetype.nvim) speed up neovim startup:
 
@@ -548,7 +548,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`formatter.nvim`](https://github.com/mhartington/formatter.nvim) for format documents:
 
-  A format runner for neovim, written in lua.
+  A format runner for neovim, written in Lua.
 
 - [`nvim-ts-context-commentstring`](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) for correctly handling code commenting:
 
@@ -558,7 +558,7 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
   🧠 💪 // Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 
-- [`stabilize.nvim`](https://github.com/luukvbaal/stabilize.nvim) for fixing little jump when a modal open/close from bottom or top:
+- [`stabilize.nvim`](https://github.com/luukvbaal/stabilize.nvim) for fixing a little jump when a modal open/close from the bottom or top:
 
   Neovim plugin to stabilize buffer content on window open/close events.
 
@@ -568,19 +568,19 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
 - [`rest.nvim`](https://github.com/NTBBloodbath/rest.nvim) for sending http request:
 
-  A fast Neovim http client written in Lua
+  A fast Neovim HTTP client written in Lua
 
 - [`nvim-hlslens`](https://github.com/kevinhwang91/nvim-hlslens) for better search highlights in buffer:
 
-  nvim-hlslens helps you better glance at matched information, seamlessly jump between matched instances.
+  nvim-hlslens helps you better glance at matched information, and seamlessly jump between matched instances.
 
 - [`rust-tools.nvim`](https://github.com/simrat39/rust-tools.nvim) rust development utils:
 
-  Extra rust tools for writing applications in neovim using the native lsp. This plugin adds extra functionality over rust analyzer.
+  Extra rust tools for writing applications in neovim using the native LSP. This plugin adds extra functionality to rust analyzer.
 
-- [`crates.nvim`](https://github.com/saecki/crates.nvim) for getting information of cargo crates in toml files:
+- [`crates.nvim`](https://github.com/saecki/crates.nvim) for getting information on cargo crates in toml files:
 
-  A neovim plugin that helps managing crates.io dependencies
+  A neovim plugin that helps manage crates.io dependencies
 
 - [`nvim-dap`](https://github.com/mfussenegger/nvim-dap) a debugging tools:
 
@@ -590,13 +590,13 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
   A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
 
-- [`yode-nvim`](https://github.com/hoschi/yode-nvim) for focus on some part of code:
+- [`yode-nvim`](https://github.com/hoschi/yode-nvim) for focus on some parts of code:
 
   Focus on the important parts of the code. Hide the rest, literally.
 
 - [`nvim_context_v`](https://github.com/haringsrob/nvim_context_vt) extra virtual text:
 
-  Shows virtual text of the current context after functions, methods, statements, etc.
+  Shows the virtual text of the current context after functions, methods, statements, etc.
 
 - [`vim-yin-yang`](https://github.com/pgdouyon/vim-yin-yang) low contrast theme:
 
@@ -606,9 +606,9 @@ Some of the plugin have the uniq configuration, some of them just copied configu
 
   Escape from insert mode without delay when typing
 
-- [`numb.nvim`](https://github.com/nacro90/numb.nvim) for peek lines just when you intend :
+- [`numb.nvim`](https://github.com/nacro90/numb.nvim) for peeking lines just when you intend :
 
-  numb.nvim is a Neovim plugin that peeks lines of the buffer in non-obtrusive way.
+  numb.nvim is a Neovim plugin that peeks lines of the buffer in a non-obtrusive way.
 
 - [`copilot.vim`](https://github.com/github/copilot.vim) for AI code suggestion :
 
