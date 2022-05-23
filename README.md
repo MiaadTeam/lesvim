@@ -182,7 +182,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 - After launching Neovim, install these `TreeSitter` lib with `:TSInstall` :
 
-  `:TSInstall comment CSS fish graphql javascript lua regex scss toml tsx vim http json`
+  `:TSInstall comment CSS fish graphql javascript lua regex scss toml tsx vim http json dockerfile`
 
 - And any other you want
 
