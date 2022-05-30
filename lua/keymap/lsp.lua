@@ -15,7 +15,17 @@ map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 -- map("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 -- map("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", opts)
-map("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+-- map("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+-- map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
 -- map("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
 -- map("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+map("n", "H", "<cmd>lua vim.diagnostic.open_float(nil, { focusable = false })<CR>", opts)
+-- map("n", "<C-h>", "<cmd>lua vim.diagnostic.show()<CR>", opts)
+-- vim.api.nvim_exec(
+-- 	[[
+--         autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+-- ]],
+-- 	false
+-- )
+-- vim.api.nvim_command([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })]])
