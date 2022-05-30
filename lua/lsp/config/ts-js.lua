@@ -1,7 +1,7 @@
 -- local on_attach = require("lsp.lsp-setup").on_attach
 local setup = require("lsp.lsp-setup")
 
-function file_exists(name)
+local function file_exists(name)
 	local f = io.open(name, "r")
 	if f ~= nil then
 		io.close(f)
