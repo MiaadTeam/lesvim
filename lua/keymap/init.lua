@@ -7,7 +7,7 @@ require("keymap.resize")
 -- require("keymap.escape")
 
 require("keymap.move")
-require("keymap.toggleterm")
+-- require("keymap.toggleterm")
 require("keymap.lsp")
 require("keymap.hlslens")
 require("keymap.copilot")

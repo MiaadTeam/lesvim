@@ -379,9 +379,9 @@ require("packer").startup(function()
 		end,
 	})
 
-	-- Built-in Terminal
-	use({ "akinsho/nvim-toggleterm.lua" })
-	use("pianocomposer321/consolation.nvim")
+	-- Built-in Terminal -- Remove inside terminal in favor of `wezterm built-in pane and tab`
+	-- use({ "akinsho/nvim-toggleterm.lua" })
+	-- use("pianocomposer321/consolation.nvim")
 
 	-- use({ "kabouzeid/nvim-lspinstall" })
 
