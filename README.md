@@ -193,7 +193,8 @@ We want to create an awesome Development Environment's so a big part of this doc
 - _Tabs and Pane's creation deletion_
 
   - `command + shift + N` or `super + shift + N` shortcut to create a new terminal window.
-  - `command + shift + Z` or `super + shift + Z` toggle full screen windows.
+  - `command + ctrl + f` or `super + ctrl + f` toggle full screen windows.
+  - `command + shift + L` or `super + shift + L` show launcher.
   - `command + t` or `super + t` shortcut to create a new terminal tab.
   - `command + w` or `super + w` shortcut to close the current terminal tab.
   - `command + '` or `super + '` shortcut to create a new vertical terminal split pane.
@@ -213,12 +214,11 @@ We want to create an awesome Development Environment's so a big part of this doc
   - `command + ctrl + l` or `super + ctrl + l` goes to the right available pane.
   - `command + ctrl + k` or `super + ctrl + k` goes to the top available pane.
   - `command + ctrl + j` or `super + ctrl + j` goes to the bottom available pane.
-  - `command + shift + T` or `super + shift + T` shows tab navigator options.
 
 - _Pane cycles_
 
-  - `command + ctrl + n` or `super + ctrl + n` goes to the next available pane.
-  - `command + ctrl + p` or `super + ctrl + p` goes to the prev available pane.
+  - `command + [` or `super + [` goes to the next available pane.
+  - `command + ]` or `super + ]` goes to the prev available pane.
 
 - _Pane resizing_
 
