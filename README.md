@@ -166,7 +166,7 @@ We want to create an awesome Development Environment's so a big part of this doc
        cd ../..
        ./3rd/luamake/luamake rebuild
        ```
-       To be noticed your executables bin PATH of sumneko should be placed at `~/.config/sumneko/bin/lua-language-server"`
+       To be noticed your executables bin PATH of sumneko should be placed at `~/.config/sumneko/bin/lua-language-server`
 
 ### Installation
 
