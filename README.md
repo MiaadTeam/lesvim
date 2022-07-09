@@ -126,6 +126,7 @@ We want to create an awesome Development Environment's so a big part of this doc
        - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)
     2. Double-click on each file and click "Install". This will make `MesloLGS NF` font available to all
        applications on your system.
+- If you decide to use the [`luffy`](https://github.com/windwp/windline.nvim#luffy) [`windline`](https://github.com/windwp/windline.nvim) config, install [`Fira Code iCursive S12`](https://github.com/windwp/windline.nvim/wiki/fonts/FiraCodeiCursiveS12-Regular.ttf).
 
 - _Installing the Formatter_
 
@@ -165,7 +166,7 @@ We want to create an awesome Development Environment's so a big part of this doc
        cd ../..
        ./3rd/luamake/luamake rebuild
        ```
-       To be noticed your executables bin PATH of sumneko should be placed at `~/.config/sumneko .. "/bin/" .. system_name .. "/lua-language-server" (your system_name is macOS or Linux or Windows)`
+       To be noticed your executables bin PATH of sumneko should be placed at `~/.config/sumneko/bin/lua-language-server`
 
 ### Installation
 
@@ -182,7 +183,7 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 - After launching Neovim, install these `TreeSitter` lib with `:TSInstall` :
 
-  `:TSInstall comment CSS fish graphql javascript lua regex scss toml tsx vim http json dockerfile`
+  `:TSInstall comment css fish graphql javascript lua regex scss toml tsx vim http json dockerfile`
 
 - And any other you want
 

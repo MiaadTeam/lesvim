@@ -1,7 +1,7 @@
 local Wrapper = require("consolation").Wrapper
 
 BuiltinTerminalWrapper = Wrapper:new()
-BuiltinTerminalWraper:setup({
+BuiltinTerminalWrapper:setup({
 	create = function()
 		vim.cmd("vnew | term")
 	end,
