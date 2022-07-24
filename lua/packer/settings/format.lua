@@ -1,73 +1,5 @@
--- require("format").setup({
--- 	["*"] = {
--- 		{ cmd = { "sed -i 's/[ \t]*$//'" } }, -- remove trailing whitespace
--- 	},
--- 	vim = {
--- 		{
--- 			cmd = { "luafmt -w replace" },
--- 			start_pattern = "^lua << EOF$",
--- 			end_pattern = "^EOF$",
--- 		},
--- 	},
--- 	vimwiki = {
--- 		{
--- 			cmd = { "prettier -w --parser babel" },
--- 			start_pattern = "^{{{javascript$",
--- 			end_pattern = "^}}}$",
--- 		},
--- 	},
--- 	rust = {
--- 		{
--- 			cmd = { "rustfmt" },
--- 		},
--- 	},
--- 	lua = {
--- 		{
--- 			cmd = { "stylua" },
--- 		},
--- 	},
--- 	json = {
--- 		{
--- 			cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" },
--- 		},
--- 	},
--- 	go = {
--- 		{
--- 			cmd = { "gofmt -w", "goimports -w" },
--- 			tempfile_postfix = ".tmp",
--- 		},
--- 	},
--- 	typescriptreact = {
--- 		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
--- 	},
--- 	typescript = {
--- 		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
--- 	},
--- 	html = {
--- 		{ cmd = { "prettier -w" } },
--- 	},
--- 	javascriptreact = {
--- 		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
--- 	},
--- 	javascript = {
--- 		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
--- 	},
--- 	-- javascript = {
--- 	-- 	{ cmd = { "dprint fmt" } },
--- 	-- },
--- 	markdown = {
--- 		{ cmd = { "dprint fmt --config ~/.config/dotfiles/dpript/dprint.json" } },
--- 	},
--- 	-- markdown = {
--- 	-- 	{ cmd = { "prettier -w" } },
--- 	-- 	{
--- 	-- 		cmd = { "black" },
--- 	-- 		start_pattern = "^```python$",
--- 	-- 		end_pattern = "^```$",
--- 	-- 		target = "current",
--- 	-- 	},
--- 	-- },
--- })
+-- Utilities for creating configurations
+local util = require("formatter.util")
 
 require("formatter").setup({
 	filetype = {
@@ -115,15 +47,15 @@ require("formatter").setup({
 			end,
 		},
 		-- SAMPLE for prettier
-		-- javascript = {
-		-- 	function()
-		-- 		return {
-		-- 			exe = "prettier",
-		-- 			args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
-		-- 			stdin = true,
-		-- 		}
-		-- 	end,
-		-- },
+		javascript = {
+			function()
+				return {
+					exe = "prettier",
+					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+					stdin = true,
+				}
+			end,
+		},
 		javascript = {
 			function()
 				return {
@@ -151,12 +83,13 @@ require("formatter").setup({
 		typescript = {
 			function()
 				return {
-					exe = "dprint fmt ",
+					exe = "prettier",
 					args = {
-						"--config ",
-						"~/.config/dotfiles/dprint/dprint.json",
+						"--stdin-filepath",
+						util.escape_path(util.get_current_buffer_file_path()),
 					},
-					stdin = false,
+					stdin = true,
+					try_node_modules = true,
 				}
 			end,
 		},
@@ -172,32 +105,35 @@ require("formatter").setup({
 				}
 			end,
 		},
-		markdown = {
-			function()
-				return {
-					exe = "dprint fmt ",
-					args = {
-						"--config ",
-						"~/.config/dotfiles/dprint/dprint.json",
-					},
-					stdin = false,
-				}
-			end,
-		},
-		json = {
-			function()
-				return {
-					exe = "dprint fmt ",
-					args = {
-						"--config ",
-						"~/.config/dotfiles/dprint/dprint.json",
-					},
-					stdin = false,
-				}
-			end,
-		},
+		-- markdown = {
+		-- 	function()
+		-- 		return {
+		-- 			exe = "dprint fmt ",
+		-- 			args = {
+		-- 				"--config ",
+		-- 				"~/.config/dotfiles/dprint/dprint.json",
+		-- 			},
+		-- 			stdin = false,
+		-- 		}
+		-- 	end,
+		-- },
+		-- json = {
+		-- 	function()
+		-- 		return {
+		-- 			exe = "dprint fmt ",
+		-- 			args = {
+		-- 				"--config ",
+		-- 				"~/.config/dotfiles/dprint/dprint.json",
+		-- 			},
+		-- 			stdin = false,
+		-- 		}
+		-- 	end,
+		-- },
 	},
 })
+
+-- ~/.config/dotfiles/dprint/dprint.json
+-- ~/.config/dotfiles/dprint/dprint.json
 
 -- vim.api.nvim_exec(
 -- 	[[
