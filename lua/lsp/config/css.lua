@@ -13,6 +13,7 @@ lspconfig.cssls.setup({
 
 lspconfig.html.setup({
 	capabilities = setup.capabilities,
+	on_attach = require("lsp.lsp-attach").on_attach,
 })
 
 if not lspconfig.emmet_ls then

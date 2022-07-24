@@ -17,8 +17,7 @@ if file_exists(os.getenv("PWD") .. "/package.json") or file_exists(os.getenv("PW
 
 		-- autostart = true,
 
-		-- on_attach = require("lsp").tsserver_on_attach,
-		-- This makes sure tsserver is not used for formatting (I prefer prettier)
+		on_attach = require("lsp.lsp-attach").on_attach, -- This makes sure tsserver is not used for formatting (I prefer prettier)
 		-- on_attach = require'lsp'.common_on_attach,
 		-- root_dir = require("lspconfig/util").root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
 		settings = { documentFormatting = false },
@@ -36,6 +35,7 @@ else
 		capabilities = setup.capabilities,
 		-- autostart = true,
 		cmd = { "deno", "lsp" },
+		on_attach = require("lsp.lsp-attach").on_attach,
 		filetypes = {
 			"javascript",
 			"javascriptreact",

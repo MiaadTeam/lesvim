@@ -8,6 +8,6 @@ require("keymap.resize")
 
 require("keymap.move")
 -- require("keymap.toggleterm")
-require("keymap.lsp")
+-- require("keymap.lsp")
 require("keymap.hlslens")
 require("keymap.copilot")
