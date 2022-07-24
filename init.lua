@@ -44,7 +44,7 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.cmd([[colorscheme tokyonight]])
 
 -- it's a snippet from project.nvim which force to nvim tree to corrct cd
-vim.g.nvim_tree_respect_buf_cwd = 1
+vim.g.respect_buf_cwd = 1
 --Set statusbar
 -- vim.g.lightline = {
 -- 	colorscheme = "onedark",
