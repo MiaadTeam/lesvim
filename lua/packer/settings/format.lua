@@ -1,6 +1,21 @@
 -- Utilities for creating configurations
 local util = require("formatter.util")
 
+function dprint_args(path)
+	return {
+		exe = "dprint",
+		args = {
+			"fmt",
+			"--config ",
+			"~/.config/dotfiles/dprint/dprint.json",
+			"--stdin",
+			path,
+		},
+		stdin = true,
+		try_node_modules = true,
+	}
+end
+
 require("formatter").setup({
 	filetype = {
 		rust = {
@@ -49,86 +64,34 @@ require("formatter").setup({
 		-- SAMPLE for prettier
 		javascript = {
 			function()
-				return {
-					exe = "prettier",
-					args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
-					stdin = true,
-				}
-			end,
-		},
-		javascript = {
-			function()
-				return {
-					exe = "dprint fmt ",
-					args = {
-						"--config ",
-						"~/.config/dotfiles/dprint/dprint.json",
-					},
-					stdin = false,
-				}
+				return dprint_args(util.escape_path(util.get_current_buffer_file_path()))
 			end,
 		},
 		javascriptreact = {
 			function()
-				return {
-					exe = "dprint fmt ",
-					args = {
-						"--config ",
-						"~/.config/dotfiles/dprint/dprint.json",
-					},
-					stdin = false,
-				}
+				return dprint_args(util.escape_path(util.get_current_buffer_file_path()))
 			end,
 		},
 		typescript = {
 			function()
-				return {
-					exe = "prettier",
-					args = {
-						"--stdin-filepath",
-						util.escape_path(util.get_current_buffer_file_path()),
-					},
-					stdin = true,
-					try_node_modules = true,
-				}
+				return dprint_args(util.escape_path(util.get_current_buffer_file_path()))
 			end,
 		},
 		typescriptreact = {
 			function()
-				return {
-					exe = "dprint fmt ",
-					args = {
-						"--config ",
-						"~/.config/dotfiles/dprint/dprint.json",
-					},
-					stdin = false,
-				}
+				return dprint_args(util.escape_path(util.get_current_buffer_file_path()))
 			end,
 		},
-		-- markdown = {
-		-- 	function()
-		-- 		return {
-		-- 			exe = "dprint fmt ",
-		-- 			args = {
-		-- 				"--config ",
-		-- 				"~/.config/dotfiles/dprint/dprint.json",
-		-- 			},
-		-- 			stdin = false,
-		-- 		}
-		-- 	end,
-		-- },
-		-- json = {
-		-- 	function()
-		-- 		return {
-		-- 			exe = "dprint fmt ",
-		-- 			args = {
-		-- 				"--config ",
-		-- 				"~/.config/dotfiles/dprint/dprint.json",
-		-- 			},
-		-- 			stdin = false,
-		-- 		}
-		-- 	end,
-		-- },
+		markdown = {
+			function()
+				return dprint_args(util.escape_path(util.get_current_buffer_file_path()))
+			end,
+		},
+		json = {
+			function()
+				return dprint_args(util.escape_path(util.get_current_buffer_file_path()))
+			end,
+		},
 	},
 })
 
