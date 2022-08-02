@@ -283,7 +283,6 @@ require("packer").startup(function()
 			-- local luasnip = require("luasnip")
 			local snippy = require("snippy")
 			local cmp = require("cmp")
-			local lspkind = require("lspkind")
 
 			cmp.setup({
 				snippet = {
@@ -347,9 +346,7 @@ require("packer").startup(function()
 				}, {
 					{ name = "buffer" },
 				}),
-				formatting = {
-					format = lspkind.cmp_format({ mode = "symbol", with_text = false, maxwidth = 50 }),
-				},
+				formatting = {},
 			})
 
 			-- Use buffer source for `/`.
