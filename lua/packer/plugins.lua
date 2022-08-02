@@ -59,13 +59,13 @@ require("packer").startup(function()
 
 	use({
 		"bennypowers/nvim-regexplainer",
-		config = function()
-			require("regexplainer").setup()
-		end,
 		requires = {
 			"nvim-treesitter/nvim-treesitter",
 			"MunifTanjim/nui.nvim",
 		},
+		config = function()
+			require("regexplainer").setup()
+		end,
 	})
 
 	use({
@@ -208,8 +208,6 @@ require("packer").startup(function()
 	use("nvim-treesitter/nvim-treesitter-textobjects")
 	-- Show code context in the above
 	use("romgrk/nvim-treesitter-context")
-
-	use("onsails/lspkind-nvim")
 
 	use({
 		"glepnir/lspsaga.nvim",
