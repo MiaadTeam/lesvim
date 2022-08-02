@@ -271,6 +271,7 @@ require("packer").startup(function()
 			-- "saadparwaiz1/cmp_luasnip",
 			"dcampos/nvim-snippy",
 			"dcampos/cmp-snippy",
+			"hrsh7th/cmp-emoji",
 		},
 
 		-- event = "InsertEnter",
@@ -343,6 +344,7 @@ require("packer").startup(function()
 					-- { name = "luasnip" }, -- For luasnip users.
 					-- { name = 'ultisnips' }, -- For ultisnips users.
 					{ name = "snippy" }, -- For snippy users.
+					{ name = "emoji" },
 				}, {
 					{ name = "buffer" },
 				}),
