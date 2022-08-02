@@ -65,9 +65,14 @@ return {
 		["C"] = { "<CMD>close<CR>", "Close Buffer (close)" },
 		["e"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Explorer" },
 		["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
-		["r"] = { "<cmd>Format<CR>", "Reformat File" },
 		["h"] = { "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)" },
 		["v"] = { "<CMD>NvimContextVtToggle<CR>", "Virtual text by treesitter" },
+		r = {
+			name = "Format & Regex",
+			f = { "<cmd>Format<CR>", "Format File" },
+			r = { "<cmd>lua require'regexplainer'.show { display = 'popup' }<CR>", "display Regex pattern" },
+			s = { "<cmd>lua require'regexplainer'.show { display = 'split' }<CR>", "display Regex pattern spell" },
+		},
 		w = {
 			name = "Windows Mannager",
 			m = { "<cmd>WinShift<CR>", "Window manipulation" },

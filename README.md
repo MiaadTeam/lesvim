@@ -269,7 +269,10 @@ You might have already noticed that all the shortcuts here begin with `command` 
   - `leader + h` jump to any word with the help of the HOP plugin (like sneak but much better)
   - `leader + q` quit nvim
   - `leader + t` show lsp action menu
-  - `leader + r` format current buffer.
+  - `leader + r` format and regex things
+    - `f` format current buffer
+    - `r` display regex pattern in popup
+    - `s` display regex pattern in split window
   - `leader + H` HTTP request things
     - `r` run the request under the cursor.
     - `p` preview the request cURL command.

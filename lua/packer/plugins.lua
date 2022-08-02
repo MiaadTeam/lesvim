@@ -58,6 +58,17 @@ require("packer").startup(function()
 	})
 
 	use({
+		"bennypowers/nvim-regexplainer",
+		config = function()
+			require("regexplainer").setup()
+		end,
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"MunifTanjim/nui.nvim",
+		},
+	})
+
+	use({
 		"phaazon/hop.nvim",
 		branch = "v1", -- optional but strongly recommended
 		config = function()
