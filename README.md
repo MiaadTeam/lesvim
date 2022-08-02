@@ -616,6 +616,10 @@ Some of the plugins have a unique configuration, some of them just copied config
 
   numb.nvim is a Neovim plugin that peeks lines of the buffer in a non-obtrusive way.
 
+- [`nvim-regexplainer`](https://github.com/bennypowers/nvim-regexplainer) for display regex pattern :
+
+  Describe the regexp under the cursor
+
 - [`copilot.vim`](https://github.com/github/copilot.vim) for AI code suggestion :
 
   GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type.
