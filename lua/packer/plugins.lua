@@ -496,36 +496,14 @@ require("packer").startup(function()
 			wk.setup({
 				myWKConfig.settings,
 			})
-			local opts = myWKConfig.opts
-			local vopts = myWKConfig.opts
+			local opts = myWKConfig.normalOpts
+			local vopts = myWKConfig.visualOpts
 
 			local mappings = myWKConfig.mappings
 			local vmappings = myWKConfig.vmappings
 
 			wk.register(mappings, opts)
-			-- wk.register(vmappings, vopts)
-			wk.register({
-				["/"] = { "<ESC><CMD>'<,'>lua require('Comment').toggle()<CR>", "Comment" },
-				["s"] = { "<ESC><CMD>'<,'>lua require('spectre').open_visual()<CR>", "Search and replace" },
-				y = {
-					name = "+ Yode Plugin",
-					c = { "<ESC><CMD>'<,'>YodeCreateSeditorFloating<CR>", "Create floatin section" },
-					r = { "<ESC><CMD>'<,'>YodeCreateSeditorReplace<CR>", "Create replace section" },
-					d = { "<CMD>YodeBufferDelete<CR>", "Delete Yoda buffer" },
-					-- split window keys
-					j = { "<CMD>YodeLayoutShiftWinDown<CR>", "Shift down" },
-					k = { "<CMD>YodeLayoutShiftWinUp<CR>", "Shift up" },
-					l = { "<CMD>YodeLayoutShiftWinBottom<CR>", "Shift bottom" },
-					h = { "<CMD>YodeLayoutShiftWinTop<CR>", "Shift top" },
-				},
-			}, {
-				mode = "v", -- VISUAL mode
-				prefix = "<leader>",
-				buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-				silent = true, -- use `silent` when creating keymaps
-				noremap = true, -- use `noremap` when creating keymaps
-				nowait = true, -- use `nowait` when creating keymaps
-			})
+			wk.register(vmappings, vopts)
 		end,
 	})
 
