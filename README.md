@@ -109,6 +109,13 @@ We want to create an awesome Development Environment's so a big part of this doc
 
   A simple, fast, and user-friendly alternative to 'find'
 
+- Using [`gnu-sed`](https://www.gnu.org/software/sed/) sed (stream editor) is a non-interactive command-line text editor:
+
+  sed is commonly used to filter text, i.e., it takes text input, performs some operation (or set of operations) on it, and outputs the modified text. sed is typically used for extracting part of a file using pattern matching or substituting multiple occurrences of a string within a file.
+
+  MacOs:
+  you need run `brew install gnu-sed`
+
 you can read a little bit more about the above utils in [this article](https://medium.com/@hemedani/create-an-awesome-development-environment-with-the-terminal-in-mac-os-like-window-manager-2da824f03572) if you want's
 
 ### Prerequisites
