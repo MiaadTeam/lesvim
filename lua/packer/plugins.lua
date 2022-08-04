@@ -24,18 +24,7 @@ require("packer").startup(function()
 		branch = "master",
 		requires = { { "nvim-lua/plenary.nvim" } },
 		config = function()
-			require("renamer").setup({
-				-- The popup title, shown if `border` is true
-				title = "Rename",
-				-- Whether or not to highlight the current word references through LSP
-				show_refs = true,
-				-- Whether or not to add resulting changes to the quickfix list
-				with_qf_list = true,
-				-- Whether or not to enter the new name through the UI or Neovim's `input`
-				-- prompt
-				with_popup = true,
-				-- The keymaps available while in the `renamer` buffer. The example below
-			})
+			require("packer.settings.renamer")
 		end,
 	})
 
@@ -81,19 +70,7 @@ require("packer").startup(function()
 	use({
 		"p00f/nvim-ts-rainbow",
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				highlight = {
-					-- ...
-				},
-				-- ...
-				rainbow = {
-					enable = true,
-					extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-					max_file_lines = nil, -- Do not enable for files with more than n lines, int
-					-- colors = {}, -- table of hex strings
-					-- termcolors = {} -- table of colour name strings
-				},
-			})
+			require("packer.settings.rainbow")
 		end,
 	})
 
@@ -109,43 +86,7 @@ require("packer").startup(function()
 	use({
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
-			-- vim.opt.termguicolors = true
-			vim.cmd([[highlight IndentHighlightListBlank1 guifg=#E06C75 gui=nocombine]])
-			vim.cmd([[highlight IndentHighlightListBlank2 guifg=#E5C07B gui=nocombine]])
-			vim.cmd([[highlight IndentHighlightListBlank3 guifg=#98C379 gui=nocombine]])
-			vim.cmd([[highlight IndentHighlightListBlank4 guifg=#56B6C2 gui=nocombine]])
-			vim.cmd([[highlight IndentHighlightListBlank5 guifg=#61AFEF gui=nocombine]])
-			vim.cmd([[highlight IndentHighlightListBlank6 guifg=#C678DD gui=nocombine]])
-
-			vim.opt.termguicolors = true
-			vim.cmd([[highlight IndentBlanklineIndent1 guibg=#291d29 gui=nocombine]])
-			vim.cmd([[highlight IndentBlanklineIndent2 guibg=#1f2b28 gui=nocombine]])
-			vim.cmd([[highlight IndentBlanklineIndent3 guibg=#2f2a3b gui=nocombine]])
-			vim.cmd([[highlight IndentBlanklineIndent4 guibg=#262933 gui=nocombine]])
-
-			vim.opt.list = true
-			-- vim.opt.listchars:append("space:—")
-			vim.opt.listchars:append("eol:↴")
-
-			require("indent_blankline").setup({
-				space_char_blankline = " ",
-				char_highlight_list = {
-					"IndentHighlightListBlank1",
-					"IndentHighlightListBlank2",
-					"IndentHighlightListBlank3",
-					"IndentHighlightListBlank4",
-					"IndentHighlightListBlank5",
-					"IndentHighlightListBlank6",
-				},
-
-				space_char_highlight_list = {
-					"IndentBlanklineIndent1",
-					"IndentBlanklineIndent2",
-					"IndentBlanklineIndent3",
-					"IndentBlanklineIndent4",
-				},
-				show_trailing_blankline_indent = true,
-			})
+			require("packer.settings.blankline")
 		end,
 	})
 
@@ -153,18 +94,7 @@ require("packer").startup(function()
 	use({
 		"sindrets/winshift.nvim",
 		config = function()
-			require("winshift").setup({
-				highlight_moving_win = true, -- Highlight the window being moved
-				focused_hl_group = "Visual", -- The highlight group used for the moving window
-				moving_win_options = {
-					-- These are local options applied to the moving window while it's
-					-- being moved. They are unset when you leave Win-Move mode.
-					wrap = false,
-					cursorline = false,
-					cursorcolumn = false,
-					colorcolumn = "",
-				},
-			})
+			require("packer.settings.winshift")
 		end,
 	})
 
@@ -181,7 +111,7 @@ require("packer").startup(function()
 		"windwp/windline.nvim",
 		config = function()
 			require("packer.settings.windline")
-			require("windline").add_status(require("spectre.state_utils").status_line())
+			-- require("windline").add_status(require("spectre.state_utils").status_line())
 		end,
 	}) -- Fancier statusline
 
