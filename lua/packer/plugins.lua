@@ -206,96 +206,7 @@ require("packer").startup(function()
 
 		-- event = "InsertEnter",
 		config = function()
-			local has_words_before = function()
-				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-				return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-			end
-
-			-- local luasnip = require("luasnip")
-			local snippy = require("snippy")
-			local cmp = require("cmp")
-
-			cmp.setup({
-				snippet = {
-					-- expand = function(args)
-					-- 	require("luasnip").lsp_expand(args.body)
-					-- end,
-					expand = function(args)
-						snippy.expand_snippet(args.body)
-					end,
-				},
-				mapping = {
-					["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-					["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-							-- elseif luasnip.expand_or_jumpable() then
-							-- 	luasnip.expand_or_jump()
-						elseif has_words_before() then
-							cmp.complete()
-						else
-							fallback()
-						end
-					end, {
-						"i",
-						"s",
-					}),
-
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-							-- elseif luasnip.jumpable(-1) then
-							-- 	luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end, {
-						"i",
-						"s",
-					}),
-
-					-- ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "s" }),
-					-- ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
-
-					["<C-y>"] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
-					["<C-e>"] = cmp.mapping({
-						i = cmp.mapping.abort(),
-						c = cmp.mapping.close(),
-					}),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-				},
-
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					-- { name = "vsnip" }, -- For vsnip users.
-					-- { name = "luasnip" }, -- For luasnip users.
-					-- { name = 'ultisnips' }, -- For ultisnips users.
-					{ name = "snippy" }, -- For snippy users.
-					{ name = "emoji" },
-				}, {
-					{ name = "buffer" },
-				}),
-				formatting = {},
-			})
-
-			-- Use buffer source for `/`.
-			cmp.setup.cmdline("/", {
-				sources = {
-					{ name = "buffer" },
-				},
-			})
-
-			-- Use cmdline & path source for ':'.
-			cmp.setup.cmdline(":", {
-				sources = cmp.config.sources({
-					{ name = "path" },
-				}, {
-					{ name = "cmdline" },
-				}),
-			})
+			require("packer.settings.cmp")
 		end,
 	}) -- Autocompletion plugin
 
@@ -308,11 +219,6 @@ require("packer").startup(function()
 		"windwp/nvim-autopairs",
 		after = "nvim-cmp",
 		config = function()
-			--			require("nvim-autopairs.completion.compe").setup({
-			--				map_complete = true, -- it will auto insert `(` after select function or method item
-			--				auto_select = false, -- auto select first item
-			--			})
-
 			require("packer.settings.autopairs")
 		end,
 	})
@@ -342,40 +248,7 @@ require("packer").startup(function()
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			-- local myTreeConfig = require("packer.settings.nvimtree")
-			local tree_cb = require("nvim-tree.config").nvim_tree_callback
-			require("nvim-tree").setup({
-				-- local tree_cb = require("nvim-tree.config").nvim_tree_callback
-				-- local list = {
-				--     				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-				-- 				{ key = "h", cb = tree_cb("close_node") },
-				-- 				{ key = "v", cb = tree_cb("vsplit") },
-				-- }
-				update_cwd = true,
-				update_focused_file = {
-					enable = true,
-					update_cwd = true,
-				},
-				view = {
-					mappings = {
-						custom_only = false,
-						list = {
-							{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-							{ key = "h", cb = tree_cb("close_node") },
-							{ key = "v", cb = tree_cb("vsplit") },
-						},
-					},
-				},
-			})
-			-- local g = vim.g
-			-- for opt, val in pairs(myTreeConfig) do
-			-- 	g["nvim_tree_" .. opt] = val
-			-- end
-			local list = {
-				{ key = { "l", "<CR>", "o" }, cb = tree_cb("edit") },
-				{ key = "h", cb = tree_cb("close_node") },
-				{ key = "v", cb = tree_cb("vsplit") },
-			}
+			require("packer.settings.tree")
 		end,
 	})
 
@@ -439,31 +312,7 @@ require("packer").startup(function()
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
-			require("Comment").setup({
-				-- -@param ctx Ctx
-				pre_hook = function(ctx)
-					-- Only calculate commentstring for tsx filetypes
-					if vim.bo.filetype == "typescriptreact" then
-						local U = require("Comment.utils")
-
-						-- Detemine whether to use linewise or blockwise commentstring
-						local type = ctx.ctype == U.ctype.line and "__default" or "__multiline"
-
-						-- Determine the location where to calculate commentstring from
-						local location = nil
-						if ctx.ctype == U.ctype.block then
-							location = require("ts_context_commentstring.utils").get_cursor_location()
-						elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-							location = require("ts_context_commentstring.utils").get_visual_start_location()
-						end
-
-						return require("ts_context_commentstring.internal").calculate_commentstring({
-							key = type,
-							location = location,
-						})
-					end
-				end,
-			})
+			require("packer.settings.ts-comment")
 		end,
 	})
 
@@ -480,27 +329,7 @@ require("packer").startup(function()
 		"NTBBloodbath/rest.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
-			require("rest-nvim").setup({
-				-- Open request results in a horizontal split
-				result_split_horizontal = false,
-				-- Skip SSL verification, useful for unknown certificates
-				skip_ssl_verification = false,
-				-- Highlight request on run
-				highlight = {
-					enabled = true,
-					timeout = 150,
-				},
-				result = {
-					-- toggle showing URL, HTTP info, headers at top the of result window
-					show_url = true,
-					show_http_info = true,
-					show_headers = true,
-				},
-				-- Jump to request line on run
-				jump_to_request = false,
-				env_file = ".env",
-				custom_dynamic_variables = {},
-			})
+			require("packer.settings.rest")
 		end,
 	})
 	use({ "kevinhwang91/nvim-hlslens" })
@@ -508,45 +337,7 @@ require("packer").startup(function()
 	use({
 		"simrat39/rust-tools.nvim",
 		config = function()
-			local opts = {
-				tools = { -- rust-tools options
-					autoSetHints = true,
-					hover_with_actions = true,
-					inlay_hints = {
-						show_parameter_hints = false,
-						parameter_hints_prefix = "",
-						other_hints_prefix = "",
-					},
-				},
-
-				-- all the opts to send to nvim-lspconfig
-				-- these override the defaults set by rust-tools.nvim
-				-- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
-				server = {
-					-- on_attach is a callback called when the language server attachs to the buffer
-					-- on_attach = on_attach,
-					settings = {
-						-- to enable rust-analyzer settings visit:
-						-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-						["rust-analyzer"] = {
-							-- enable clippy on save
-							checkOnSave = {
-								command = "clippy",
-							},
-							lens = {
-								enumVariantReferences = true,
-								methodReferences = true,
-								references = true,
-							},
-							rustfmt = {
-								enableRangeFormatting = true,
-							},
-						},
-					},
-				},
-			}
-
-			require("rust-tools").setup(opts)
+			require("packer.settings.rust")
 		end,
 	})
 
@@ -592,16 +383,7 @@ require("packer").startup(function()
 	use({
 		"max397574/better-escape.nvim",
 		config = function()
-			require("better_escape").setup({
-				mapping = { "jk", "kj" }, -- a table with mappings to use
-				timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-				clear_empty_lines = false, -- clear line after escaping if there is only whitespace
-				keys = "<Esc>", -- keys used for escaping, if it is a function will use the result everytime
-				-- example
-				-- keys = function()
-				--   return vim.fn.col '.' - 2 >= 1 and '<esc>l' or '<esc>'
-				-- end,
-			})
+			require("packer.settings.escape")
 		end,
 	})
 	-- use({
