@@ -17,5 +17,6 @@ require("lsp.init")
 -- require("lsp.ts-js-deno")
 
 -- Global Mappings and functions executed on startup
+require("global.colorschema")
 require("global.map")
 require("global.exec")
