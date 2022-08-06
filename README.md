@@ -67,6 +67,9 @@ We want to create an awesome Development Environment's so a big part of this doc
 
   It is a user-friendly command-line shell.
 
+  [It's my `config.fish`](https://raw.githubusercontent.com/hemedani/dotfiles/main/config.fish), you should put it in `$HOME/.config/fish/config.fish`:
+  please note that you should be install [`exa`](https://github.com/ogham/exa) [`zoxide`](https://github.com/ajeetdsouza/zoxide) and [`starship`](https://github.com/starship/starship) to avoid throwing error for `functions` and `init` command in the config file
+
 - [Using `starship` as your default Shell prompt.](https://github.com/starship/starship)
 
   It is the minimal, blazing-fast, and infinitely customizable prompt for any shell!
