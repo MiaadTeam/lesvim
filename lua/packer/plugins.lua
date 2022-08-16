@@ -390,9 +390,9 @@ return packer.startup(function(use)
     end,
   })
 
-  use({
-    "/Users/syd/work/GitRepo/forks/null-ls.nvim",
-  })
+  -- use({
+  --   "/Users/syd/work/GitRepo/forks/null-ls.nvim",
+  -- })
 
   -- use({
   -- 	"beauwilliams/focus.nvim",
