@@ -1,6 +1,6 @@
 local global = require("keymap.global")
 local map = global.map
-mapOptions = global.mapOptions
+local mapOptions = global.mapOptions
 
 -- TODO fix this
 -- resize with arrows

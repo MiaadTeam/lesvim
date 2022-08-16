@@ -36,7 +36,7 @@ vim.o.writebackup = false -- This is recommended by coc
 vim.o.updatetime = 300 -- Faster completion
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
--- vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
+vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
 vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
 vim.cmd("filetype plugin on") -- filetype detection
 vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h16")
@@ -48,11 +48,11 @@ vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h
 -- vim.o.guifont = "FiraCode Nerd Font:h37"
 
 vim.api.nvim_exec(
-	[[
+  [[
 augroup ShowDiagnostic
   autocmd!
   autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focusable = false })
 augroup END
 ]],
-	true
+  true
 )

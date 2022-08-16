@@ -1,5 +1,5 @@
 local map = vim.api.nvim_set_keymap
-mapOptions = { noremap = true, silent = true }
+local mapOptions = { noremap = true, silent = true }
 
 --Remap space as leader key
 map("", "<Space>", "<Nop>", mapOptions)
@@ -15,16 +15,16 @@ vim.cmd('inoremap <expr> <c-k> ("\\<C-p>")')
 
 -- fix to get netrw's gx command to work correctly
 map(
-	"n",
-	"gx",
-	":call netrw#BrowseX(expand((exists('g:netrw_gx')? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())<cr>",
-	{ noremap = true, silent = true }
+  "n",
+  "gx",
+  ":call netrw#BrowseX(expand((exists('g:netrw_gx')? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())<cr>",
+  { noremap = true, silent = true }
 )
 
 -- vim.cmd('vnoremap p "0p')
 -- vim.cmd('vnoremap P "0P')
 
 return {
-	map = map,
-	mapOptions = mapOptions,
+  map = map,
+  mapOptions = mapOptions,
 }

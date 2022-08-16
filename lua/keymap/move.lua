@@ -1,6 +1,6 @@
 local global = require("keymap.global")
 local map = global.map
-mapOptions = global.mapOptions
+local mapOptions = global.mapOptions
 
 -- Move selected line / block of text in visual mode
 map("x", "K", ":move '<-2<CR>gv-gv", mapOptions)
