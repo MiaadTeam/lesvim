@@ -93,13 +93,6 @@ M.mappings = {
 	w = {
 		name = "Windows Mannager",
 		m = { "<cmd>WinShift<CR>", "Window manipulation" },
-		c = { "<cmd>FocusSplitCycle<CR>", "Cycles Windows" },
-		e = { "<cmd>FocusMaxOrEqual<CR>", "Maximize or equalize Windows" },
-		n = { "<cmd>FocusSplitNicely<CR>", "Split Windows nicely" },
-		l = { "<cmd>FocusSplitRight<CR>", "Split Windows Right" },
-		h = { "<cmd>FocusSplitLeft<CR>", "Split Windows Left" },
-		j = { "<cmd>FocusSplitUp<CR>", "Split Windows Up" },
-		k = { "<cmd>FocusSplitDown<CR>", "Split Windows Down" },
 	},
 	H = {
 		name = "Http things",
