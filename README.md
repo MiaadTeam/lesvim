@@ -274,7 +274,7 @@ You might have already noticed that all the shortcuts here begin with `command` 
   - `leader + e` toggle `Nvim Tree` explorer and immediately find the currently active buffer file in the tree.
   - `leader + /` comment just one line in `Normal and Visual` mode. (commenting keybinding has been explained below)
   - `leader + c` close current active buffer.
-  - `leader + w` manipulate splited buffers in the current window.(create and modify the slipt window explained below)
+  - `ctrl + w` manipulate splited buffers in the current window.(create and modify the slipt window explained below)
   - `leader + f` open Telescope and find any file fuzzy in CWD.
   - `leader + h` jump to any word with the help of the HOP plugin (like sneak but much better)
   - `leader + q` quit nvim
