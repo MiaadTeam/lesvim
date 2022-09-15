@@ -403,12 +403,6 @@ return packer.startup(function(use)
   -- })
 
   use({
-    "hoschi/yode-nvim",
-    config = function()
-      require("yode-nvim").setup({})
-    end,
-  })
-  use({
     "haringsrob/nvim_context_vt",
   })
 
