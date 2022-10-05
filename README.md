@@ -606,10 +606,6 @@ Some of the plugins have a unique configuration, some of them just copied config
 
   A high-performance color highlighter for Neovim which has no external dependencies! Written in performant Luajit.
 
-- [`yode-nvim`](https://github.com/hoschi/yode-nvim) for focus on some parts of code:
-
-  Focus on the important parts of the code. Hide the rest, literally.
-
 - [`nvim_context_v`](https://github.com/haringsrob/nvim_context_vt) extra virtual text:
 
   Shows the virtual text of the current context after functions, methods, statements, etc.
