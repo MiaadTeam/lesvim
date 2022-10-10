@@ -427,7 +427,16 @@ return packer.startup(function(use)
       require("numb").setup()
     end,
   })
+
   use({ "github/copilot.vim" })
+
+  -- for smooth scrolling
+  use({
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup()
+    end,
+  })
 
   -- replaces the UI for messages, cmdline and the popupmenu.
   use({
