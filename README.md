@@ -626,6 +626,10 @@ Some of the plugins have a unique configuration, some of them just copied config
 
   Describe the regexp under the cursor
 
+- [`folke/noice.nvim`](https://github.com/folke/noice.nvim) for replaces the UI for `messages`, `cmdline` and the `popupmenu` :
+
+  💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+
 - [`copilot.vim`](https://github.com/github/copilot.vim) for AI code suggestion :
 
   GitHub Copilot is an AI pair programmer which suggests line completions and entire function bodies as you type.
