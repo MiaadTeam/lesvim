@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/6236123/143620266-4c72be16-652b-4d80-850e-1f868787fbc4.png" alt="Lesvim Nvim Screenshot" />
+  <img src="https://user-images.githubusercontent.com/6236123/194855268-2608742d-ccf2-4767-923e-2e4a99ac8642.png" alt="Lesvim Nvim Screenshot" />
 </p>
 
 <p align="center">
@@ -48,7 +48,7 @@
 
 We want to create an awesome Development Environment's so a big part of this document is not about Neovim, we briefly talk about the terminal emulator and prompt and other terminal tools, that make possible the whole Development Life live in Terminal.
 
-<img width="1680" alt="Screen Shot 1400-08-18 at 19 05 55" src="https://user-images.githubusercontent.com/6236123/140955086-c2236f06-c279-4430-b4a7-8e722d874bff.png">
+<img width="1680" alt="Screen Shot 1400-08-18 at 19 05 55" src="https://user-images.githubusercontent.com/6236123/194859831-711b6d8c-ac49-4de3-8cfe-f89b5950c16c.png">
 <img width="1680" alt="Screen Shot 1400-08-18 at 23 11 12" src="https://user-images.githubusercontent.com/6236123/140993424-525cf9d2-4530-4412-9f4b-44d29cfa9964.png">
 
 ## Getting Started
