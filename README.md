@@ -267,6 +267,9 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
   If you press any key which has something bound to it and waits for a few seconds, `which-key` shows you an awesome hint for continuing press-related keys.
 
+- Scrolling
+  - Smooth scrolling for window movement commands (mappings optional): `<C-u>`, `<C-d>`, `<C-b>`, `<C-f>`, `<C-y>`, `<C-e>`, `zt`, `zz`, `zb`.
+
 - Leader Key:
 
   The `leader` is often set to `space` key, so when you press `space` and wait for a few second `which-key` show all grouped and singleton of its binding keys. The following section briefly introduces a few of them:
