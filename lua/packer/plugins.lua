@@ -480,6 +480,18 @@ return packer.startup(function(use)
             prefix_string = " ✨ ",
             max_length = 80,
           },
+          javascriptreact = {
+            prefix_string = " ✨ ",
+            max_length = 80,
+          },
+          typescript = {
+            prefix_string = " ✨ ",
+            max_length = 80,
+          },
+          typescriptreact = {
+            prefix_string = " ✨ ",
+            max_length = 80,
+          },
         },
       })
     end,
