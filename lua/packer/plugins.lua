@@ -439,7 +439,7 @@ return packer.startup(function(use)
       require("nvim-biscuits").setup({})
     end,
     requires = {
-      "nvim-treesitter/nvim-treesitter",
+      { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
     },
   })
 
