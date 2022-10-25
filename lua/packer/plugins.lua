@@ -83,7 +83,7 @@ return packer.startup(function(use)
       "MunifTanjim/nui.nvim",
     },
     config = function()
-      require("regexplainer").setup()
+      require("regexplainer").setup({})
     end,
   })
 
@@ -428,7 +428,20 @@ return packer.startup(function(use)
     end,
   })
 
+  -- implementation of github copilot
   use({ "github/copilot.vim" })
+
+  -- implementation of github copilot
+  use({
+    "code-biscuits/nvim-biscuits",
+
+    config = function()
+      require("nvim-biscuits").setup({})
+    end,
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+  })
 
   -- for smooth scrolling
   use({
