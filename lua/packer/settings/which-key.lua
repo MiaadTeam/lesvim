@@ -154,7 +154,12 @@ M.mappings = {
       "Checkout commit(for current file)",
     },
   },
-
+  o = {
+    name = "+ Portal Jumplist",
+    o = { "<cmd>lua require('portal').jump_backward()<cr>", "Jump backward" },
+    i = { "<cmd>lua require('portal').jump_forward()<cr>", "Jump forward" },
+    m = { "<cmd>lua require('portal.mark').toggle()<cr>", "marks jump list" },
+  },
   m = {
     name = "+ Markdown Tools",
     t = { "<cmd>Glow<cr>", "Preview in terminal directly" },

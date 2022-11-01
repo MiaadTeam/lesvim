@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use(require("packer.config.bisquits"))
   use(require("packer.config.neoscroll"))
   use(require("packer.config.noice"))
+  use(require("packer.config.portal"))
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
