@@ -1,3 +1,6 @@
+-- Description : project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+-- Link : https://github.com/ahmedkhalf/project.nvim
+
 local M = {
   "ahmedkhalf/project.nvim",
   config = function()

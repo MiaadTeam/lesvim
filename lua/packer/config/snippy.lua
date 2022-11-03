@@ -1,3 +1,6 @@
+-- Description : A snippets plugin for Neovim 0.5.0+ written in Lua.
+-- Link : https://github.com/dcampos/nvim-snippy
+
 local M = {
   "dcampos/nvim-snippy",
   config = function()

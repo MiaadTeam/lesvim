@@ -1,3 +1,6 @@
+-- Description :  Neovim motions on speed!
+-- Link : https://github.com/phaazon/hop.nvim
+
 local M = {
   "phaazon/hop.nvim",
   branch = "v1", -- optional but strongly recommended

@@ -1,3 +1,6 @@
+-- Description : A neovim port of Assorted Biscuits. Ends up with more supported languages too.
+-- Link : https://github.com/code-biscuits/nvim-biscuits
+
 local M = {
   "code-biscuits/nvim-biscuits",
 

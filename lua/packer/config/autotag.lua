@@ -1,3 +1,6 @@
+-- Description : Use treesitter to auto close and auto rename html tag
+-- Link : https://github.com/windwp/nvim-ts-autotag
+
 local M = {
   "windwp/nvim-ts-autotag",
   config = function()

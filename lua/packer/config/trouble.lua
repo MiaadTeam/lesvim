@@ -1,3 +1,6 @@
+-- Description : 🚦 A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
+-- Link : https://github.com/folke/trouble.nvim
+
 local M = {
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons",

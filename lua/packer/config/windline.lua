@@ -1,3 +1,6 @@
+-- Description : Animation statusline, floating window statusline. Use lua + luv make some wind
+-- Link : https://github.com/windwp/windline.nvim
+
 local M = {
   "windwp/windline.nvim",
   config = function()

@@ -1,3 +1,6 @@
+-- Description : 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+-- Link : https://github.com/folke/noice.nvim
+
 local M = {
   "folke/noice.nvim",
   event = "VimEnter",
