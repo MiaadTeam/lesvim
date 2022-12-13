@@ -2,7 +2,7 @@ vim.cmd("set iskeyword+=-") -- treat dash separated words as a word text object"
 vim.cmd("set shortmess+=c") -- Don't pass messages to |ins-completion-menu|.
 vim.cmd("set inccommand=split") -- Make substitution work in realtime
 vim.cmd("set clipboard+=unnamedplus") -- Make substitution work in realtime
-vim.o.so = 5
+vim.o.so = 5 -- make scroll before riching top and bottom
 vim.o.title = true
 TERMINAL = vim.fn.expand("$TERMINAL")
 vim.cmd('let &titleold="' .. TERMINAL .. '"')
@@ -33,7 +33,7 @@ vim.o.showtabline = 2 -- Always show tabs
 vim.o.showmode = false -- We don't need to see things like -- INSERT -- anymore
 vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
-vim.o.updatetime = 300 -- Faster completion
+vim.o.updatetime = 100 -- Faster completion
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
 vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
