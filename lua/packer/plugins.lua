@@ -63,7 +63,7 @@ return packer.startup(function(use)
   use(require("packer.config.numb"))
   use({ "github/copilot.vim" })
   use(require("packer.config.bisquits"))
-  use(require("packer.config.neoscroll"))
+  -- use(require("packer.config.neoscroll"))
   use(require("packer.config.noice"))
   use(require("packer.config.portal"))
 
