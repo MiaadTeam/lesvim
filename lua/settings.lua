@@ -47,11 +47,20 @@ vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
 -- vim.o.guifont = "FiraCode Nerd Font:h37"
 
+-- vim.api.nvim_exec(
+--   [[
+-- augroup ShowDiagnostic
+--   autocmd!
+--   autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focusable = false })
+-- augroup END
+-- ]],
+--   true
+-- )
 vim.api.nvim_exec(
   [[
 augroup ShowDiagnostic
   autocmd!
-  autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focusable = false })
+  autocmd CursorHold,CursorHoldI * lua require("lspsaga.diagnostic").show_line_diagnostics()
 augroup END
 ]],
   true
