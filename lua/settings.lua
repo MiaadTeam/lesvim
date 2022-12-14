@@ -56,12 +56,12 @@ vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h
 -- ]],
 --   true
 -- )
-vim.api.nvim_exec(
-  [[
-augroup ShowDiagnostic
-  autocmd!
-  autocmd CursorHold,CursorHoldI * lua require("lspsaga.diagnostic").show_line_diagnostics()
-augroup END
-]],
-  true
-)
+-- vim.api.nvim_exec(
+--   [[
+-- augroup ShowDiagnostic
+--   autocmd!
+--   autocmd CursorHold,CursorHoldI * lua require("lspsaga.diagnostic").show_line_diagnostics()
+-- augroup END
+-- ]],
+--   true
+-- )
