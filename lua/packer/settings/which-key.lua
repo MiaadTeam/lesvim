@@ -89,7 +89,6 @@ M.mappings = {
     p = { "<CMD>lua require('rest-nvim').run(true)<CR>", "preview the request cURL command" },
     l = { "<CMD>lua require('rest-nvim').last()<CR>", "re-run the last request" },
   },
-  ["t"] = { "<cmd>CodeActionMenu<CR>", "Code Action Menu" },
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<CR>", "jump to buffer" },
@@ -172,45 +171,61 @@ M.mappings = {
     -- 	"Code Action",
     -- },
     a = {
-      "<cmd>CodeActionMenu<cr>",
+      "<cmd>Lspsaga code_action<cr>",
       "Code Action",
     },
-    d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
-      "Document Diagnostics",
+    l = {
+      "<cmd>Lspsaga show_line_diagnostics<cr>",
+      "Line Diagnostics",
+    },
+    h = {
+      "<cmd>Lspsaga hover_doc<cr>",
+      "Lsp Hover Doc",
+    },
+    c = {
+      "<cmd>Lspsaga show_cursor_diagnostics<cr>",
+      "Line Diagnostics",
     },
     w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
+      "<cmd>Telescope lsp_workspace_symbols<cr>",
+      "Workspace Symbols",
     },
     -- f = { "<cmd>silent FormatWrite<cr>", "Format" },
     f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     j = {
-      "<CMD>lua vim.lsp.diagnostic.goto_next()<CR>",
+      "<CMD>Lspsaga diagnostic_jump_next<CR>",
       "Next Diagnostic",
     },
     k = {
-      "<CMD>lua vim.lsp.diagnostic.goto_prev()<CR>",
+      "<CMD>Lspsaga diagnostic_jump_prev<CR>",
       "Prev Diagnostic",
     },
-    p = {
-      name = "Peek",
-      d = { "<cmd>lua require('lsp.peek').Peek('definition')<cr>", "Definition" },
-      t = { "<cmd>lua require('lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
-      i = { "<cmd>lua require('lsp.peek').Peek('implementation')<cr>", "Implementation" },
+    n = {
+      "<CMD>lua require('lspsaga.diagnostic').goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
+      "Next ERROR",
     },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    e = {
+      "<CMD>lua require('lspsaga.diagnostic').goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
+      "Prev ERROR",
+    },
+    p = { "<cmd>Lspsaga peek_definition<cr>", "Peek Definition" },
+    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+    s = { "<cmd>Lspsaga lsp_finder<cr>", "find and search with LSP" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
-    t = {
-      "<cmd>TroubleToggle<cr>",
-      "Find Document or Project troubles",
+    o = {
+      "<cmd>Lspsaga outline<cr>",
+      "Open Outline",
     },
+  },
+  t = {
+    name = "Float Terminal",
+    t = { "<cmd>Lspsaga open_floaterm<cr>", "Open Terminal" },
+    g = { "<cmd>Lspsaga open_floaterm gitui<cr>", "Open GitUI" },
+    l = { "<cmd>Lspsaga open_floaterm lazygit<cr>", "Open lazygit" },
   },
   s = {
     name = "Search",
