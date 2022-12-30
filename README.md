@@ -192,14 +192,14 @@ you can read a little bit more about the above utils in [this article](https://m
 
 - _Install plugins :_
 
-  - `:PackerInstall`
-  - `:PackerCompile`
+  - `:Lazy install`
+  - `:Lazy check`
 
-    Please quit and reopen Neovim and execute `:PackerUpdate` and `:PackerCompile` again
+    Please quit and reopen Neovim and execute `:Lazy update` and `:Lazy sync` again
 
 - After launching Neovim, install these `TreeSitter` lib with `:TSInstall` :
 
-  `:TSInstall comment css fish graphql javascript lua regex scss toml tsx vim http json dockerfile`
+  `:TSInstall comment css fish graphql javascript typescript markdown lua regex scss toml tsx vim http json dockerfile`
 
 - And any other you want
 
@@ -259,7 +259,7 @@ You might have already noticed that all the shortcuts here begin with `command` 
 
     For instance, you can easily jump between lines with a glance by pressing `<number>j|k`.
 
-  - As mentioned in the setup section, we manage plugins with [Packer](https://github.com/wbthomason/packer.nvim).
+  - As mentioned in the setup section, we manage plugins with [Lazy](https://github.com/folke/lazy.nvim).
 
     A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
 
@@ -344,13 +344,17 @@ You might have already noticed that all the shortcuts here begin with `command` 
     - `s` show document symbols with the telescope
     - `t` find document or project troubles
     - `w` show workspace diagnostics
-  - `leader + p` is for packer things:
+  - `leader + p` is for Lazy Plugins :
     - `i` install the package if a new package is available
-    - `c` compile packer and create `plugin/packer_compiled.lua` file
+    - `c` check plugins for available updates
+    - `l` log plugins last release notes
+    - `r` restore plugins to prior commits
+    - `p` plugins profile
+    - `d` debugging plugins
     - `s` sync packages with git repos
     - `u` update packages
-    - `r` clean unused package
-    - `S` packer status
+    - `x` clean unused package
+    - `h` lazy plugin help
   - `leader + z` for spell stuff:
     - `p` a special command that fixed a spell and jumps to the next misspelled word
     - `t` toggle spell checker to on and off
@@ -385,9 +389,9 @@ Some of the plugins have a unique configuration, some of them just copied config
 
 ##### So We use this plugins:
 
-- [`packer`](https://github.com/wbthomason/packer.nvim) for manage plugins:
+- [`lazy`](https://github.com/folke/lazy.nvim) for manage plugins:
 
-  A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config
+  💤 A modern plugin manager for Neovim
 
 - [`plenary`](https://github.com/nvim-lua/plenary.nvim) as dependencies for many plugins and Lua utils:
 
