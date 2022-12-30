@@ -1,5 +1,4 @@
 require("lazy").setup({
-
   require("lazy.config.plenary"),
   require("lazy.config.popup"),
   require("lazy.config.fugitive"),

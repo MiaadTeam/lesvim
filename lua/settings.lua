@@ -19,6 +19,7 @@ vim.cmd("set colorcolumn=99999") -- fix indentline for now
 vim.o.mouse = "a" -- Enable your mouse
 vim.o.splitbelow = true -- Horizontal splits will automatically be below
 vim.o.termguicolors = true -- set term gui colors most terminals support this
+vim.opt.termguicolors = true
 vim.o.splitright = true -- Vertical splits will automatically be to the right
 vim.o.conceallevel = 0 -- So that I can see `` in markdown files
 vim.cmd("set ts=4") -- Insert 2 spaces for a tab
@@ -33,16 +34,19 @@ vim.o.showtabline = 2 -- Always show tabs
 vim.o.showmode = false -- We don't need to see things like -- INSERT -- anymore
 vim.o.backup = false -- This is recommended by coc
 vim.o.writebackup = false -- This is recommended by coc
-vim.o.updatetime = 100 -- Faster completion
+vim.o.updatetime = 200 -- Faster completion
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
 vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
 vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
 vim.cmd("filetype plugin on") -- filetype detection
-vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h16")
+-- vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h16")
+vim.opt.guifont = {
+  "Cascadia Code Light,MesloLGS NF,Hack Nerd Font,Adobe Arabic",
+  ":h15",
+}
 
 -- vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
--- vim.o.guifont = "Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h24"
 -- vim.o.guifont = "Cascadia Code Light:h36,Hack Nerd Font,Adobe Arabic:h24"
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
 -- vim.o.guifont = "FiraCode Nerd Font:h37"
