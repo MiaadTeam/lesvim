@@ -18,19 +18,19 @@ local M = {
           prefix_string = " 🌐 ",
         },
         javascript = {
-          prefix_string = " ✨ ",
+          prefix_string = " 🪡 ",
           max_length = 80,
         },
         javascriptreact = {
-          prefix_string = " ✨ ",
+          prefix_string = " 🪡 ",
           max_length = 80,
         },
         typescript = {
-          prefix_string = " ✨ ",
+          prefix_string = " 🪡 ",
           max_length = 80,
         },
         typescriptreact = {
-          prefix_string = " ✨ ",
+          prefix_string = " 🪡 ",
           max_length = 80,
         },
       },
