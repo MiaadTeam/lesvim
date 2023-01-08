@@ -57,6 +57,8 @@ We want to create an awesome Development Environment's so a big part of this doc
 
 - We highly recommend using `Linux` or `Mac` as your operating system.
 
+- Please install the nightly build of [`Neovim`](https://github.com/neovim/neovim/wiki/Installing-Neovim), You need at least version `0.8`.
+
 - [Using `Wezterm` as your default Terminal emulator.](https://github.com/wez/wezterm)
 
   It is a GPU-accelerated cross-platform terminal emulator and multiplexer written by @wez and implemented in Rust
