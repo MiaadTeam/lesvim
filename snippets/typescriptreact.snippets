@@ -22,9 +22,9 @@ snippet llow
 	*/
 	console.group("${1} ------ ");
 	console.warn(" ============= ");
-	console.warn();
+	console.log();
 	console.warn({${1}}, " ------ ");
-	console.warn();
+	console.log();
 	console.warn(" ============= ");
 	console.groupEnd();
 
@@ -36,10 +36,10 @@ snippet lloe
 	*	Please remove your log after debugging
 	*/
 	console.group("${1} ------ ");
-	console.debug(" ============= ");
-	console.debug();
-	console.debug({${1}}, " ------ ");
-	console.debug();
+	console.log(" ============= ");
+	console.log();
+	console.error({${1}}, " ------ ");
+	console.log();
 	console.debug(" ============= ");
 	console.groupEnd();
 
