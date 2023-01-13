@@ -24,3 +24,4 @@ spell/
 *.old
 lua/.DS_Store
 .DS_Store
+*/**/.DS_Store
