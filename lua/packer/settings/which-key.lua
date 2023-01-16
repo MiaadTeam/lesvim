@@ -71,6 +71,7 @@ M.mappings = {
   ["e"] = { "<cmd>NvimTreeFindFileToggle<CR>", "Explorer" },
   ["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
   ["h"] = { "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)" },
+  ["n"] = { "<cmd>noh<CR>", "Turn off search highlight" },
   ["v"] = { "<CMD>NvimContextVtToggle<CR>", "Virtual text by treesitter" },
   r = {
     name = "Format & Replace & Regex ",
