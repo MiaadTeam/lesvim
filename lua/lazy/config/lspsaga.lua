@@ -3,9 +3,9 @@
 
 local M = {
   "glepnir/lspsaga.nvim",
+  event = "BufRead",
   config = function()
-    -- you can configure Hop the way you like here; see :h hop-config
-    require("lspsaga").init_lsp_saga()
+    require("lspsaga").setup({})
   end,
 }
 
