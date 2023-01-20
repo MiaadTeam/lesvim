@@ -4,7 +4,7 @@
 local M = {
   "lukas-reineke/indent-blankline.nvim",
   config = function()
-    require("packer.settings.blankline")
+    require("lazy.settings.blankline")
   end,
 }
 

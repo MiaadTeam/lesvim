@@ -17,7 +17,7 @@ local M = {
 
   -- event = "InsertEnter",
   config = function()
-    require("packer.settings.cmp")
+    require("lazy.settings.cmp")
   end,
 }
 

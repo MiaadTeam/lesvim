@@ -4,7 +4,7 @@
 local M = {
   "folke/which-key.nvim",
   config = function()
-    local myWKConfig = require("packer.settings.which-key")
+    local myWKConfig = require("lazy.settings.which-key")
     local wk = require("which-key")
     wk.setup({
       myWKConfig.settings,

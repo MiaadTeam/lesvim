@@ -4,7 +4,7 @@
 local M = {
   "p00f/nvim-ts-rainbow",
   config = function()
-    require("packer.settings.rainbow")
+    require("lazy.settings.rainbow")
   end,
 }
 

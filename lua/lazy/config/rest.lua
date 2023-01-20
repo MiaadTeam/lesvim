@@ -5,7 +5,7 @@ local M = {
   "NTBBloodbath/rest.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require("packer.settings.rest")
+    require("lazy.settings.rest")
   end,
 }
 

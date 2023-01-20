@@ -6,7 +6,7 @@ local M = {
   branch = "master",
   dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
-    require("packer.settings.renamer")
+    require("lazy.settings.renamer")
   end,
 }
 

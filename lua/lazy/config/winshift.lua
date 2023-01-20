@@ -4,7 +4,7 @@
 local M = {
   "sindrets/winshift.nvim",
   config = function()
-    require("packer.settings.winshift")
+    require("lazy.settings.winshift")
   end,
 }
 

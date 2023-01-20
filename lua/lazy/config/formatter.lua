@@ -4,7 +4,7 @@
 local M = {
   "mhartington/formatter.nvim",
   config = function()
-    require("packer.settings.format")
+    require("lazy.settings.format")
   end,
 }
 

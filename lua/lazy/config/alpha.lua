@@ -4,7 +4,7 @@
 local M = {
   "goolord/alpha-nvim",
   config = function()
-    require("packer.settings.alpha")
+    require("lazy.settings.alpha")
   end,
 }
 

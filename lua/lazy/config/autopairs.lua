@@ -4,7 +4,7 @@
 local M = {
   "windwp/nvim-autopairs",
   config = function()
-    require("packer.settings.autopairs")
+    require("lazy.settings.autopairs")
   end,
 }
 

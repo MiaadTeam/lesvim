@@ -3,9 +3,9 @@
 
 local M = {
   "kyazdani42/nvim-tree.lua",
-  dependencies ={ "kyazdani42/nvim-web-devicons"},
+  dependencies = { "kyazdani42/nvim-web-devicons" },
   config = function()
-    require("packer.settings.tree")
+    require("lazy.settings.tree")
   end,
 }
 

@@ -4,7 +4,7 @@
 local M = {
   "numToStr/Comment.nvim",
   config = function()
-    require("packer.settings.ts-comment")
+    require("lazy.settings.ts-comment")
   end,
 }
 

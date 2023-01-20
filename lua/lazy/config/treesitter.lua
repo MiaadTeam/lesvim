@@ -3,9 +3,9 @@
 
 local M = {
   "nvim-treesitter/nvim-treesitter",
-  build= ":TSUpdate",
+  build = ":TSUpdate",
   config = function()
-    require("packer.settings.treesitter")
+    require("lazy.settings.treesitter")
   end,
 }
 

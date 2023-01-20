@@ -5,7 +5,7 @@ local M = {
   "akinsho/nvim-bufferline.lua",
   dependencies = { "kyazdani42/nvim-web-devicons" },
   config = function()
-    require("bufferline").setup(require("packer.settings.bufferline"))
+    require("bufferline").setup(require("lazy.settings.bufferline"))
   end,
 }
 
