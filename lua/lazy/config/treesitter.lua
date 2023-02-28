@@ -4,6 +4,12 @@
 local M = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  requires = {
+    {
+      "pfeiferj/nvim-hurl",
+      branch = "main",
+    },
+  },
   config = function()
     require("lazy.settings.treesitter")
   end,

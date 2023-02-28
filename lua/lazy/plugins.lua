@@ -11,6 +11,7 @@ require("lazy").setup({
   { "tpope/vim-surround" },
   require("lazy.config.regexplainer"),
   require("lazy.config.hop"),
+  require("lazy.config.hurl"),
   require("lazy.config.rainbow"),
   require("lazy.config.alpha"),
   require("lazy.config.blankline"),
