@@ -160,7 +160,8 @@ you can read a little bit more about the above utils in [this article](https://m
 
 - _Install LSPs_
 
-  `Deno` and `Rust` LSPs are installed and attached to the relevant buffer when you execute the `nvim` command on your proper root project;
+
+  `Deno` and `Rust` LSPs are installed and attached to the relevant buffer when you execute the `nvim` command on your proper root project. if you want to use `denolsp` just create a [`deno.json`](https://deno.land/manual@v1.32.4/getting_started/configuration_file) file in the root of you project, and run the `nvim` command on the root working directory.
 
   - For installing `tsserver` LSP just run: `npm install -g typescript typescript-language-server`. You can read the rest of its doc [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver)
 
