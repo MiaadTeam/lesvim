@@ -5,13 +5,13 @@ snippet llog
 	*
 	*	Please remove your log after debugging
 	*/
-	console.group("${1} ------ ");
 	console.log(" ============= ");
+	console.group("${1} ------ ");
 	console.log();
 	console.info({${1}}, " ------ ");
 	console.log();
-	console.log(" ============= ");
 	console.groupEnd();
+	console.log(" ============= ");
 
 snippet llow
 	/*
@@ -20,13 +20,13 @@ snippet llow
 	*
 	*	Please remove your log after debugging
 	*/
-	console.group("${1} ------ ");
 	console.warn(" ============= ");
+	console.group("${1} ------ ");
 	console.log();
 	console.warn({${1}}, " ------ ");
 	console.log();
-	console.warn(" ============= ");
 	console.groupEnd();
+	console.warn(" ============= ");
 
 snippet lloe
 	/*
@@ -35,11 +35,11 @@ snippet lloe
 	*
 	*	Please remove your log after debugging
 	*/
-	console.group("${1} ------ ");
 	console.log(" ============= ");
+	console.group("${1} ------ ");
 	console.log();
 	console.error({${1}}, " ------ ");
 	console.log();
-	console.debug(" ============= ");
 	console.groupEnd();
+	console.debug(" ============= ");
 
