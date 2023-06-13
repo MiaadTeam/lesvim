@@ -83,6 +83,10 @@ M.mappings = {
   w = {
     name = "Windows Mannager",
     m = { "<cmd>WinShift<CR>", "Window manipulation" },
+    s = { "<cmd>sp<CR>", "split window" },
+    v = { "<cmd>vsp<CR>", "split window vertical" },
+    o = { "<cmd>only<CR>", "close other window" },
+    q = { "<cmd>quit<CR>", "quit window" },
   },
   H = {
     name = "Http things",
