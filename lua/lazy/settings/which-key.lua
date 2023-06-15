@@ -187,6 +187,10 @@ M.mappings = {
       "<cmd>Lspsaga show_line_diagnostics<cr>",
       "Line Diagnostics",
     },
+    b = {
+      "<cmd>Lspsaga show_buf_diagnostics<cr>",
+      "Buffer Diagnostics",
+    },
     h = {
       "<cmd>Lspsaga hover_doc<cr>",
       "Lsp Hover Doc",
@@ -211,11 +215,11 @@ M.mappings = {
       "Prev Diagnostic",
     },
     n = {
-      "<CMD>lua require('lspsaga.diagnostic').goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
+      "<CMD>lua require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
       "Next ERROR",
     },
     e = {
-      "<CMD>lua require('lspsaga.diagnostic').goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
+      "<CMD>lua require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
       "Prev ERROR",
     },
     p = { "<cmd>Lspsaga peek_definition<cr>", "Peek Definition" },
