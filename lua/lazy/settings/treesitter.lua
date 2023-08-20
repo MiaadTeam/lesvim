@@ -1,7 +1,9 @@
--- Treesitter configuration
--- Parsers must be installed manually via :TSInstall
-require("nvim-treesitter.configs").setup({
-  ensure_installed = { "hurl" },
+local configs = require("nvim-treesitter.configs")
+
+configs.setup({
+  ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "html", "hurl" },
+  sync_install = false,
+
   autopairs = { enable = true },
   autotag = {
     enable = true,

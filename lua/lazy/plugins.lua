@@ -40,7 +40,7 @@ require("lazy").setup({
   require("lazy.config.bufferline"),
   require("lazy.config.tree"),
   require("lazy.config.project"),
-  "nathom/filetype.nvim",
+  -- "nathom/filetype.nvim",
   require("lazy.config.twilight"),
   require("lazy.config.formatter"),
   require("lazy.config.which-key"),
@@ -58,7 +58,7 @@ require("lazy").setup({
   { "pgdouyon/vim-yin-yang" },
   require("lazy.config.escap"),
   require("lazy.config.numb"),
-  { "github/copilot.vim" },
+  -- { "github/copilot.vim" },
   require("lazy.config.bisquits"),
   -- require("lazy.config.neoscroll"))
   require("lazy.config.noice"),

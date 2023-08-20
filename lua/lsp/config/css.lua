@@ -20,10 +20,12 @@ require("lspconfig").cssls.setup({
     "js",
     "ts",
     "tsx",
-    "javascriptreact",
-    "typescriptreact",
     "javascript",
+    "javascriptreact",
+    "javascript.jsx",
     "typescript",
+    "typescriptreact",
+    "typescript.tsx",
   },
   on_attach = require("lsp.lsp-attach").on_attach,
 })
@@ -42,7 +44,19 @@ if not lspconfig.emmet_ls then
   configs.emmet_ls = {
     default_config = {
       cmd = { "emmet-ls", "--stdio" },
-      filetypes = { "html", "css", "blade", "jsx", "tsx", "javascriptreact", "typescriptreact" },
+      filetypes = {
+        "html",
+        "css",
+        "blade",
+        "jsx",
+        "tsx",
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+      },
       root_dir = function(fname)
         return vim.loop.cwd()
       end,

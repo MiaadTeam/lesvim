@@ -37,10 +37,15 @@ vim.o.writebackup = false -- This is recommended by coc
 vim.o.updatetime = 200 -- Faster completion
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.o.clipboard = "unnamed" -- Copy paste between vim and everything else
-vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
-vim.cmd("filetype plugin on") -- filetype detection
--- vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font,Adobe\\ Arabic:h16")
+vim.g.markdown_fenced_languages = {
+  "ts=typescript",
+}
+
 vim.opt.guifont = {
   "Cascadia Code Light,MesloLGS NF,Hack Nerd Font,Adobe Arabic",
   ":h15",
