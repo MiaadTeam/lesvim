@@ -204,7 +204,7 @@ M.mappings = {
       "Workspace Symbols",
     },
     -- f = { "<cmd>silent FormatWrite<cr>", "Format" },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format()<cr>", "LSP Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     j = {
       "<CMD>Lspsaga diagnostic_jump_next<CR>",
@@ -224,7 +224,7 @@ M.mappings = {
     },
     p = { "<cmd>Lspsaga peek_definition<cr>", "Peek Definition" },
     r = { "<cmd>Lspsaga rename<cr>", "Rename" },
-    s = { "<cmd>Lspsaga lsp_finder<cr>", "find and search with LSP" },
+    s = { "<cmd>Lspsaga finder<cr>", "find and search with LSP" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",

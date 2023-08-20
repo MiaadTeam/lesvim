@@ -2,6 +2,15 @@
 local setup = require("lsp.lsp-setup")
 local nvim_lsp = require("lspconfig")
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = { vim.api.nvim_buf_get_name(0) },
+    title = "",
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 local function file_exists(name)
   local f = io.open(name, "r")
   if f ~= nil then
@@ -46,7 +55,13 @@ else
       "typescript.tsx",
     },
     on_attach = require("lsp.lsp-attach").on_attach, -- This makes sure tsserver is not used for formatting (I prefer prettier)
-    settings = { documentFormatting = false },
+    -- settings = { documentFormatting = false },
+    commands = {
+      OrganizeImports = {
+        organize_imports,
+        description = "Organize Imports",
+      },
+    },
     root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
   })
 end
