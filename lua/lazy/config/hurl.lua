@@ -6,7 +6,7 @@ local M = {
   branch = "main", -- optional but strongly recommended
   config = function()
     -- you can configure Hop the way you like here; see :h hop-config
-    require("hurl").setup()
+    require("hurl").setup({})
   end,
 }
 

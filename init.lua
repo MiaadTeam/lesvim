@@ -1,8 +1,5 @@
 -- Global Variables
 require("global.vars")
---Package configurations
--- require("packer.loader")
--- require("packer.plugins")
 
 -- Settings
 require("settings")
@@ -23,3 +20,4 @@ require("keymap")
 require("lsp.init")
 -- require("lsp.lspinstall")
 -- require("lsp.ts-js-deno")
+--

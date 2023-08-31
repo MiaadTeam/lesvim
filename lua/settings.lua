@@ -47,12 +47,12 @@ vim.g.markdown_fenced_languages = {
 }
 
 vim.opt.guifont = {
-  "Cascadia Code Light,MesloLGS NF,Hack Nerd Font,Adobe Arabic",
+  "Cascadia Code Light,Vazir Code Hack,MesloLGS NF,Hack Nerd Font",
   ":h15",
 }
 
 -- vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
--- vim.o.guifont = "Cascadia Code Light:h36,Hack Nerd Font,Adobe Arabic:h24"
+-- vim.o.guifont = "Cascadia Code Light,Hack Nerd Font,Adobe Arabic,Times:h35"
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
 -- vim.o.guifont = "FiraCode Nerd Font:h37"
 
