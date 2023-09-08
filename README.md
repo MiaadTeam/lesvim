@@ -70,7 +70,7 @@ We want to create an awesome Development Environment's so a big part of this doc
   It is a user-friendly command-line shell.
 
   [It's my `config.fish`](https://raw.githubusercontent.com/hemedani/dotfiles/main/config.fish), you should put it in `$HOME/.config/fish/config.fish`:
-  please note that you should be install [`exa`](https://github.com/ogham/exa) [`zoxide`](https://github.com/ajeetdsouza/zoxide) and [`starship`](https://github.com/starship/starship) to avoid throwing error for `functions` and `init` command in the config file
+  please note that you should be install [`eza`](https://github.com/eza-community/eza) [`zoxide`](https://github.com/ajeetdsouza/zoxide) and [`starship`](https://github.com/starship/starship) to avoid throwing error for `functions` and `init` command in the config file
 
 - [Using `starship` as your default Shell prompt.](https://github.com/starship/starship)
 
@@ -86,15 +86,15 @@ We want to create an awesome Development Environment's so a big part of this doc
 
   [It's my `GitUI` `VIM Like` keybinding](https://raw.githubusercontent.com/hemedani/dotfiles/main/gitui/key_bindings.ron), you should put it in `$HOME/.config/gitui/key_bindings.ron`
 
-- Using [`exa`](https://github.com/ogham/exa) as a `ls` command in the terminal:
+- Using [`eza`](https://github.com/eza-community/eza) as a `ls` command in the terminal:
 
   A modern replacement for ‘ls’.
 
-  I personally set `ll` alias to `exa --tree --level=2 -a --long --header --accessed` with this functions in `fish` shell:
+  I personally set `ll` alias to `eza --tree --level=2 -a --long --header --accessed` with this functions in `fish` shell:
 
   ```fish
-  function ll --wraps=ls --wraps=exa --description 'List contents of directory using exa tree'
-      exa --tree --level=2 -a --long --header --accessed --git $argv
+  function ll --wraps=ls --wraps=eza --description 'List contents of directory using eza tree'
+      eza --tree --level=2 -a --long --header --accessed --git $argv
   end
   ```
 
