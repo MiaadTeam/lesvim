@@ -464,10 +464,6 @@ Some of the plugins have a unique configuration, some of them just copied config
 
   Rainbow parentheses for neovim using tree-sitter. Also at https://sr.ht/~p00f/nvim-ts-rainbow
 
-- [`alpha-nvim`](https://github.com/goolord/alpha-nvim) for greeter page:
-
-  a lua powered greeter like vim-startify / dashboard-nvim
-
 - [`indent-blankline.nvim`](https://github.com/lukas-reineke/indent-blankline.nvim) for coloring indent blankline:
 
   Indent guides for Neovim
