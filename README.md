@@ -121,7 +121,7 @@ We want to create an awesome Development Environment's so a big part of this doc
   MacOs:
   you need run `brew install gnu-sed`
 
-you can read a little bit more about the above utils in [this article](https://medium.com/@hemedani/create-an-awesome-development-environment-with-the-terminal-in-mac-os-like-window-manager-2da824f03572) if you want's
+you can read a little bit more about the above utils in [this article](https://medium.com/@hemedani/create-an-awesome-development-environment-with-the-terminal-in-mac-os-like-window-manager-2da824f03572) if you want.
 
 ### Prerequisites
 
