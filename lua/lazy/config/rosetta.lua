@@ -2,7 +2,7 @@
 -- Link : https://github.com/mcookly/rosetta.nvim
 
 local M = {
-  "mcookly/rosetta.nvim",
+  "nyngwang/rosetta.nvim",
   config = function()
     require("rosetta").setup()
   end,

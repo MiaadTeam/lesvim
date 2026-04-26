@@ -51,17 +51,19 @@ require("lazy").setup({
   { "ellisonleao/glow.nvim" },
   require("lazy.config.rest"),
   require("lazy.config.hlslens"),
-  require("lazy.config.rust"),
   require("lazy.config.crates"),
   { "mfussenegger/nvim-dap" },
   require("lazy.config.colorizer"),
   { "haringsrob/nvim_context_vt" },
   { "pgdouyon/vim-yin-yang" },
-  require("lazy.config.escap"),
   require("lazy.config.numb"),
   -- { "github/copilot.vim" },
   require("lazy.config.bisquits"),
   -- require("lazy.config.neoscroll"))
   require("lazy.config.noice"),
   require("lazy.config.portal"),
+}, {
+  pkg = {
+    enabled = false,
+  },
 })

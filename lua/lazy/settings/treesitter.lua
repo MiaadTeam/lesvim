@@ -1,16 +1,15 @@
-local configs = require("nvim-treesitter.configs")
+local ok, configs = pcall(require, "nvim-treesitter.configs")
+if not ok then
+  return
+end
 
 configs.setup({
-  ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "html", "hurl" },
+  ensure_installed = { "lua", "vim", "vimdoc", "query", "javascript", "html", "hurl", "http" },
   sync_install = false,
 
   autopairs = { enable = true },
   autotag = {
     enable = true,
-  },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
   },
   highlight = {
     enable = true, -- false will disable the whole extension
