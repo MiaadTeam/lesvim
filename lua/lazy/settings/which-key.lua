@@ -22,11 +22,11 @@ M.settings = {
     separator = "➜", -- symbol used between a key and it's label
     group = "+", -- symbol prepended to a group
   },
-  window = {
+  win = {
     border = "rounded", -- none, single, double, shadow
-    position = "bottom", -- bottom, top
-    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-    padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
+    padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+    title = true,
+    title_pos = "center",
     winblend = 0,
   },
   layout = {
@@ -35,246 +35,130 @@ M.settings = {
     spacing = 3, -- spacing between columns
     align = "left",
   },
-  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
 }
 
-M.normalOpts = {
-  mode = "n", -- NORMAL mode
-  prefix = "<leader>",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
+local function map(lhs, rhs, desc, mode)
+  return { lhs, rhs, desc = desc, mode = mode, nowait = true, remap = false }
+end
+
+local function group(lhs, desc, mode)
+  return { lhs, group = desc, mode = mode, nowait = true, remap = false }
+end
+
+M.normal_mappings = {
+  map("<leader>/", "<cmd>lua require('Comment').toggle()<CR>", "Comment", "n"),
+  map("<leader>C", "<CMD>close<CR>", "Close Buffer (close)", "n"),
+  group("<leader>H", "Http things", "n"),
+  map("<leader>Hl", "<CMD>Rest last<CR>", "re-run the last request", "n"),
+  map("<leader>Hp", "<CMD>Rest open<CR>", "open the response window", "n"),
+  map("<leader>Hr", "<CMD>Rest run<CR>", "run the request under the cursor", "n"),
+  group("<leader>T", "Treesitter", "n"),
+  map("<leader>Ti", ":TSConfigInfo<cr>", "Info", "n"),
+  group("<leader>b", "Buffers", "n"),
+  map("<leader>bd", "<cmd>BufferLineSortByDirectory<cr>", "sort BufferLines automatically by directory", "n"),
+  map("<leader>bf", "<cmd>Telescope buffers<CR>", "Find buffer", "n"),
+  map("<leader>bj", "<cmd>BufferLinePick<CR>", "jump to buffer", "n"),
+  map("<leader>bl", "<cmd>BufferLineCloseLeft<cr>", "close all BufferLines to the left", "n"),
+  map("<leader>bn", "<cmd>BufferLineSortByExtension<cr>", "sort BufferLines automatically by language", "n"),
+  map("<leader>br", "<cmd>BufferLineCloseRight<cr>", "close all BufferLines to the right", "n"),
+  map("<leader>bt", "<cmd>BufferLineSortByTabs<cr>", "sort BufferLines automatically by Tabs", "n"),
+  map("<leader>bw", "<cmd>%bd|e#|bd#<CR>", "wipeout buffer", "n"),
+  map("<leader>c", "<CMD>bd<CR>", "Close Buffer (bd)", "n"),
+  map("<leader>e", "<cmd>NvimTreeFindFileToggle!<CR>", "Explorer", "n"),
+  map("<leader>f", "<cmd>Telescope find_files<CR>", "Find File", "n"),
+  group("<leader>g", "Git", "n"),
+  map("<leader>gC", "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)", "n"),
+  map("<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer", "n"),
+  map("<leader>gb", "<cmd>Telescope git_branches<cr>", "Checkout branch", "n"),
+  map("<leader>gc", "<cmd>Telescope git_commits<cr>", "Checkout commit", "n"),
+  map("<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk", "n"),
+  map("<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk", "n"),
+  map("<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame", "n"),
+  map("<leader>go", "<cmd>Telescope git_status<cr>", "Open changed file", "n"),
+  map("<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk", "n"),
+  map("<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk", "n"),
+  map("<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk", "n"),
+  map("<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", "n"),
+  map("<leader>h", "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)", "n"),
+  group("<leader>l", "LSP", "n"),
+  map("<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols", "n"),
+  map("<leader>la", "<cmd>Lspsaga code_action<cr>", "Code Action", "n"),
+  map("<leader>lb", "<cmd>Lspsaga show_buf_diagnostics<cr>", "Buffer Diagnostics", "n"),
+  map("<leader>lc", "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Line Diagnostics", "n"),
+  map("<leader>le", "<CMD>lua require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>", "Prev ERROR", "n"),
+  map("<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", "LSP Format", "n"),
+  map("<leader>lh", "<cmd>Lspsaga hover_doc<cr>", "Lsp Hover Doc", "n"),
+  map("<leader>li", "<cmd>LspInfo<cr>", "Info", "n"),
+  map("<leader>lj", "<CMD>Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic", "n"),
+  map("<leader>lk", "<CMD>Lspsaga diagnostic_jump_prev<CR>", "Prev Diagnostic", "n"),
+  map("<leader>ll", "<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostics", "n"),
+  map("<leader>ln", "<CMD>lua require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>", "Next ERROR", "n"),
+  map("<leader>lo", "<cmd>Lspsaga outline<cr>", "Open Outline", "n"),
+  map("<leader>lp", "<cmd>Lspsaga peek_definition<cr>", "Peek Definition", "n"),
+  map("<leader>lr", "<cmd>Lspsaga rename<cr>", "Rename", "n"),
+  map("<leader>ls", "<cmd>Lspsaga finder<cr>", "find and search with LSP", "n"),
+  map("<leader>lw", "<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols", "n"),
+  group("<leader>m", " Markdown Tools", "n"),
+  map("<leader>mp", "<CMD>MarkdownPreviewToggle<CR>", "Start/Stop Preview in default browser", "n"),
+  map("<leader>mt", "<cmd>Glow<cr>", "Preview in terminal directly", "n"),
+  map("<leader>n", "<cmd>noh<CR>", "Turn off search highlight", "n"),
+  group("<leader>o", "+ Portal Jumplist", "n"),
+  map("<leader>oi", "<cmd>lua require('portal').jump_forward()<cr>", "Jump forward", "n"),
+  map("<leader>om", "<cmd>lua require('portal.mark').toggle()<cr>", "marks jump list", "n"),
+  map("<leader>oo", "<cmd>lua require('portal').jump_backward()<cr>", "Jump backward", "n"),
+  group("<leader>p", "Lazy Plugins", "n"),
+  map("<leader>pc", "<cmd>Lazy check<cr>", "check plugins for available updates", "n"),
+  map("<leader>pd", "<cmd>Lazy debug<cr>", "debugging plugins", "n"),
+  map("<leader>ph", "<cmd>Lazy help<cr>", "lazy plugin help", "n"),
+  map("<leader>pi", "<cmd>Lazy install<cr>", "install the package if a new package is available", "n"),
+  map("<leader>pl", "<cmd>Lazy log<cr>", "log plugins last release notes", "n"),
+  map("<leader>pp", "<cmd>Lazy profile<cr>", "plugins profile", "n"),
+  map("<leader>pr", "<cmd>Lazy restore<cr>", "restore plugins to prior commits", "n"),
+  map("<leader>ps", "<cmd>Lazy sync<cr>", "sync packages with git repos", "n"),
+  map("<leader>pu", "<cmd>Lazy update<cr>", "update packages", "n"),
+  map("<leader>px", "<cmd>Lazy clean<cr>", "clean unused package", "n"),
+  map("<leader>q", "<cmd>q!<CR>", "Quit", "n"),
+  group("<leader>r", "Format & Replace & Regex ", "n"),
+  map("<leader>rf", "<cmd>Format<CR>", "Format File", "n"),
+  map("<leader>rp", "<cmd>lua require'regexplainer'.show { display = 'popup' }<CR>", "display Regex pattern in popup", "n"),
+  map("<leader>rr", "<cmd>lua require('renamer').rename()<CR>", "rename UI like VS-CODE", "n"),
+  map("<leader>rs", "<cmd>lua require'regexplainer'.show { display = 'split' }<CR>", "display Regex pattern in split window", "n"),
+  group("<leader>s", "Search", "n"),
+  map("<leader>sC", "<cmd>Telescope commands<cr>", "Commands", "n"),
+  map("<leader>sM", "<cmd>Telescope man_pages<cr>", "Man Pages", "n"),
+  map("<leader>sR", "<cmd>Telescope registers<cr>", "Registers", "n"),
+  map("<leader>sb", "<cmd>Telescope git_branches<cr>", "Checkout branch", "n"),
+  map("<leader>sc", "<cmd>Telescope colorscheme<cr>", "Colorscheme", "n"),
+  map("<leader>sf", "<cmd>Telescope find_files<cr>", "Find File", "n"),
+  map("<leader>sg", "<CMD>lua require('spectre').open()<CR>", "Search and replace with rg", "n"),
+  map("<leader>sh", "<cmd>Telescope help_tags<cr>", "Find Help", "n"),
+  map("<leader>sk", "<cmd>Telescope keymaps<cr>", "Keymaps", "n"),
+  map("<leader>sl", "<CMD>lua require('spectre').open_file_search()<CR>", "Search and replace with rg (active buffer set to path)", "n"),
+  map("<leader>sp", "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>", "Colorscheme with Preview", "n"),
+  map("<leader>sr", "<cmd>Telescope oldfiles<cr>", "Open Recent File", "n"),
+  map("<leader>st", "<cmd>Telescope live_grep<cr>", "Text", "n"),
+  map("<leader>sw", "<CMD>lua require('spectre').open_visual({select_word=true})<CR>", "Search and replace with rg (select word under cursor)", "n"),
+  group("<leader>t", "Float Terminal", "n"),
+  map("<leader>tg", "<cmd>Lspsaga open_floaterm gitui<cr>", "Open GitUI", "n"),
+  map("<leader>tl", "<cmd>Lspsaga open_floaterm lazygit<cr>", "Open lazygit", "n"),
+  map("<leader>tt", "<cmd>Lspsaga open_floaterm<cr>", "Open Terminal", "n"),
+  map("<leader>v", "<CMD>NvimContextVtToggle<CR>", "Virtual text by treesitter", "n"),
+  group("<leader>w", "Windows Mannager", "n"),
+  map("<leader>wm", "<cmd>WinShift<CR>", "Window manipulation", "n"),
+  map("<leader>wo", "<cmd>only<CR>", "close other window", "n"),
+  map("<leader>wq", "<cmd>quit<CR>", "quit window", "n"),
+  map("<leader>ws", "<cmd>sp<CR>", "split window", "n"),
+  map("<leader>wv", "<cmd>vsp<CR>", "split window vertical", "n"),
+  group("<leader>z", "Spell", "n"),
+  map("<leader>zp", "<CMD>normal! mz[s1z=`z<CR>", "pick first suggest in spell checker", "n"),
+  map("<leader>zt", "<CMD>set spell!<CR>", "toggle spell checker", "n"),
 }
 
-M.visualOpts = {
-  mode = "v", -- VISUAL mode
-  prefix = "<leader>",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
-  noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
-}
-
-M.vmappings = {
-  ["/"] = { "<ESC><CMD>'<,'>lua require('Comment').toggle()<CR>", "Comment" },
-  ["s"] = { "<ESC><CMD>'<,'>lua require('spectre').open_visual()<CR>", "Search and replace" },
-  r = { "<cmd>lua require('renamer').rename()<CR>", "rename UI like VS-CODE" },
-}
-
-M.mappings = {
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
-  ["c"] = { "<CMD>bd<CR>", "Close Buffer (bd)" },
-  ["C"] = { "<CMD>close<CR>", "Close Buffer (close)" },
-  ["e"] = { "<cmd>NvimTreeFindFileToggle!<CR>", "Explorer" },
-  ["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
-  ["h"] = { "<cmd>lua require'hop'.hint_words()<CR>", "Find word (HOP)" },
-  ["n"] = { "<cmd>noh<CR>", "Turn off search highlight" },
-  ["v"] = { "<CMD>NvimContextVtToggle<CR>", "Virtual text by treesitter" },
-  r = {
-    name = "Format & Replace & Regex ",
-    f = { "<cmd>Format<CR>", "Format File" },
-    r = { "<cmd>lua require('renamer').rename()<CR>", "rename UI like VS-CODE" },
-    p = { "<cmd>lua require'regexplainer'.show { display = 'popup' }<CR>", "display Regex pattern in popup" },
-    s = { "<cmd>lua require'regexplainer'.show { display = 'split' }<CR>", "display Regex pattern in split window" },
-  },
-  w = {
-    name = "Windows Mannager",
-    m = { "<cmd>WinShift<CR>", "Window manipulation" },
-    s = { "<cmd>sp<CR>", "split window" },
-    v = { "<cmd>vsp<CR>", "split window vertical" },
-    o = { "<cmd>only<CR>", "close other window" },
-    q = { "<cmd>quit<CR>", "quit window" },
-  },
-  H = {
-    name = "Http things",
-    r = { "<CMD>lua require('rest-nvim').run()<CR>", "run the request under the cursor" },
-    p = { "<CMD>lua require('rest-nvim').run(true)<CR>", "preview the request cURL command" },
-    l = { "<CMD>lua require('rest-nvim').last()<CR>", "re-run the last request" },
-  },
-  b = {
-    name = "Buffers",
-    j = { "<cmd>BufferLinePick<CR>", "jump to buffer" },
-    f = { "<cmd>Telescope buffers<CR>", "Find buffer" },
-    w = { "<cmd>%bd|e#|bd#<CR>", "wipeout buffer" },
-    r = {
-      "<cmd>BufferLineCloseRight<cr>",
-      "close all BufferLines to the right",
-    },
-    l = {
-      "<cmd>BufferLineCloseLeft<cr>",
-      "close all BufferLines to the left",
-    },
-    d = {
-      "<cmd>BufferLineSortByDirectory<cr>",
-      "sort BufferLines automatically by directory",
-    },
-    n = {
-      "<cmd>BufferLineSortByExtension<cr>",
-      "sort BufferLines automatically by language",
-    },
-    t = {
-      "<cmd>BufferLineSortByTabs<cr>",
-      "sort BufferLines automatically by Tabs",
-    },
-  },
-  p = {
-    name = "Lazy Plugins",
-    i = { "<cmd>Lazy install<cr>", "install the package if a new package is available" },
-    c = { "<cmd>Lazy check<cr>", "check plugins for available updates" },
-    l = { "<cmd>Lazy log<cr>", "log plugins last release notes" },
-    r = { "<cmd>Lazy restore<cr>", "restore plugins to prior commits" },
-    p = { "<cmd>Lazy profile<cr>", "plugins profile" },
-    d = { "<cmd>Lazy debug<cr>", "debugging plugins" },
-    s = { "<cmd>Lazy sync<cr>", "sync packages with git repos" },
-    u = { "<cmd>Lazy update<cr>", "update packages" },
-    x = { "<cmd>Lazy clean<cr>", "clean unused package" },
-    h = { "<cmd>Lazy help<cr>", "lazy plugin help" },
-  },
-
-  -- " Available Debug Adapters:
-  -- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
-  -- " Adapter configuration and installation instructions:
-  -- "   https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-  -- " Debug Adapter protocol:
-  -- "   https://microsoft.github.io/debug-adapter-protocol/
-  -- " Debugging
-  g = {
-    name = "Git",
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    u = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-    C = {
-      "<cmd>Telescope git_bcommits<cr>",
-      "Checkout commit(for current file)",
-    },
-  },
-  o = {
-    name = "+ Portal Jumplist",
-    o = { "<cmd>lua require('portal').jump_backward()<cr>", "Jump backward" },
-    i = { "<cmd>lua require('portal').jump_forward()<cr>", "Jump forward" },
-    m = { "<cmd>lua require('portal.mark').toggle()<cr>", "marks jump list" },
-  },
-  m = {
-    name = "+ Markdown Tools",
-    t = { "<cmd>Glow<cr>", "Preview in terminal directly" },
-    p = { "<CMD>MarkdownPreviewToggle<CR>", "Start/Stop Preview in default browser" },
-  },
-  l = {
-    name = "LSP",
-    -- a = {
-    -- 	"<cmd>lua require'telescope.builtin'.lsp_code_actions(require('telescope.themes').get_dropdown({}))<cr>",
-    -- 	"Code Action",
-    -- },
-    a = {
-      "<cmd>Lspsaga code_action<cr>",
-      "Code Action",
-    },
-    l = {
-      "<cmd>Lspsaga show_line_diagnostics<cr>",
-      "Line Diagnostics",
-    },
-    b = {
-      "<cmd>Lspsaga show_buf_diagnostics<cr>",
-      "Buffer Diagnostics",
-    },
-    h = {
-      "<cmd>Lspsaga hover_doc<cr>",
-      "Lsp Hover Doc",
-    },
-    c = {
-      "<cmd>Lspsaga show_cursor_diagnostics<cr>",
-      "Line Diagnostics",
-    },
-    w = {
-      "<cmd>Telescope lsp_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
-    -- f = { "<cmd>silent FormatWrite<cr>", "Format" },
-    f = { "<cmd>lua vim.lsp.buf.format()<cr>", "LSP Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    j = {
-      "<CMD>Lspsaga diagnostic_jump_next<CR>",
-      "Next Diagnostic",
-    },
-    k = {
-      "<CMD>Lspsaga diagnostic_jump_prev<CR>",
-      "Prev Diagnostic",
-    },
-    n = {
-      "<CMD>lua require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>",
-      "Next ERROR",
-    },
-    e = {
-      "<CMD>lua require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>",
-      "Prev ERROR",
-    },
-    p = { "<cmd>Lspsaga peek_definition<cr>", "Peek Definition" },
-    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
-    s = { "<cmd>Lspsaga finder<cr>", "find and search with LSP" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
-    o = {
-      "<cmd>Lspsaga outline<cr>",
-      "Open Outline",
-    },
-  },
-  t = {
-    name = "Float Terminal",
-    t = { "<cmd>Lspsaga open_floaterm<cr>", "Open Terminal" },
-    g = { "<cmd>Lspsaga open_floaterm gitui<cr>", "Open GitUI" },
-    l = { "<cmd>Lspsaga open_floaterm lazygit<cr>", "Open lazygit" },
-  },
-  s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    f = { "<cmd>Telescope find_files<cr>", "Find File" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    t = { "<cmd>Telescope live_grep<cr>", "Text" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
-    p = {
-      "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
-      "Colorscheme with Preview",
-    },
-    g = { "<CMD>lua require('spectre').open()<CR>", "Search and replace with rg" },
-    w = {
-      "<CMD>lua require('spectre').open_visual({select_word=true})<CR>",
-      "Search and replace with rg (select word under cursor)",
-    },
-    l = {
-      "<CMD>lua require('spectre').open_file_search()<CR>",
-      "Search and replace with rg (active buffer set to path)",
-    },
-  },
-  T = {
-    name = "Treesitter",
-    i = { ":TSConfigInfo<cr>", "Info" },
-  },
-  z = {
-    name = "Spell",
-    t = { "<CMD>set spell!<CR>", "toggle spell checker" },
-    p = { "<CMD>normal! mz[s1z=`z<CR>", "pick first suggest in spell checker" },
-  },
+M.visual_mappings = {
+  map("<leader>/", "<ESC><CMD>'<,'>lua require('Comment').toggle()<CR>", "Comment", "v"),
+  map("<leader>r", "<cmd>lua require('renamer').rename()<CR>", "rename UI like VS-CODE", "v"),
+  map("<leader>s", "<ESC><CMD>'<,'>lua require('spectre').open_visual()<CR>", "Search and replace", "v"),
 }
 
 return M

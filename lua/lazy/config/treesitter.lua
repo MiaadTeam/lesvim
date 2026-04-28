@@ -3,13 +3,8 @@
 
 local M = {
   "nvim-treesitter/nvim-treesitter",
+  commit = "f197a15b0d1e8d555263af20add51450e5aaa1f0",
   build = ":TSUpdate",
-  requires = {
-    {
-      "pfeiferj/nvim-hurl",
-      branch = "main",
-    },
-  },
   config = function()
     require("lazy.settings.treesitter")
   end,

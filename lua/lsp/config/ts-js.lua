@@ -43,9 +43,8 @@ if file_exists(os.getenv("PWD") .. "/deno.json") or file_exists(os.getenv("PWD")
     root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
   })
 else
-  nvim_lsp.tsserver.setup({
+  local ts_ls_config = {
     capabilities = setup.capabilities,
-    autostart = true,
     filetypes = {
       "javascript",
       "javascriptreact",
@@ -54,8 +53,7 @@ else
       "typescriptreact",
       "typescript.tsx",
     },
-    on_attach = require("lsp.lsp-attach").on_attach, -- This makes sure tsserver is not used for formatting (I prefer prettier)
-    -- settings = { documentFormatting = false },
+    on_attach = require("lsp.lsp-attach").on_attach,
     commands = {
       OrganizeImports = {
         organize_imports,
@@ -63,5 +61,12 @@ else
       },
     },
     root_dir = nvim_lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
-  })
+  }
+
+  if vim.lsp.config then
+    vim.lsp.config("ts_ls", ts_ls_config)
+    vim.lsp.enable("ts_ls")
+  else
+    nvim_lsp.tsserver.setup(ts_ls_config)
+  end
 end

@@ -1,3 +1,5 @@
+require("ts_context_commentstring").setup({})
+
 require("Comment").setup({
 	-- -@param ctx Ctx
 	pre_hook = function(ctx)

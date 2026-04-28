@@ -3,7 +3,11 @@
 
 local M = {
   "NTBBloodbath/rest.nvim",
-  dependencies = { "nvim-lua/plenary.nvim" },
+  cmd = { "Rest" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-neotest/nvim-nio",
+  },
   config = function()
     require("lazy.settings.rest")
   end,

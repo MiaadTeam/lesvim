@@ -5,7 +5,7 @@ local on_attach = function(client)
 	require("lsp.lsp-attach").on_attach()
 end
 
-require("lspconfig").rust_analyzer.setup({
+local rust_analyzer_config = {
 	on_attach = on_attach,
 	capabilities = setup.capabilities,
 	settings = {
@@ -37,12 +37,16 @@ require("lspconfig").rust_analyzer.setup({
 			rustfmt = {
 				enableRangeFormatting = true,
 			},
-			-- files = {
-			--     watcher = -- I don't know what should i can set in here
-			-- }
 		},
 	},
-})
+}
+
+if vim.lsp.config then
+	vim.lsp.config("rust_analyzer", rust_analyzer_config)
+	vim.lsp.enable("rust_analyzer")
+else
+	require("lspconfig").rust_analyzer.setup(rust_analyzer_config)
+end
 
 -- local nvim_lsp = require("lspconfig")
 --

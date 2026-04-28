@@ -3,6 +3,9 @@
 
 local M = {
   "p00f/nvim-ts-rainbow",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+  },
   config = function()
     require("lazy.settings.rainbow")
   end,

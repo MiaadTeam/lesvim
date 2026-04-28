@@ -4,6 +4,9 @@
 local M = {
   "pfeiferj/nvim-hurl",
   branch = "main", -- optional but strongly recommended
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+  },
   config = function()
     -- you can configure Hop the way you like here; see :h hop-config
     require("hurl").setup({})
